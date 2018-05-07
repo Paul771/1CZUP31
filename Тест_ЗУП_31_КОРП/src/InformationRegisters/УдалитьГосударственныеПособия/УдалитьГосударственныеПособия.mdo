@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2ae113e9-491b-4a27-b67f-1b38b228f116">
+  <producedTypes>
+    <selectionType typeId="937da3dc-a5fd-405a-a455-e5936a7f2c9f" valueTypeId="4d0ae910-ffc0-464d-9d19-97d17d393010"/>
+    <listType typeId="6d75b612-fdb5-4ddd-8a58-3b979df2dd71" valueTypeId="5fde42ab-77fa-4e0f-ae86-8961ac44d2bc"/>
+    <managerType typeId="0b5fb39a-c73d-4e4d-bca0-cb864e801b5b" valueTypeId="bba67c19-bc3b-470c-873b-7c01745cfe78"/>
+    <recordSetType typeId="86ccb854-7488-442c-90e7-ac742194f6b9" valueTypeId="1d6b4e4b-d3ba-4c9a-acc2-419b73d3e507"/>
+    <recordKeyType typeId="d7ad08cb-e826-4149-993a-69e2466c2e46" valueTypeId="85f9cfa4-cd6f-46f2-83fd-7d0a53fb21ff"/>
+    <recordType typeId="f7856309-0b91-48c5-a969-afa9fa15f33f" valueTypeId="d996bf7e-eaa6-4423-b71b-fd09c55b2e74"/>
+    <recordManagerType typeId="5f470903-de0d-4671-a3d2-b3d6c7bf65c0" valueTypeId="abe5fe24-b4fb-4395-9b7c-f8d20b1cde91"/>
+  </producedTypes>
+  <name>УдалитьГосударственныеПособия</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) Государственные пособия</value>
+  </synonym>
+  <comment></comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="863c7163-9cc1-428e-bd17-53876f195814">
+    <name>Размер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="418c46f6-54f2-456b-ae29-685ec8593afb">
+    <name>ВидПособия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид пособия</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.УдалитьВидыГосударственныхПособий</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <templates uuid="a59d92b6-ad1a-4f78-b36b-7ff91103fd9c">
+    <name>ГосударственныеПособия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Государственные пособия</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+</mdclass:InformationRegister>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="85f3248b-f00f-4484-9027-615577dada6e">
+  <name>УстановитьВремяРегистрацииПриОтменеПроведенияДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить время регистрации при отмене проведения документа</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.УтверждениеТарифнойСетки</types>
+    <types>DocumentObject.ПеремещениеВДругоеПодразделение</types>
+    <types>DocumentObject.ИндексацияЗаработка</types>
+    <types>DocumentObject.ВосстановлениеВДолжности</types>
+    <types>DocumentObject.РезультатыАттестацииСотрудников</types>
+    <types>DocumentObject.НазначениеПлановогоНачисления</types>
+    <types>DocumentObject.ПеремещениеМеждуТерриториями</types>
+    <types>DocumentObject.ПрекращениеПлановогоНачисления</types>
+    <types>DocumentObject.ВозвратИзОтпускаПоУходуЗаРебенком</types>
+    <types>DocumentObject.ИзменениеКвалификационногоРазряда</types>
+    <types>DocumentObject.ИзменениеЛьготСотрудников</types>
+    <types>DocumentObject.ПриемНаРаботуСписком</types>
+    <types>DocumentObject.НачальнаяШтатнаяРасстановка</types>
+    <types>DocumentObject.КадровыйПеревод</types>
+    <types>DocumentObject.ИзменениеОплатыТруда</types>
+    <types>DocumentObject.УвольнениеСписком</types>
+    <types>DocumentObject.ИзменениеГрафикаРаботыСписком</types>
+    <types>DocumentObject.ПриказНаДоплатуДоСреднегоЗаработка</types>
+    <types>DocumentObject.НазначениеПодработки</types>
+    <types>DocumentObject.ОтменаСовмещения</types>
+    <types>DocumentObject.ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком</types>
+    <types>DocumentObject.КадровыйПереводСписком</types>
+    <types>DocumentObject.Совмещение</types>
+    <types>DocumentObject.ПрекращениеПодработки</types>
+    <types>DocumentObject.ИзменениеМестРаботы</types>
+    <types>DocumentObject.ПриемНаРаботу</types>
+    <types>DocumentObject.ИзменениеПлановыхНачислений</types>
+    <types>DocumentObject.Увольнение</types>
+    <types>DocumentObject.ОтменаДоплатыДоСреднегоЗаработка</types>
+    <types>DocumentObject.ОтпускПоУходуЗаРебенком</types>
+    <types>DocumentObject.ИзменениеАванса</types>
+  </source>
+  <event>UndoPosting</event>
+  <handler>CommonModule.ЗарплатаКадрыРасширенныйСобытия.УстановитьВремяРегистрацииПриОтменеПроведенияДокументаОбработкаУдаленияПроведения</handler>
+</mdclass:EventSubscription>

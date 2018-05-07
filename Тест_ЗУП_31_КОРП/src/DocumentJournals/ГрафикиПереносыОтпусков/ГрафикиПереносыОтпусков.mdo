@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6baff715-7f76-46d1-b982-106fea4c1cd1">
+  <producedTypes>
+    <selectionType typeId="7b17ce72-21a8-4c54-8666-726c883e1aa2" valueTypeId="0c8fc29d-3a5b-451f-8cb8-9d1e5752093b"/>
+    <listType typeId="34cb3128-5201-4e8c-8f45-51a4219261d9" valueTypeId="e7ed37a8-fee2-4ce4-ba20-4759d22531c4"/>
+    <managerType typeId="2cdd099c-5833-46e4-a73a-827f79e5b34a" valueTypeId="6939cb22-945f-4b77-b303-edd280ad02ec"/>
+  </producedTypes>
+  <name>ГрафикиПереносыОтпусков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Графики, переносы отпусков</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.ГрафикиПереносыОтпусков.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ГрафикОтпусков</registeredDocuments>
+  <registeredDocuments>Document.ПереносОтпуска</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Графики и переносы отпусков</value>
+  </extendedListPresentation>
+  <columns uuid="f82b93d4-2e12-4184-a406-5fc06d759e67">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ГрафикОтпусков.Attribute.Организация</references>
+    <references>Document.ПереносОтпуска.Attribute.Организация</references>
+  </columns>
+  <columns uuid="9910e52a-f4c8-47d7-95ff-77e9815d744e">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ГрафикОтпусков.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ПереносОтпуска.Attribute.Сотрудник</references>
+  </columns>
+  <columns uuid="af60405e-8827-4fbc-aef8-cf37530c4d72">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ГрафикОтпусков.Attribute.Ответственный</references>
+    <references>Document.ПереносОтпуска.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="d14718e2-172e-444b-816d-28603d70f3b8">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ПереносОтпуска.Attribute.Комментарий</references>
+    <references>Document.ГрафикОтпусков.Attribute.Комментарий</references>
+  </columns>
+  <forms uuid="6a29a179-1793-46e7-9e7d-6fce6dcf1eb4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

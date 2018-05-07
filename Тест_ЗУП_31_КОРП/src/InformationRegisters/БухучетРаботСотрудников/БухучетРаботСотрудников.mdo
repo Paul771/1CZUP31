@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9c707692-28f0-4b6b-8f35-27a07f5442b4">
+  <producedTypes>
+    <selectionType typeId="20e8705f-1d48-4e6b-a59e-1b1d463176bb" valueTypeId="ac1f3e66-11af-4096-9e63-6a1a9d4a5da5"/>
+    <listType typeId="88dfb64c-531c-44d0-9709-e9da6f1b0e30" valueTypeId="05a864eb-55cb-4b99-833a-89570534ca4b"/>
+    <managerType typeId="e14cac1f-441b-45f8-aa0d-f386f050ff30" valueTypeId="d04f8130-0b5d-4c83-98dd-90fc47ab9dbd"/>
+    <recordSetType typeId="0da3d117-47d9-4019-b288-f752a09ef17d" valueTypeId="9c505a8a-d422-47a2-9a41-26602fdc97d9"/>
+    <recordKeyType typeId="4f9a06c9-dd84-4eab-83d1-046eac7f4cd2" valueTypeId="b86f41a3-8950-424f-a86a-612100f512ee"/>
+    <recordType typeId="402a598e-b8ee-48e3-ba4b-1ae5e37c98b1" valueTypeId="0c1c06cb-5989-401e-b49a-82bb33d2e676"/>
+    <recordManagerType typeId="2f86aaac-050c-4609-a929-c7fd8688eb96" valueTypeId="130c2c8e-1b0a-4e43-b823-5d43ca064a56"/>
+  </producedTypes>
+  <name>БухучетРаботСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бухучет работ сотрудников</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e1e9dba9-3cf5-4a7c-bad0-3000685345a7">
+    <name>СтатьяФинансирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья финансирования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="59a6bfd0-abf0-44bb-995e-84061b995015">
+    <name>СпособОтраженияЗарплатыВБухучете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет, субконто</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВБухУчете</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d102aba7-f56d-40d9-b8c4-2e9e46a12124">
+    <name>ОтношениеКЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ОтношениеКЕНВДЗатратНаЗарплату</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0e23e70a-c569-45c1-87e8-21f0462d208d">
+    <name>ПодразделениеУчетаЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение учета затрат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>0:7879a1f0-7119-4f05-9bb3-39cf59e0552b</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="8af438ad-66d0-41d8-be02-e43f415b877e">
+    <name>ВидРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид работ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыРаботСотрудников</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

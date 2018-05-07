@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="939d22aa-7197-4192-9c99-82f0981e4da1">
+  <producedTypes>
+    <selectionType typeId="32b7cbf1-073c-4c7d-b588-0ae52b90cf8e" valueTypeId="8b5a7997-7e5e-49cb-8c49-31468b6808db"/>
+    <listType typeId="5dee1c45-1440-4f98-babf-987e81f9ab12" valueTypeId="b88d35c6-ebcc-4df9-8d54-8235c0f79fc8"/>
+    <managerType typeId="41704adb-ac8b-4374-9d84-b9c4de4b46d0" valueTypeId="4d41f368-0559-4e7c-81e3-a7cec398003c"/>
+    <recordSetType typeId="f9564df4-d499-4084-adbe-c14c945d30ec" valueTypeId="dc798dc9-6fa3-47c3-b812-42d6dd6e060d"/>
+    <recordKeyType typeId="b4d1cd35-9611-4d9c-8e5d-396e626a2412" valueTypeId="2c8bc17d-13c8-460c-84f0-862d6737927a"/>
+    <recordType typeId="1ee417d1-6377-4fe0-b458-74384f6a2586" valueTypeId="d63fd61e-d571-4f1d-ac5f-6623f99749e5"/>
+    <recordManagerType typeId="52098187-04a9-467b-b27e-370f48b3ce40" valueTypeId="cabe18e6-60be-4c6b-8022-20bea0d8f373"/>
+  </producedTypes>
+  <name>ОперацииРасчетаЗарплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Операции расчета зарплаты</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="35768ed8-7055-42a5-ad7c-4b60c52b17f2">
+    <name>ВидОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид операции</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыОперацийРасчетаЗарплаты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="64ddfe89-3536-42f0-999a-1ea7ffe247a4">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.НачислениеЗарплаты</types>
+      <types>DocumentRef.НачислениеЗаПервуюПоловинуМесяца</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

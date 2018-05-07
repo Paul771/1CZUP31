@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    function test(data) {
+        return data;
+    }
+
+    function listener(event) {
+
+        try {
+            // Возвращаем данные родителю
+            window.parent.postMessage(event.data, "*");
+        } catch (err) {
+            alert(err)
+        }
+
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener("message", listener);
+    } else {
+        // IE8
+        window.attachEvent("onmessage", listener);
+    }
+
+</script>
+
+</body>
+</html>

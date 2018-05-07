@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b9a4142d-b01d-49f3-86b9-68153a084c01">
+  <producedTypes>
+    <selectionType typeId="a3d45048-3337-4445-a053-5aa2b2e61f8e" valueTypeId="c0000fb6-d5a6-4884-8c34-ffbb42794809"/>
+    <listType typeId="e74a8237-29d9-4536-b704-a2a49d414d2b" valueTypeId="51990e81-25bc-43d5-9d5d-8690719cdee1"/>
+    <managerType typeId="5f7751e4-c0f7-492f-877d-73cecd0aa792" valueTypeId="b9d77056-087b-4a38-b561-3dacd9759d58"/>
+    <recordSetType typeId="fcf24230-0be0-4da0-b913-dc146ac38944" valueTypeId="93ee6433-a43a-4d4c-b8bc-e13cfce294ab"/>
+    <recordKeyType typeId="38800593-ccf6-4603-b29a-44f1008631a3" valueTypeId="55c34b0e-81da-4f63-b439-e781de89f010"/>
+    <recordType typeId="beda02a6-f836-4915-88c7-40cfc3ffc368" valueTypeId="b419c132-5bb5-4ad1-a0bb-eae28a833f02"/>
+    <recordManagerType typeId="e788eef2-0fb8-4e52-b9cc-d2e733c612cb" valueTypeId="2392c11d-975f-4c53-bf4a-5d262c508989"/>
+  </producedTypes>
+  <name>ПодчиненностьСтруктурныхЕдиниц</name>
+  <synonym>
+    <key>ru</key>
+    <value>Подчиненность структурных единиц</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="656b74df-029c-4f67-8aae-69c7e081f0e4">
+    <name>Уровень</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уровень</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="98e51ec0-9ee3-4cdc-9bfd-167c72a4db39">
+    <name>СтруктурнаяЕдиница</name>
+    <synonym>
+      <key>ru</key>
+      <value>Структурная единица</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b682fb34-12fa-44f6-9f4f-f7e2e4e35de1">
+    <name>ВышестоящаяСтруктурнаяЕдиница</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вышестоящая структурная единица</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

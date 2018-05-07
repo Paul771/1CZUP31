@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="131643a8-7c60-4df3-9c9d-c49a840d13f9">
+  <name>ПроверитьНеобходимостьПерерасчетаСреднегоЗаработкаФСС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить необходимость перерасчета среднего заработка ФСС</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ДанныеСтрахователейДляРасчетаСреднегоЗаработкаФСС</types>
+    <types>AccumulationRegisterRecordSet.ДанныеОНачисленияхДляРасчетаСреднегоЗаработкаФСС</types>
+    <types>InformationRegisterRecordSet.ДанныеОВремениДляРасчетаСреднегоФСС</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.УчетПособийСоциальногоСтрахованияРасширенныйСобытия.ПроверитьНеобходимостьПерерасчетаСреднегоЗаработкаФСС</handler>
+</mdclass:EventSubscription>

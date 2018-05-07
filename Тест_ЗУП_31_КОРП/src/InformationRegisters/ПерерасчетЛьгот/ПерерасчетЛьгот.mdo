@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dec1aa9c-4035-4974-b831-b8d5164b25c6">
+  <producedTypes>
+    <selectionType typeId="4b877ba7-c41d-4e04-af49-06305b1e8176" valueTypeId="908d6462-0c91-47fd-b826-00e53e49acce"/>
+    <listType typeId="34b9b336-df46-4970-a035-61607bd7df6a" valueTypeId="1fca3c68-ee82-425c-a5db-aea85c247e79"/>
+    <managerType typeId="99fe94fd-9057-4d9b-b999-c0a7094430a9" valueTypeId="6c8b3a22-b28c-46d6-9f22-e7269902e3a1"/>
+    <recordSetType typeId="850c45de-5a26-4150-9c1d-333921736897" valueTypeId="be15a3ce-404d-4a2c-a442-a5f5706b5b2b"/>
+    <recordKeyType typeId="b6d337ab-4fbf-4631-8899-b8ac050e4a86" valueTypeId="417225bf-6562-4b63-9bd3-cbff478c492c"/>
+    <recordType typeId="57a6b769-e674-4836-b70a-14afedbc4e32" valueTypeId="24468463-a1b9-470f-b4f5-9be6127b73ee"/>
+    <recordManagerType typeId="75b70d6c-de10-47a6-ae13-a9865b4967f9" valueTypeId="2f552a36-a6a1-42b6-a935-397a9870e0b3"/>
+  </producedTypes>
+  <name>ПерерасчетЛьгот</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перерасчет льгот</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="8859edc1-a08a-4654-b3ad-1b305da1837f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1bfb9e97-49bf-44b0-95d2-25ca98930f05">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cb7e0de7-603a-449e-b889-e75162221db1">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="49dc6a77-5718-4f83-adf6-329f4558fcc2">
+    <name>ПериодДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период действия</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="52e33724-a6b8-48db-92a9-ed90f7e2ef86">
+    <name>Основание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.СторнированиеНачислений</types>
+      <types>DocumentRef.НазначениеПлановогоНачисления</types>
+      <types>DocumentRef.ИзменениеМестРаботы</types>
+      <types>DocumentRef.ИзменениеУсловийОплатыОтпускаПоУходуЗаРебенком</types>
+      <types>DocumentRef.УдержаниеВСчетРасчетовПоПрочимОперациям</types>
+      <types>DocumentRef.УдержаниеДобровольныхВзносовВНПФ</types>
+      <types>DocumentRef.ИзменениеЛьготСотрудников</types>
+      <types>DocumentRef.ИзменениеОплатыТруда</types>
+      <types>DocumentRef.ДанныеДляРасчетаЗарплаты</types>
+      <types>DocumentRef.КадровыйПеревод</types>
+      <types>DocumentRef.ИндивидуальныйГрафик</types>
+      <types>DocumentRef.УдержаниеПрофсоюзныхВзносов</types>
+      <types>DocumentRef.ПростойСотрудников</types>
+      <types>DocumentRef.ИзменениеГрафикаРаботыСписком</types>
+      <types>DocumentRef.РегистрацияПереработок</types>
+      <types>DocumentRef.УтверждениеТарифнойСетки</types>
+      <types>DocumentRef.РаботаВВыходныеИПраздничныеДни</types>
+      <types>DocumentRef.Совмещение</types>
+      <types>DocumentRef.Отпуск</types>
+      <types>DocumentRef.УдержаниеДобровольныхСтраховыхВзносов</types>
+      <types>DocumentRef.ИзменениеКвалификационногоРазряда</types>
+      <types>DocumentRef.БольничныйЛист</types>
+      <types>DocumentRef.ПрекращениеПлановогоНачисления</types>
+      <types>DocumentRef.ИндексацияЗаработка</types>
+      <types>DocumentRef.ОплатаПоСреднемуЗаработку</types>
+      <types>DocumentRef.ОтменаДоплатыДоСреднегоЗаработка</types>
+      <types>DocumentRef.НачальнаяШтатнаяРасстановка</types>
+      <types>DocumentRef.ИзменениеПлановыхНачислений</types>
+      <types>DocumentRef.Увольнение</types>
+      <types>DocumentRef.ПеремещениеВДругоеПодразделение</types>
+      <types>DocumentRef.ВосстановлениеВДолжности</types>
+      <types>DocumentRef.ТабельУчетаРабочегоВремени</types>
+      <types>DocumentRef.НазначениеПодработки</types>
+      <types>DocumentRef.ОтпускБезСохраненияОплаты</types>
+      <types>DocumentRef.ВозвратИзОтпускаПоУходуЗаРебенком</types>
+      <types>DocumentRef.ПрогулНеявка</types>
+      <types>DocumentRef.ПриказНаДоплатуДоСреднегоЗаработка</types>
+      <types>DocumentRef.КадровыйПереводСписком</types>
+      <types>DocumentRef.ПрекращениеПодработки</types>
+      <types>DocumentRef.ПриемНаРаботу</types>
+      <types>DocumentRef.Командировка</types>
+      <types>DocumentRef.ПостоянноеУдержаниеВПользуТретьихЛиц</types>
+      <types>DocumentRef.УвольнениеСписком</types>
+      <types>DocumentRef.ОтменаСовмещения</types>
+      <types>DocumentRef.Отгул</types>
+      <types>DocumentRef.ОтпускПоУходуЗаРебенком</types>
+      <types>DocumentRef.ПриемНаРаботуСписком</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="ee11732e-e6bb-4411-a9a0-d665ea9ddca3">
+    <name>ДокументНачисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ начисления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПростойСотрудников</types>
+      <types>DocumentRef.Отпуск</types>
+      <types>DocumentRef.БольничныйЛист</types>
+      <types>DocumentRef.ОплатаПоСреднемуЗаработку</types>
+      <types>DocumentRef.Премия</types>
+      <types>DocumentRef.ОтгулСписком</types>
+      <types>DocumentRef.ОплатаДнейУходаЗаДетьмиИнвалидами</types>
+      <types>DocumentRef.НачислениеЗарплаты</types>
+      <types>DocumentRef.РазовоеНачисление</types>
+      <types>DocumentRef.Увольнение</types>
+      <types>DocumentRef.ОтпускБезСохраненияОплаты</types>
+      <types>DocumentRef.ПрогулНеявка</types>
+      <types>DocumentRef.Командировка</types>
+      <types>DocumentRef.УвольнениеСписком</types>
+      <types>DocumentRef.МатериальнаяПомощь</types>
+      <types>DocumentRef.Отгул</types>
+      <types>DocumentRef.ОтпускПоУходуЗаРебенком</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="04b43fc8-17f1-4760-9310-186ae9ef7f77">
+    <name>Льгота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Льгота</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfCalculationTypesRef.Начисления</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bc028070-10cd-4cb5-bce8-c1daa56c08ca">
+  <producedTypes>
+    <selectionType typeId="1af06d44-17c8-4600-90d2-64e38042ef08" valueTypeId="50a6d486-97e9-41d9-8892-89d0a142e78f"/>
+    <listType typeId="3b79aa4b-c1d6-4412-93af-9aa09153efc8" valueTypeId="507661cd-af1d-434c-a20f-37bd6897a76f"/>
+    <managerType typeId="6dbad8f0-b3be-425b-bc74-b3d68eac26d0" valueTypeId="275c2c18-8f2d-40c7-9af7-13b2df74e4e3"/>
+    <recordSetType typeId="03bb1aef-c77e-4ee4-84f5-d2841120209f" valueTypeId="c59cfed2-4cfd-46b2-a154-f1acf4474b0c"/>
+    <recordKeyType typeId="7702dd49-400e-4897-acfb-298e1d18708b" valueTypeId="2290e01c-c4f9-4abc-8fd6-77b820dccbd9"/>
+    <recordType typeId="43020e22-3985-4c04-bc9a-b2262198772b" valueTypeId="ff36bacd-026f-4292-b7f9-9e719528311d"/>
+    <recordManagerType typeId="41582c49-46cc-430e-a6d1-3e6e37a10dae" valueTypeId="6fc2850f-2d96-423a-b327-14148b7101f2"/>
+  </producedTypes>
+  <name>ПлановыеДатыСпециальнойОценкиУсловийТруда</name>
+  <synonym>
+    <key>ru</key>
+    <value>Плановые даты специальной оценки условий труда</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8401b9a9-6e4e-4b0a-8c73-a79cce52525f">
+    <name>ДатаБлижайшейОценки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата ближайшей оценки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="50648aad-ea5c-432b-887f-11b5b1466896">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4ca4905d-aef2-4abc-bcab-8a869dd22624">
+    <name>РабочееМесто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочее место</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ШтатноеРасписание</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:chm="http://v8.1c.ru/8.2/data/chart">
+	<item>
+		<selection>
+			<item>
+				<field>ТабличноеПолеГрафикаМесяц</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДанныеГрафика.ПорядокВидаВремени</left>
+				<comparisonType>Greater</comparisonType>
+				<right xsi:type="xs:decimal">1</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:FormBackColor</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Текст</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string"/>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Видимость</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Отображать</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ТабличноеПолеГрафика</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДанныеГрафика.НомерМесяца</left>
+				<comparisonType>InList</comparisonType>
+				<right xsi:type="xs:decimal">2</right>
+				<right xsi:type="xs:decimal">4</right>
+				<right xsi:type="xs:decimal">6</right>
+				<right xsi:type="xs:decimal">8</right>
+				<right xsi:type="xs:decimal">10</right>
+				<right xsi:type="xs:decimal">12</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:FieldAlternativeBackColor</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:BorderColor</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ТабличноеПолеГрафикаДень29</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДанныеГрафика.КоличествоДнейВМесяце</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">29</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:ТекстЗапрещеннойЯчейкиЦвет</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value bold="true" italic="false" kind="WindowsFont" ref="sys:DefaultGUIFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Текст</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">X</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ТабличноеПолеГрафикаДень30</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДанныеГрафика.КоличествоДнейВМесяце</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">30</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:ТекстЗапрещеннойЯчейкиЦвет</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value bold="true" italic="false" kind="WindowsFont" ref="sys:DefaultGUIFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Текст</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">X</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ТабличноеПолеГрафикаДень31</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДанныеГрафика.КоличествоДнейВМесяце</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">31</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:ТекстЗапрещеннойЯчейкиЦвет</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value bold="true" italic="false" kind="WindowsFont" ref="sys:DefaultGUIFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Текст</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">X</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ТабличноеПолеГрафикаДень1</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень2</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень3</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень4</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень5</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень6</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень7</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень8</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень10</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень11</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень12</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень13</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень14</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень15</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень16</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень17</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень18</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень19</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень20</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень21</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень22</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень23</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень24</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень25</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень26</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень27</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень28</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень29</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень30</field>
+			</item>
+			<item>
+				<field>ТабличноеПолеГрафикаДень31</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДанныеГрафика.ВидВремени</left>
+				<comparisonType>NotFilled</comparisonType>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

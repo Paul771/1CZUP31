@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6ab0420d-1cd4-4733-82da-d57912016a9f">
+  <name>СоздатьВидыАттестацииСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создать виды аттестации сотрудников</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>ConstantValueManager.РаботаВМедицинскомУчреждении</types>
+    <types>ConstantValueManager.ИспользоватьГосударственнуюСлужбу</types>
+    <types>ConstantValueManager.ИспользоватьАттестацииСотрудников</types>
+    <types>ConstantValueManager.ИспользоватьМуниципальнуюСлужбу</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.АттестацииСотрудниковСобытия.СоздатьВидыАттестацииСотрудниковПриЗаписи</handler>
+</mdclass:EventSubscription>

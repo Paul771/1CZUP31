@@ -1,0 +1,3135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизическоеЛицо</dataPath>
+			<field>ФизическоеЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.Организация</dcscor:choiceParameter>
+							<dcscor:value>Организация</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ведомость</dataPath>
+			<field>Ведомость</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Год</dataPath>
+			<field>Год</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=гггг</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВыплаты</dataPath>
+			<field>ДатаВыплаты</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДЛФ=D</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоступления</dataPath>
+			<field>ДатаПоступления</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДЛФ=D</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МесяцВыплаты</dataPath>
+			<field>МесяцВыплаты</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=ММММ</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерПлатежногоДокумента</dataPath>
+			<field>НомерПлатежногоДокумента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаВыплаты</dataPath>
+			<field>СуммаВыплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПоступления</dataPath>
+			<field>СуммаПоступления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабельныйНомер</dataPath>
+			<field>ТабельныйНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб. номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНач</dataPath>
+			<field>ОстатокНач</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток нач</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ДАТАВРЕМЯ(1, 1, 1) КАК Период
+ПОМЕСТИТЬ Представления_Периоды
+ГДЕ
+	"НачалоИнтервала" = &amp;НачалоПериода
+	И "ОкончаниеИнтервала" = &amp;КонецПериода
+	И "Периодичность" = "ГОД"
+	И "ИспользоватьКонецПериода" = ЛОЖЬ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВзаиморасчетыСДепонентами.Период КАК Год,
+	ВзаиморасчетыСДепонентами.Организация КАК Организация,
+	ВзаиморасчетыСДепонентами.ФизическоеЛицо КАК ФизическоеЛицо,
+	ВзаиморасчетыСДепонентами.Ведомость КАК Ведомость,
+	ВзаиморасчетыСДепонентами.СуммаНачальныйОстаток КАК ОстатокНач,
+	ВзаиморасчетыСДепонентами.СуммаКонечныйОстаток КАК ОстатокКон
+ПОМЕСТИТЬ ВТОстатки
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСДепонентами.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода, ГОД, , ) КАК ВзаиморасчетыСДепонентами
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Остатки.Организация КАК Организация,
+	Остатки.ФизическоеЛицо КАК ФизическоеЛицо,
+	Остатки.Ведомость КАК Ведомость
+ПОМЕСТИТЬ ВТПоступленияПрошлыхПериодов
+ИЗ
+	ВТОстатки КАК Остатки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Периоды.Период КАК Год,
+	ПоступленияДепонентов.Организация КАК Организация,
+	ПоступленияДепонентов.ФизическоеЛицо КАК ФизическоеЛицо,
+	ПоступленияДепонентов.Ведомость КАК Ведомость,
+	МАКСИМУМ(Остатки.Год) КАК ГодСОстатком
+ПОМЕСТИТЬ ВТГодыСОстатками
+ИЗ
+	Представления_Периоды КАК Периоды
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТПоступленияПрошлыхПериодов КАК ПоступленияДепонентов
+		ПО (ИСТИНА)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТОстатки КАК Остатки
+		ПО (Остатки.Год &lt;= Периоды.Период)
+			И (ПоступленияДепонентов.Организация = Остатки.Организация)
+			И (ПоступленияДепонентов.ФизическоеЛицо = Остатки.ФизическоеЛицо)
+			И (ПоступленияДепонентов.Ведомость = Остатки.Ведомость)
+
+СГРУППИРОВАТЬ ПО
+	Периоды.Период,
+	ПоступленияДепонентов.Организация,
+	ПоступленияДепонентов.ФизическоеЛицо,
+	ПоступленияДепонентов.Ведомость
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ГодыСОстатками.Год КАК Год,
+	ГодыСОстатками.Организация КАК Организация,
+	ГодыСОстатками.ФизическоеЛицо КАК ФизическоеЛицо,
+	ГодыСОстатками.Ведомость КАК Ведомость,
+	ВзаиморасчетыСДепонентами.Период КАК ДатаПоступления,
+	Остатки.ОстатокНач КАК ОстатокНач,
+	СУММА(ВзаиморасчетыСДепонентами.Сумма) КАК СуммаПоступления
+ПОМЕСТИТЬ ВТПоступления
+ИЗ
+	ВТГодыСОстатками КАК ГодыСОстатками
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТОстатки КАК Остатки
+		ПО (Остатки.Год = ГодыСОстатками.ГодСОстатком)
+			И (Остатки.Организация = ГодыСОстатками.Организация)
+			И (Остатки.ФизическоеЛицо = ГодыСОстатками.ФизическоеЛицо)
+			И (Остатки.Ведомость = ГодыСОстатками.Ведомость)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВзаиморасчетыСДепонентами КАК ВзаиморасчетыСДепонентами
+		ПО (ВзаиморасчетыСДепонентами.Организация = ГодыСОстатками.Организация)
+			И (ВзаиморасчетыСДепонентами.ФизическоеЛицо = ГодыСОстатками.ФизическоеЛицо)
+			И (ВзаиморасчетыСДепонентами.Ведомость = ГодыСОстатками.Ведомость)
+			И (ВзаиморасчетыСДепонентами.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход))
+ГДЕ
+	Остатки.ОстатокНач &gt; 0
+	И ГодыСОстатками.ГодСОстатком = ГодыСОстатками.Год
+
+СГРУППИРОВАТЬ ПО
+	ГодыСОстатками.Год,
+	ГодыСОстатками.Организация,
+	ГодыСОстатками.ФизическоеЛицо,
+	ГодыСОстатками.Ведомость,
+	ВзаиморасчетыСДепонентами.Период,
+	Остатки.ОстатокНач
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	НАЧАЛОПЕРИОДА(ВзаиморасчетыСДепонентами.Период, ГОД),
+	ВзаиморасчетыСДепонентами.Организация,
+	ВзаиморасчетыСДепонентами.ФизическоеЛицо,
+	ВзаиморасчетыСДепонентами.Ведомость,
+	ВзаиморасчетыСДепонентами.Период,
+	СУММА(ВзаиморасчетыСДепонентами.Сумма),
+	СУММА(ВзаиморасчетыСДепонентами.Сумма)
+ИЗ
+	РегистрНакопления.ВзаиморасчетыСДепонентами КАК ВзаиморасчетыСДепонентами
+ГДЕ
+	ВзаиморасчетыСДепонентами.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ВзаиморасчетыСДепонентами.ВидДвижения = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)
+
+СГРУППИРОВАТЬ ПО
+	ВзаиморасчетыСДепонентами.Организация,
+	ВзаиморасчетыСДепонентами.ФизическоеЛицо,
+	ВзаиморасчетыСДепонентами.Ведомость,
+	ВзаиморасчетыСДепонентами.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Поступления.Организация КАК Организация,
+	Поступления.ФизическоеЛицо КАК ФизическоеЛицо,
+	Поступления.Ведомость КАК Ведомость,
+	МИНИМУМ(НАЧАЛОПЕРИОДА(ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)), МЕСЯЦ)) КАК ПервыйМесяцВыплаты
+ПОМЕСТИТЬ ВТПервыеМесяцыВыплатыПредварительно
+ИЗ
+	ВТПоступления КАК Поступления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВзаиморасчетыСДепонентами КАК ВзаиморасчетыСДепонентами
+		ПО (ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)) &gt;= Поступления.Год)
+			И (ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)) &lt;= КОНЕЦПЕРИОДА(Поступления.Год, ГОД))
+			И (ЕСТЬNULL(ВзаиморасчетыСДепонентами.ВидДвижения, ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)) = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход))
+			И Поступления.Организация = ВзаиморасчетыСДепонентами.Организация
+			И Поступления.ФизическоеЛицо = ВзаиморасчетыСДепонентами.ФизическоеЛицо
+			И Поступления.Ведомость = ВзаиморасчетыСДепонентами.Ведомость
+
+СГРУППИРОВАТЬ ПО
+	Поступления.Организация,
+	Поступления.ФизическоеЛицо,
+	Поступления.Ведомость
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Поступления.Организация КАК Организация,
+	Поступления.ФизическоеЛицо КАК ФизическоеЛицо,
+	Поступления.Ведомость КАК Ведомость,
+	Поступления.ПервыйМесяцВыплаты КАК ПервыйМесяцВыплаты,
+	МИНИМУМ(ВзаиморасчетыСДепонентами.Регистратор) КАК Регистратор
+ПОМЕСТИТЬ ВТПервыеМесяцыВыплаты
+ИЗ
+	ВТПервыеМесяцыВыплатыПредварительно КАК Поступления
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВзаиморасчетыСДепонентами КАК ВзаиморасчетыСДепонентами
+		ПО Поступления.Организация = ВзаиморасчетыСДепонентами.Организация
+			И Поступления.ФизическоеЛицо = ВзаиморасчетыСДепонентами.ФизическоеЛицо
+			И Поступления.Ведомость = ВзаиморасчетыСДепонентами.Ведомость
+			И (Поступления.ПервыйМесяцВыплаты = НАЧАЛОПЕРИОДА(ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)), МЕСЯЦ))
+
+СГРУППИРОВАТЬ ПО
+	Поступления.Организация,
+	Поступления.ФизическоеЛицо,
+	Поступления.Ведомость,
+	Поступления.ПервыйМесяцВыплаты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Поступления.Год КАК Год,
+	Поступления.Организация КАК Организация,
+	Поступления.ФизическоеЛицо КАК ФизическоеЛицо,
+	Сотрудники.Код КАК ТабельныйНомер,
+	Поступления.Ведомость КАК Ведомость,
+	Поступления.ДатаПоступления КАК ДатаПоступления,
+	Поступления.СуммаПоступления КАК СуммаПоступления,
+	Поступления.ОстатокНач КАК ОстатокНач,
+	НАЧАЛОПЕРИОДА(ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)), МЕСЯЦ) КАК МесяцВыплаты,
+	ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаВыплаты,
+	ЕСТЬNULL(ВзаиморасчетыСДепонентами.Сумма, 0) КАК СуммаВыплаты,
+	ЕСТЬNULL(ВзаиморасчетыСДепонентами.НомерПлатежногоДокумента, "") КАК НомерПлатежногоДокумента
+ИЗ
+	ВТПоступления КАК Поступления
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТПервыеМесяцыВыплаты КАК ПервыеМесяцыВыплаты
+		ПО (ПервыеМесяцыВыплаты.Организация = Поступления.Организация)
+			И (ПервыеМесяцыВыплаты.ФизическоеЛицо = Поступления.ФизическоеЛицо)
+			И (ПервыеМесяцыВыплаты.Ведомость = Поступления.Ведомость)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВзаиморасчетыСДепонентами КАК ВзаиморасчетыСДепонентами
+		ПО (ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)) &gt;= Поступления.Год)
+			И (ЕСТЬNULL(ВзаиморасчетыСДепонентами.Период, ДАТАВРЕМЯ(1, 1, 1)) &lt;= КОНЕЦПЕРИОДА(Поступления.Год, ГОД))
+			И (ЕСТЬNULL(ВзаиморасчетыСДепонентами.ВидДвижения, ЗНАЧЕНИЕ(ВидДвиженияНакопления.Приход)) = ЗНАЧЕНИЕ(ВидДвиженияНакопления.Расход))
+			И Поступления.Организация = ВзаиморасчетыСДепонентами.Организация
+			И Поступления.ФизическоеЛицо = ВзаиморасчетыСДепонентами.ФизическоеЛицо
+			И Поступления.Ведомость = ВзаиморасчетыСДепонентами.Ведомость
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Сотрудники КАК Сотрудники
+		ПО (Сотрудники.ФизическоеЛицо = Поступления.ФизическоеЛицо)
+			И (Сотрудники.ГоловнаяОрганизация = Поступления.Организация.ГоловнаяОрганизация)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ОсновныеСотрудникиФизическихЛиц КАК ОсновныеСотрудникиФизическихЛиц
+		ПО (ОсновныеСотрудникиФизическихЛиц.Сотрудник = Сотрудники.Ссылка)
+			И (ОсновныеСотрудникиФизическихЛиц.ФизическоеЛицо = Сотрудники.ФизическоеЛицо)
+			И (&amp;КонецПериода МЕЖДУ ОсновныеСотрудникиФизическихЛиц.ДатаНачала И ОсновныеСотрудникиФизическихЛиц.ДатаОкончания)</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаВыплаты</dataPath>
+		<expression>Сумма(СуммаВыплаты)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПоступления</dataPath>
+		<expression>Сумма(СуммаПоступления)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец Периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ГлавныйБухгалтер</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Главный бухгалтер</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Исполнитель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Исполнитель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДолжностьИсполнителя</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Должность исполнителя</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Должности</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КлючВарианта</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ключ варианта</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>АнализДепонированнойЗарплаты</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ депонированной зарплаты</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле1</dcsset:dataPath>
+					<dcsset:title>Сумма пост.</dcsset:title>
+					<dcsset:detailExpression>СуммаПоступления</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>[Сумма поступления]</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression/>
+					<dcsset:totalExpressionPresentation/>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>47511a35-4ce2-4b3f-b3eb-780ef3c9256d</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизическоеЛицо</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>553b0970-1e0d-4463-912d-49c501660f08</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудники</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>770334f3-5e5b-4d7b-8107-340506103819</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГлавныйБухгалтер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Исполнитель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДолжностьИсполнителя</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Год</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ФизическоеЛицо</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаПоступления</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаВыплаты</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаВыплаты</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаПоступления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаПоступления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧДЦ='2'; ДЛФ='D'</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Год</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПоступления</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Поступило</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаВыплаты</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выплачено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Шрифт</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Организация</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СуммаВыплаты</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>СуммаПоступления</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemTable">
+					<dcsset:column>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>Month</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="dcscor:DataCompositionPeriodAdditionType">Year</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="dcscor:DataCompositionPeriodAdditionType">Year</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">МесяцВыплаты</dcsset:left>
+								<dcsset:comparisonType>Filled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаВыплаты</dcsset:field>
+								<dcsset:title> </dcsset:title>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>РасположениеРесурсов</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionResourcesPlacement">Vertically</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:column>
+					<dcsset:row>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ФизическоеЛицо</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ДатаПоступления</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Ведомость.Номер</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>ФизическоеЛицо</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>ДатаПоступления</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>Ведомость.Номер</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ФизическоеЛицо</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДатаПоступления</dcsset:field>
+								<dcsset:title>Дата пост.</dcsset:title>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Ведомость.Номер</dcsset:field>
+								<dcsset:title>№ вед-ти</dcsset:title>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>№ платежки</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>РасположениеОбщихИтогов</dcscor:parameter>
+								<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:row>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>КнигаУчетаДепонентов</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Книга учета депонентов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле1</dcsset:dataPath>
+					<dcsset:title>СуммаПост</dcsset:title>
+					<dcsset:detailExpression>СуммаПоступления</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>[Сумма поступления]</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression/>
+					<dcsset:totalExpressionPresentation/>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле2</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВЯнваре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 1
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 1
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 1
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 1
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле4</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВФеврале</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 2
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 2
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 2
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 2
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле5</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМарте</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 3
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 3
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 3
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 3
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле6</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАпреле</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 4
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 4
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 4
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 4
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле3</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМае</dcsset:title>
+					<dcsset:detailExpression>ЕстьNull(Выбор
+		Когда Месяц(МесяцВыплаты) = 5
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец, 0)</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>ЕстьNull(Выбор
+		Когда Месяц([Месяц выплаты]) = 5
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец, 0)</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(ЕстьNull(Выбор
+			Когда Месяц(МесяцВыплаты) = 5
+				Тогда СуммаВыплаты
+			Иначе 0
+		Конец, 0))</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(ЕстьNull(Выбор
+			Когда Месяц([Месяц выплаты]) = 5
+				Тогда [Сумма выплаты]
+			Иначе 0
+		Конец, 0))</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле7</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюне</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 6
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 6
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 6
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 6
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле8</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюле</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 7
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 7
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 7
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 7
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле9</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАвгусте</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 8
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 8
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 8
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 8
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле10</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВСентябре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 9
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 9
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 9
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 9
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле11</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВОктябре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 10
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 10
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 10
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 10
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле12</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВНоябре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 11
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 11
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 11
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 11
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле13</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВДекабре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 12
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 12
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 12
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 12
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле14</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВЯнвареИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 1
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 1
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 1
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 1
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле15</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВФевралеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 2
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 2
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 2
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 2
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле16</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМартеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 3
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 3
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 3
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 3
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле17</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАпрелеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 4
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 4
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 4
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 4
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле18</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМаеИтог</dcsset:title>
+					<dcsset:detailExpression>ЕстьNull(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 5
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец, 0)</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>ЕстьNull(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 5
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец, 0)</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(ЕстьNull(Выбор
+			Когда Месяц(МесяцВыплаты) &lt;= 5
+				Тогда СуммаВыплаты
+			Иначе 0
+		Конец, 0))</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(ЕстьNull(Выбор
+			Когда Месяц([Месяц выплаты]) &lt;= 5
+				Тогда [Сумма выплаты]
+			Иначе 0
+		Конец, 0))</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле19</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюнеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 6
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 6
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 6
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 6
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле20</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюлеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 7
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 7
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 7
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 7
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле21</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАвгустеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 8
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 8
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 8
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 8
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле22</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВСентябреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 9
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 9
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 9
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 9
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле23</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВОктябреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 10
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 10
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 10
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 10
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле24</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВНоябреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 11
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 11
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 11
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 11
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле25</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВДекабреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 12
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 12
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 12
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 12
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>47511a35-4ce2-4b3f-b3eb-780ef3c9256d</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизическоеЛицо</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>553b0970-1e0d-4463-912d-49c501660f08</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудники</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>770334f3-5e5b-4d7b-8107-340506103819</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГлавныйБухгалтер</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>530ae0da-39df-4dbf-8358-8320fed9b879</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Исполнитель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>2b72a015-aa3a-4060-879c-2d4112383418</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДолжностьИсполнителя</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>7fb8c262-13d3-4e86-b424-3bec8ea24d7c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КлючВарианта</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">КнигаУчетаДепонентов</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ФизическоеЛицо</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Ведомость</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>МесяцВыплаты</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаВыплаты</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаПоступления</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ДЛФ='D'</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Год</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Организация.НаименованиеПолное</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаВыплаты</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле4</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле5</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле6</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле3</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле7</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле8</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле9</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле10</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле11</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле12</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле13</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле14</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле15</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле16</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле17</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле18</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле19</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле20</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле21</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле22</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле23</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле24</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле25</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Год</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТабельныйНомер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОстатокНач</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ТабельныйНомер</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:title>Дата пост.</dcsset:title>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:title>№ вед-ти</dcsset:title>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ОстатокНач</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ТабельныйНомер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФизическоеЛицо.ФИО</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле2</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле4</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле5</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле6</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле3</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле7</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле8</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле9</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле10</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле11</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле12</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле13</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>МесяцВыплаты</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле4</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле5</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле6</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле3</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле7</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле8</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле9</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле10</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле11</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле12</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле13</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаВыплаты</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле14</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле15</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле16</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле17</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле18</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле19</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле20</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле21</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле22</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле23</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле24</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ПользовательскиеПоля.Поле25</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>СписокДепонентов</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Список депонентов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле1</dcsset:dataPath>
+					<dcsset:title>Остаток</dcsset:title>
+					<dcsset:detailExpression>СуммаПоступления - СуммаВыплаты</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>[Сумма поступления] - [Сумма выплаты]</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(СуммаПоступления - СуммаВыплаты)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма([Сумма поступления] - [Сумма выплаты])</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>c435836f-e5bf-4547-ae8f-dc3e9c6c62aa</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизическоеЛицо</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>28889a76-8514-4949-9045-a888b5572826</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудники</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>43b7d5ed-8a9a-4525-9fcc-c2a877b738c9</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ФизическоеЛицо</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаПоступления</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Ведомость</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаВыплаты</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаПоступления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаВыплаты</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаПоступления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧДЦ='2'; ДФ='dd.MM.yyyy'</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Шрифт</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="14" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>СуммаВыплаты</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>СуммаПоступления</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+								<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТипМакета</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionGroupTemplateType">Vertical</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:title>№ ведом-ти</dcsset:title>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:title>Дата депонирования</dcsset:title>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаПоступления</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаВыплаты</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Форма0504048</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Книга учета депонентов (0504048)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле1</dcsset:dataPath>
+					<dcsset:title>СуммаПост</dcsset:title>
+					<dcsset:detailExpression>СуммаПоступления</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>[Сумма поступления]</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression/>
+					<dcsset:totalExpressionPresentation/>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле2</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВЯнваре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 1
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 1
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 1
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 1
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле4</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВФеврале</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 2
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 2
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 2
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 2
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле5</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМарте</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 3
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 3
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 3
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 3
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле6</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАпреле</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 4
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 4
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 4
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 4
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле3</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМае</dcsset:title>
+					<dcsset:detailExpression>ЕстьNull(Выбор
+		Когда Месяц(МесяцВыплаты) = 5
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец, 0)</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>ЕстьNull(Выбор
+		Когда Месяц([Месяц выплаты]) = 5
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец, 0)</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(ЕстьNull(Выбор
+			Когда Месяц(МесяцВыплаты) = 5
+				Тогда СуммаВыплаты
+			Иначе 0
+		Конец, 0))</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(ЕстьNull(Выбор
+			Когда Месяц([Месяц выплаты]) = 5
+				Тогда [Сумма выплаты]
+			Иначе 0
+		Конец, 0))</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле7</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюне</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 6
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 6
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 6
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 6
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле8</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюле</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 7
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 7
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 7
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 7
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле9</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАвгусте</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 8
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 8
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 8
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 8
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле10</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВСентябре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 9
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 9
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 9
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 9
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле11</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВОктябре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 10
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 10
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 10
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 10
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле12</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВНоябре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 11
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 11
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 11
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 11
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле13</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВДекабре</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) = 12
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) = 12
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) = 12
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) = 12
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле14</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВЯнвареИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 1
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 1
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 1
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 1
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле15</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВФевралеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 2
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 2
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 2
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 2
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле16</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМартеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 3
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 3
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 3
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 3
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле17</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАпрелеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 4
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 4
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 4
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 4
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле18</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВМаеИтог</dcsset:title>
+					<dcsset:detailExpression>ЕстьNull(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 5
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец, 0)</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>ЕстьNull(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 5
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец, 0)</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(ЕстьNull(Выбор
+			Когда Месяц(МесяцВыплаты) &lt;= 5
+				Тогда СуммаВыплаты
+			Иначе 0
+		Конец, 0))</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(ЕстьNull(Выбор
+			Когда Месяц([Месяц выплаты]) &lt;= 5
+				Тогда [Сумма выплаты]
+			Иначе 0
+		Конец, 0))</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле19</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюнеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 6
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 6
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 6
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 6
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле20</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВИюлеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 7
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 7
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 7
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 7
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле21</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВАвгустеИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 8
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 8
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 8
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 8
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле22</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВСентябреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 9
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 9
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 9
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 9
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле23</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВОктябреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 10
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 10
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 10
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 10
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле24</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВНоябреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 11
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 11
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 11
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 11
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>ПользовательскиеПоля.Поле25</dcsset:dataPath>
+					<dcsset:title>ВыплаченоВДекабреИтог</dcsset:title>
+					<dcsset:detailExpression>Выбор
+	Когда Месяц(МесяцВыплаты) &lt;= 12
+		Тогда СуммаВыплаты
+	Иначе 0
+Конец</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Выбор
+	Когда Месяц([Месяц выплаты]) &lt;= 12
+		Тогда [Сумма выплаты]
+	Иначе 0
+Конец</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Сумма(Выбор
+		Когда Месяц(МесяцВыплаты) &lt;= 12
+			Тогда СуммаВыплаты
+		Иначе 0
+	Конец)</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Сумма(Выбор
+		Когда Месяц([Месяц выплаты]) &lt;= 12
+			Тогда [Сумма выплаты]
+		Иначе 0
+	Конец)</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>47511a35-4ce2-4b3f-b3eb-780ef3c9256d</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ФизическоеЛицо</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:userSettingID>553b0970-1e0d-4463-912d-49c501660f08</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>770334f3-5e5b-4d7b-8107-340506103819</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Исполнитель</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.ФизическиеЛица.ПустаяСсылка</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>3366fc1f-ad68-43d4-adff-da0cfd438a99</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="xs:string">Руководитель</dcsset:userSettingPresentation>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КлючВарианта</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Форма0504048</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Год</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ФизическоеЛицо</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаПоступления</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаВыплаты</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Ведомость.Дата</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаВыплаты</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СуммаПоступления</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ДЛФ='D'</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Год</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Организация.НаименованиеПолное</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаВыплаты</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле4</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле5</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле6</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле3</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле7</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле8</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле9</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле10</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле11</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле12</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле13</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле14</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле15</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле16</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле17</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле18</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле19</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле20</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле21</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле22</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле23</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле24</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПользовательскиеПоля.Поле25</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Организация</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ФизическоеЛицо</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ТабельныйНомер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>СуммаПоступления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ДатаПоступления</dcsset:field>
+							<dcsset:title>Дата пост.</dcsset:title>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Ведомость.Номер</dcsset:field>
+							<dcsset:title>№ вед-ти</dcsset:title>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле1</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ТабельныйНомер</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ФизическоеЛицо.ФИО</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле2</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле4</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле5</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле6</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле3</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле7</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле8</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле9</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле10</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле11</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле12</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПользовательскиеПоля.Поле13</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаВыплаты</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>НомерПлатежногоДокумента</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

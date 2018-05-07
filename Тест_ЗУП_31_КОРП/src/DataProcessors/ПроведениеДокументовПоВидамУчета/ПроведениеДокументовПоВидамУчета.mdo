@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e83331b8-6df7-4695-b9ab-d5216d6d63b1">
+  <producedTypes>
+    <objectType typeId="116f9f25-6133-44f8-967f-5ffad710cedb" valueTypeId="ee09d4b3-f865-428d-9572-7ad8a1813624"/>
+    <managerType typeId="a4ebbd3e-c126-431f-bc0e-c381c215ea34" valueTypeId="9d693909-002f-4490-85de-7eca231ee2a4"/>
+  </producedTypes>
+  <name>ПроведениеДокументовПоВидамУчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проведение документов по видам учета</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПроведениеДокументовПоВидамУчета.Form.Форма</defaultForm>
+  <attributes uuid="16300be9-1849-4d12-a0f5-f5b504f7a5f9">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="34fa8c3e-c0b4-4da6-b849-b92415bf777e">
+    <name>УчетСреднегоЗаработка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учет среднего заработка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3151eeb8-3fa9-4567-ab64-59a943faeefa">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="dd689d62-ab78-43c7-9ed6-1e45c246ab2d">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="d19e6681-a67a-4853-bfa2-aab8f2a82c07">
+    <name>ОбновитьДанныеДляРасчетаСреднегоЗаработка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обновить данные для расчета среднего заработка</value>
+    </synonym>
+    <comment></comment>
+    <group>CommandGroup.НовостиСервис</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.DataProcessor</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

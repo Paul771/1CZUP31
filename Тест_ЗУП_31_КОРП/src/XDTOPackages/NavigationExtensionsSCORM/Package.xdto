@@ -1,0 +1,20 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.adlnet.org/xsd/adlnav_v1p3">
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlnav_v1p3" name="hideLMSUI" type="d2p1:hideLMSUIType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlnav_v1p3" name="navigationInterface" type="d2p1:navigationInterfaceType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlnav_v1p3" name="presentation" type="d2p1:presentationType"/>
+	<valueType name="hideLMSUIType" base="xsd:token" variety="Atomic">
+		<enumeration>abandon</enumeration>
+		<enumeration>continue</enumeration>
+		<enumeration>exit</enumeration>
+		<enumeration>previous</enumeration>
+		<enumeration>suspendAll</enumeration>
+		<enumeration>exitAll</enumeration>
+		<enumeration>abandonAll</enumeration>
+	</valueType>
+	<objectType name="navigationInterfaceType">
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlnav_v1p3" ref="d3p1:hideLMSUI" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="presentationType">
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlnav_v1p3" ref="d3p1:navigationInterface" lowerBound="0"/>
+	</objectType>
+</package>

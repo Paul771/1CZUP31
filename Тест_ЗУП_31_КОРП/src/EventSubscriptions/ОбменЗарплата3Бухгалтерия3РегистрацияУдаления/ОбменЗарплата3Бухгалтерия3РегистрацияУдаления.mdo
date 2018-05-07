@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5a84c0c0-5ac4-421c-996e-fc7cde101c0c">
+  <name>ОбменЗарплата3Бухгалтерия3РегистрацияУдаления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен &quot;Зарплата и управление персоналом 3 - Бухгалтерия предприятия 3&quot;. Перед удалением.</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.СтраныМира</types>
+    <types>DocumentObject.ПогашениеЗаймаСотруднику</types>
+    <types>DocumentObject.ОтражениеЗарплатыВБухучете</types>
+    <types>CatalogObject.СпособыОтраженияЗарплатыВБухУчете</types>
+    <types>CatalogObject.ФизическиеЛица</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыРаздатчиком</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыПеречислением</types>
+    <types>CatalogObject.Организации</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыВБанк</types>
+    <types>CatalogObject.БанковскиеСчетаКонтрагентов</types>
+    <types>DocumentObject.ВыплатаДепонированнойЗарплаты</types>
+    <types>CatalogObject.ВидыКонтактнойИнформации</types>
+    <types>DocumentObject.СправкиПоНДФЛДляРасчетаПоНалогуНаПрибыль</types>
+    <types>DocumentObject.ДоговорЗаймаСотруднику</types>
+    <types>DocumentObject.ДепонированиеЗарплаты</types>
+    <types>CatalogObject.ВидыДокументовФизическихЛиц</types>
+    <types>CatalogObject.ПодразделенияОрганизаций</types>
+    <types>DocumentObject.ВыдачаЗаймаСотруднику</types>
+    <types>DocumentObject.РегламентированныйОтчет</types>
+    <types>DocumentObject.НачислениеОценочныхОбязательствПоОтпускам</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыВКассу</types>
+    <types>CatalogObject.Контрагенты</types>
+    <types>CatalogObject.Пользователи</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ОбменДаннымиСобытияЗарплатаИУправлениеПерсоналом.ОбменЗарплата3Бухгалтерия3ПередУдалением</handler>
+</mdclass:EventSubscription>

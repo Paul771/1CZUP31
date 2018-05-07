@@ -1,0 +1,89 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://schemas.microsoft.com/wix/2006/wi">
+	<objectType name="Wix">
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Product" type="d3p1:Product"/>
+	</objectType>
+	<objectType name="Product">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Name" type="xs:string" form="Attribute"/>
+		<property name="Language" type="xs:string" form="Attribute"/>
+		<property name="Codepage" type="xs:string" form="Attribute"/>
+		<property name="Version" type="xs:string" form="Attribute"/>
+		<property name="Manufacturer" type="xs:string" form="Attribute"/>
+		<property name="UpgradeCode" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Package" type="d3p1:Package"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Media" type="d3p1:Media"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Directory" type="d3p1:Directory"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Feature" type="d3p1:Feature" upperBound="-1"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Property" type="d3p1:Property" lowerBound="1" upperBound="-1"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="WixVariable" type="d3p1:WixVariable" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="UIRef" type="d3p1:UIRef"/>
+	</objectType>
+	<objectType name="Package">
+		<property name="Description" type="xs:string" form="Attribute"/>
+		<property name="Comments" type="xs:string" form="Attribute"/>
+		<property name="Manufacturer" type="xs:string" form="Attribute"/>
+		<property name="InstallerVersion" type="xs:string" form="Attribute"/>
+		<property name="Compressed" type="xs:string" form="Attribute"/>
+		<property name="InstallScope" type="xs:string" form="Attribute"/>
+		<property name="InstallPrivileges" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="Media">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Cabinet" type="xs:string" form="Attribute"/>
+		<property name="EmbedCab" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="Directory">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Name" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Directory" type="d3p1:Directory" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="Component" type="d3p1:Component" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Component">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Guid" type="xs:string" form="Attribute"/>
+		<property name="KeyPath" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="File" type="d3p1:File" upperBound="-1"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="RegistryValue" type="d3p1:RegistryValue" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="RemoveFolder" type="d3p1:RemoveFolder" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="File">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Name" type="xs:string" form="Attribute"/>
+		<property name="DiskId" type="xs:string" form="Attribute"/>
+		<property name="Source" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="Feature">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Title" type="xs:string" form="Attribute"/>
+		<property name="Level" type="xs:string" form="Attribute"/>
+		<property xmlns:d3p1="http://schemas.microsoft.com/wix/2006/wi" name="ComponentRef" type="d3p1:ComponentRef" upperBound="-1"/>
+	</objectType>
+	<objectType name="ComponentRef">
+		<property name="Id" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="Property">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Value" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="WixVariable">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="Overridable" type="xs:string" form="Attribute"/>
+		<property name="Value" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="UIRef">
+		<property name="Id" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="RegistryValue">
+		<property name="Root" type="xs:string" form="Attribute"/>
+		<property name="Key" type="xs:string" form="Attribute"/>
+		<property name="Name" type="xs:string" form="Attribute"/>
+		<property name="Type" type="xs:string" form="Attribute"/>
+		<property name="Value" type="xs:string" form="Attribute"/>
+		<property name="KeyPath" type="xs:string" form="Attribute"/>
+	</objectType>
+	<objectType name="RemoveFolder">
+		<property name="Id" type="xs:string" form="Attribute"/>
+		<property name="On" type="xs:string" form="Attribute"/>
+		<property name="Directory" type="xs:string" form="Attribute"/>
+	</objectType>
+</package>

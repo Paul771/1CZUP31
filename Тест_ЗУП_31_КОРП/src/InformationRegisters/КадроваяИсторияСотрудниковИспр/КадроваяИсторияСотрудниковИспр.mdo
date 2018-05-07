@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2978bce8-30a5-4d87-aedf-1b89ece1bd72">
+  <producedTypes>
+    <selectionType typeId="0f6cc9ed-1b05-4a44-8e78-eba7bb08644c" valueTypeId="d1ef28ae-57d6-4cec-a900-e10e13bc68c1"/>
+    <listType typeId="143a4622-08e7-4166-8b39-81ba3468c523" valueTypeId="d87433d6-ef3b-4ef5-b584-e0b433c62e92"/>
+    <managerType typeId="74d807cf-feea-47f6-b6de-21ac28a1c74f" valueTypeId="820975b0-49dc-43e0-80ed-5a11689ed0c4"/>
+    <recordSetType typeId="f4814ee1-9241-4643-8ed8-afa349aed706" valueTypeId="0e3439d7-794c-4f49-9d5f-7febee5982c4"/>
+    <recordKeyType typeId="64eb26ca-0db5-4552-85be-f641f3dbbda5" valueTypeId="38000b15-e689-4e8c-a257-5af62e64a991"/>
+    <recordType typeId="4bbf5550-58fc-4eeb-9925-2ad3e23ae666" valueTypeId="ff1a2f09-90a7-4604-a1c0-8c16c811c1eb"/>
+    <recordManagerType typeId="5dc205ba-5389-412e-bf67-aca6c9711aef" valueTypeId="857c2f6c-4b34-42dd-b6d5-a25fd92bcacf"/>
+  </producedTypes>
+  <name>КадроваяИсторияСотрудниковИспр</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кадровая история сотрудников (испр.)</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="b6e57c42-ea8e-436e-be30-54c50679529f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="2c9ab6bf-e2ca-4744-bde3-0c44d6ceaadb">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9d13c408-7ef6-43de-98bf-a3d112937c18">
+    <name>ВидСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид события</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыКадровыхСобытий</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="de723a19-eb4b-4ece-a754-f68d98fc6187">
+    <name>ДолжностьПоШтатномуРасписанию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность по штатному расписанию</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ШтатноеРасписание</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="74e453b7-fe84-4fc9-9f4e-889a770acb43">
+    <name>КоличествоСтавок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество ставок</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>22</precision>
+        <scale>20</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="03c09f50-59a7-4ca7-8d03-a53f4830d225">
+    <name>Должность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d353c497-7884-4a76-9132-0af76cc5963e">
+    <name>УдалитьВидЗанятости</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Вид занятости</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыЗанятости</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Основное место работы или совместительство</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыЗанятости.EnumValue.ОсновноеМестоРаботы</value>
+    </fillValue>
+  </resources>
+  <resources uuid="75eee201-b7e7-46eb-89fb-2f48bcf1692c">
+    <name>ВидДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид договора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыДоговоровССотрудниками</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыДоговоровССотрудниками.EnumValue.ТрудовойДоговор</value>
+    </fillValue>
+  </resources>
+  <resources uuid="82a442ff-0620-4ded-b644-bfd766a565ab">
+    <name>ДействуетДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действует до</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5d02515d-ac5a-4f16-80f5-a24633a634c4">
+    <name>ГоловнойСотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головной сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="073077b0-4b90-4e0c-ad24-65824590c880">
+    <name>ЭтоГоловнойСотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это головной сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3f9d4b7b-90e7-40b7-830d-ce6a8fd8f8d6">
+    <name>УдалитьОрганизацияПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Организация по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0804511b-a55d-4959-835b-ae910036276c">
+    <name>УдалитьПодразделениеПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Подразделение по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c04f8afc-947b-46ec-a1e2-d33eb70612b7">
+    <name>УдалитьДолжностьПоШтатномуРасписаниюПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Должность по штатному расписанию по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ШтатноеРасписание</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d1b6fd72-e0a8-452a-b078-16c352a3fb47">
+    <name>УдалитьДолжностьПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Должность по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8b7f6ad3-0af6-47a1-b79f-a675b25d3688">
+    <name>УдалитьКоличествоСтавокПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Количество ставок по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>22</precision>
+        <scale>20</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9400d770-679d-4678-b405-bfde561aca5a">
+    <name>УдалитьВидСобытияПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Вид события по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыКадровыхСобытий</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="61f64fe8-0fe9-44cb-b1c7-5cdde9ff57cd">
+    <name>УдалитьВидЗанятостиПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Вид занятости по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыЗанятости</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Основное место работы или совместительство</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыЗанятости.EnumValue.ОсновноеМестоРаботы</value>
+    </fillValue>
+  </resources>
+  <resources uuid="b0876695-c567-44fa-9cf5-da12a0fe89f1">
+    <name>УдалитьВидДоговораПоОкончании</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Вид договора по окончании</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыДоговоровССотрудниками</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыДоговоровССотрудниками.EnumValue.ТрудовойДоговор</value>
+    </fillValue>
+  </resources>
+  <attributes uuid="d9b4bd2e-95f1-4c0d-83c4-b8c67b0f5f01">
+    <name>ПервичныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первичный документ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.КадровыйПеревод</types>
+      <types>DocumentRef.Увольнение</types>
+      <types>DocumentRef.ВосстановлениеВДолжности</types>
+      <types>DocumentRef.КадровыйПереводСписком</types>
+      <types>DocumentRef.ПриемНаРаботу</types>
+      <types>DocumentRef.УвольнениеСписком</types>
+      <types>DocumentRef.ПриемНаРаботуСписком</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="99d69562-6d36-4a95-9f28-c8b44f4e80c8">
+    <name>РегистраторИзмерение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистратор измерение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.КадровыйПеревод</types>
+      <types>DocumentRef.Увольнение</types>
+      <types>DocumentRef.ПеремещениеВДругоеПодразделение</types>
+      <types>DocumentRef.ВосстановлениеВДолжности</types>
+      <types>DocumentRef.НазначениеПодработки</types>
+      <types>DocumentRef.КадровыйПереводСписком</types>
+      <types>DocumentRef.ПрекращениеПодработки</types>
+      <types>DocumentRef.ПриемНаРаботу</types>
+      <types>DocumentRef.УвольнениеСписком</types>
+      <types>DocumentRef.ПриемНаРаботуСписком</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2d98d7e4-88d8-46eb-b3d2-b1b3b70d8cf9">
+    <name>ПериодИзмерение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период измерение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="db092ff8-4247-4c14-b4ae-e2491de3ea8c">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e8fef6f6-7f87-404c-bed7-4a074aec285f">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="99947943-deec-4e5e-8e72-b13c84138c20">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

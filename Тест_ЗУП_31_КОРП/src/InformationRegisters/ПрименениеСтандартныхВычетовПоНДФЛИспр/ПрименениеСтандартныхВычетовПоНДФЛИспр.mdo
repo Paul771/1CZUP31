@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="32158b4c-8c0d-4bdd-aa42-511ee02906bb">
+  <producedTypes>
+    <selectionType typeId="c39faa56-f7a0-42e0-a179-b2237600d81e" valueTypeId="d453e4c6-126e-4463-94dc-004fff66da05"/>
+    <listType typeId="ef9dfbc1-3e0b-4f3a-a22e-bb755bc3d2f4" valueTypeId="4a5bc642-ef0f-45a1-8853-84348ce0db8a"/>
+    <managerType typeId="0cda9357-7a3d-44c6-a07b-238eed41f98b" valueTypeId="f6ef333a-dd9e-4db8-81df-90dc2e307832"/>
+    <recordSetType typeId="80c11e8b-e038-4910-a53d-293109a71390" valueTypeId="d5d6883e-284a-4932-92a5-f308fb578fa0"/>
+    <recordKeyType typeId="be4aa054-f068-4b58-8a40-ac5c1cbffd06" valueTypeId="381c1f26-32cb-498a-b57d-cfaf84e0cbee"/>
+    <recordType typeId="de66a60b-4dec-4fac-9148-8129ef268441" valueTypeId="d5c97cbb-2b95-4641-bf5b-bf0604708dd6"/>
+    <recordManagerType typeId="2be0fa4e-ad2d-4f34-a0ae-127e04e7394d" valueTypeId="c460ef28-535b-449e-a0b0-25e04dfef613"/>
+  </producedTypes>
+  <name>ПрименениеСтандартныхВычетовПоНДФЛИспр</name>
+  <synonym>
+    <key>ru</key>
+    <value>Применение стандартных вычетов по НДФЛ (испр.)</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="40667f2e-2cf6-46df-be8f-4afd68b8c4e5">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="9e2900c4-f6dc-46db-bc00-a46983c69897">
+    <name>РегистраторИзмерение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистратор измерение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Увольнение</types>
+      <types>DocumentRef.ПрекращениеСтандартныхВычетовНДФЛ</types>
+      <types>DocumentRef.УвольнениеСписком</types>
+      <types>DocumentRef.ЗаявлениеНаПредоставлениеСтандартныхВычетовПоНДФЛ</types>
+      <types>DocumentRef.ПереносДанных</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bab34f32-38da-4abf-a174-6d8f1995a661">
+    <name>ПериодИзмерение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период измерение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="91cd32bb-3f0d-493d-b193-09e2eef30ea6">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="aa2ccea3-31cc-4e02-b505-00aa89d7066f">
+  <producedTypes>
+    <selectionType typeId="60ad050a-e0bc-424e-9e05-5ccfa1b928ee" valueTypeId="c641d8be-4ff9-4c85-9230-bf5e3794a87c"/>
+    <listType typeId="3fa07cca-a6a3-4703-a55d-4ced5f32f124" valueTypeId="72c07e27-fe60-48a9-bfee-2779ad62db54"/>
+    <managerType typeId="f09733d3-1ed9-4fee-8fcc-e03424104e30" valueTypeId="29cb3728-2d2a-45e0-8545-e1fd75861213"/>
+    <recordSetType typeId="e46e429c-c5ff-4fba-ae4f-fd3ca2cc37f4" valueTypeId="2c8fa83e-2ac3-4a6e-9ece-28c197744798"/>
+    <recordKeyType typeId="bf91a833-a5ff-430c-afbd-27d89ab6c11e" valueTypeId="9e7b83df-11c8-4197-a507-2a7dec42f804"/>
+    <recordType typeId="e2e78007-c895-4040-87be-2b6f57e0ebbc" valueTypeId="c52a6306-88b0-4799-80b2-d947ea432ea9"/>
+    <recordManagerType typeId="02d87472-ea5a-4c0a-a41c-de5ed67f2e7b" valueTypeId="06ec027f-ff88-4296-bdb7-1abe77ec7ddf"/>
+  </producedTypes>
+  <name>СтатусФизическихЛицКакНалогоплательщиковНДФЛ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статус физических лиц как налогоплательщиков НДФЛ</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:DateValue">
+      <value>1900-01-01T00:00:00</value>
+    </fillValue>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <listPresentation>
+    <key>ru</key>
+    <value>Статусы физических лиц как налогоплательщиков НДФЛ</value>
+  </listPresentation>
+  <resources uuid="cb6f186e-9aaf-4d43-aa7f-3a3d1a67474b">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтатусыНалогоплательщиковПоНДФЛ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СтатусыНалогоплательщиковПоНДФЛ.Резидент</value>
+    </fillValue>
+  </resources>
+  <resources uuid="0344ad86-e112-4e1a-8930-ef9ffec3a222">
+    <name>УдалитьСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Статус</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.УдалитьСтатусыНалогоплательщиковПоНДФЛ</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.УдалитьСтатусыНалогоплательщиковПоНДФЛ.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="a5b1d2d5-54b1-4cb8-9318-25edce279013">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="2cab46ac-6c26-44ba-9b07-784d91f9524c">
+    <name>РедактированиеИстории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование истории</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

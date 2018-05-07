@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6e60a6a4-7948-4f01-8d1e-b696c43da023">
+  <name>ПодготовитьСведенияОПериодахСреднегоЗаработкаФСС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Подготовить Сведения о периодах среднего заработка ФСС</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ДанныеСтрахователейДляРасчетаСреднегоЗаработкаФСС</types>
+    <types>AccumulationRegisterRecordSet.ДанныеОНачисленияхДляРасчетаСреднегоЗаработкаФСС</types>
+    <types>InformationRegisterRecordSet.ДанныеОВремениДляРасчетаСреднегоФСС</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.УчетПособийСоциальногоСтрахованияРасширенныйСобытия.ПодготовитьСведенияОПериодахСреднегоЗаработкаФСС</handler>
+</mdclass:EventSubscription>

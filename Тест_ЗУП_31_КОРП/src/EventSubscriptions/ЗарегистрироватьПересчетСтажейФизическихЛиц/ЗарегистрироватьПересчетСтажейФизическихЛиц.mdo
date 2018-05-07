@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="79cd130f-acb6-4519-b3d1-06c7d0c597df">
+  <name>ЗарегистрироватьПересчетСтажейФизическихЛиц</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрировать пересчет стажей физических лиц</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.ТерриторииСотрудников</types>
+    <types>InformationRegisterRecordSet.КадроваяИсторияСотрудников</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.АвтоматическийРасчетСтажейФизическихЛиц.ЗарегистрироватьПересчетСтажейФизическихЛиц</handler>
+</mdclass:EventSubscription>

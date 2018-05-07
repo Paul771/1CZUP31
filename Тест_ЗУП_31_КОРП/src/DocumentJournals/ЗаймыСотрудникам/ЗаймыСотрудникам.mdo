@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8b8737be-4fea-4382-8454-44bff8a5959f">
+  <producedTypes>
+    <selectionType typeId="6e9d0238-bad2-4d5a-b3d3-c1738e69f2e5" valueTypeId="adb31213-6d44-4dc3-b30e-e56a0f647e90"/>
+    <listType typeId="e68eb9b5-0590-4f97-8f33-c4cdc4d04721" valueTypeId="fb1e2d3b-9bd6-4902-97c6-b925550b7b28"/>
+    <managerType typeId="c8291e14-30cf-46eb-9386-ebc0524f7fb7" valueTypeId="6c39b68d-1a5c-433f-9f4e-845887a67657"/>
+  </producedTypes>
+  <name>ЗаймыСотрудникам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Займы сотрудникам</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.ЗаймыСотрудникам.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ДоговорЗаймаСотруднику</registeredDocuments>
+  <registeredDocuments>Document.ВыдачаЗаймаСотруднику</registeredDocuments>
+  <registeredDocuments>Document.ИзменениеУсловийДоговораЗаймаСотруднику</registeredDocuments>
+  <registeredDocuments>Document.ПогашениеЗаймаСотруднику</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <explanation>
+    <key>ru</key>
+    <value>Документы, относящиеся к предоставленным займам сотрудникам</value>
+  </explanation>
+  <columns uuid="8fd94393-3714-4db9-bc10-e9d885dded0c">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыдачаЗаймаСотруднику.Attribute.Организация</references>
+    <references>Document.ДоговорЗаймаСотруднику.Attribute.Организация</references>
+    <references>Document.ИзменениеУсловийДоговораЗаймаСотруднику.Attribute.Организация</references>
+    <references>Document.ПогашениеЗаймаСотруднику.Attribute.Организация</references>
+  </columns>
+  <columns uuid="eaedc764-9b33-4cd6-8bcf-05a1d82edc65">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыдачаЗаймаСотруднику.Attribute.ФизическоеЛицо</references>
+    <references>Document.ДоговорЗаймаСотруднику.Attribute.ФизическоеЛицо</references>
+    <references>Document.ИзменениеУсловийДоговораЗаймаСотруднику.Attribute.ФизическоеЛицо</references>
+    <references>Document.ПогашениеЗаймаСотруднику.Attribute.ФизическоеЛицо</references>
+  </columns>
+  <columns uuid="8149a050-99ac-452b-aaeb-7784456719d7">
+    <name>ДоговорЗайма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор займа</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыдачаЗаймаСотруднику.Attribute.ДоговорЗайма</references>
+    <references>Document.ИзменениеУсловийДоговораЗаймаСотруднику.Attribute.ДоговорЗайма</references>
+    <references>Document.ПогашениеЗаймаСотруднику.Attribute.ДоговорЗайма</references>
+  </columns>
+  <columns uuid="b7cbd77e-d9dc-4315-a586-84fdccb9a57e">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыдачаЗаймаСотруднику.Attribute.Сумма</references>
+    <references>Document.ДоговорЗаймаСотруднику.Attribute.Сумма</references>
+    <references>Document.ИзменениеУсловийДоговораЗаймаСотруднику.Attribute.Сумма</references>
+    <references>Document.ПогашениеЗаймаСотруднику.Attribute.Сумма</references>
+  </columns>
+  <columns uuid="dce16e35-4d25-406f-91bf-2b8553e75bb4">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыдачаЗаймаСотруднику.Attribute.Ответственный</references>
+    <references>Document.ДоговорЗаймаСотруднику.Attribute.Ответственный</references>
+    <references>Document.ИзменениеУсловийДоговораЗаймаСотруднику.Attribute.Ответственный</references>
+    <references>Document.ПогашениеЗаймаСотруднику.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="1f16554d-ed91-49f5-b569-f64f1831f936">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыдачаЗаймаСотруднику.Attribute.Комментарий</references>
+    <references>Document.ДоговорЗаймаСотруднику.Attribute.Комментарий</references>
+    <references>Document.ИзменениеУсловийДоговораЗаймаСотруднику.Attribute.Комментарий</references>
+    <references>Document.ПогашениеЗаймаСотруднику.Attribute.Комментарий</references>
+  </columns>
+  <forms uuid="82d8c5aa-cf7c-474f-88e1-62c41310e0ac">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

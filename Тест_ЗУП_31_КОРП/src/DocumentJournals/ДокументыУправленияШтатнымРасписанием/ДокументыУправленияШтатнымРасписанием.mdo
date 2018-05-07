@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="24a1b342-a90e-47b4-9849-3e39c6086992">
+  <producedTypes>
+    <selectionType typeId="b9119fa1-899f-4e00-b1c3-94063a10bb08" valueTypeId="3362f25b-5889-4b1b-8331-8590bb828ba5"/>
+    <listType typeId="247190a0-5138-494b-862d-819c81af29d4" valueTypeId="95cac7c7-d656-40c2-bfee-6ed93e2d8e16"/>
+    <managerType typeId="c392072f-64ba-465a-a0ca-0ad56cbdd0f8" valueTypeId="a4862312-017a-4e20-b8fb-c8b50dc4b6f8"/>
+  </producedTypes>
+  <name>ДокументыУправленияШтатнымРасписанием</name>
+  <synonym>
+    <key>ru</key>
+    <value>Изменения штатного расписания</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.ДокументыУправленияШтатнымРасписанием.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ИзменениеШтатногоРасписания</registeredDocuments>
+  <registeredDocuments>Document.УтверждениеШтатногоРасписания</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="8399af5e-0a58-4835-9046-363e5544daf6">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ИзменениеШтатногоРасписания.Attribute.ДатаВступленияВСилу</references>
+    <references>Document.УтверждениеШтатногоРасписания.Attribute.МесяцВступленияВСилу</references>
+  </columns>
+  <columns uuid="4605fc94-1afb-447c-abda-c6846f561662">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ИзменениеШтатногоРасписания.Attribute.Организация</references>
+    <references>Document.УтверждениеШтатногоРасписания.Attribute.Организация</references>
+  </columns>
+  <columns uuid="1103c8d7-8df0-482c-9a64-dbf291c9d590">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ИзменениеШтатногоРасписания.Attribute.Ответственный</references>
+    <references>Document.УтверждениеШтатногоРасписания.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="9c3a0fbd-1c34-4bb4-86ae-f1d5284559fd">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.УтверждениеШтатногоРасписания.Attribute.Комментарий</references>
+    <references>Document.ИзменениеШтатногоРасписания.Attribute.Комментарий</references>
+  </columns>
+  <forms uuid="d8d56800-6485-48a4-84e0-b81ddea49b6b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

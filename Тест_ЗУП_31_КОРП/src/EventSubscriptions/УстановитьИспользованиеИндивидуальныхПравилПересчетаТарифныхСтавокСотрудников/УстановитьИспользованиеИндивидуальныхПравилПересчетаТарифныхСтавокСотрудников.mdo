@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7db8858a-d820-42bd-aea8-e28537206243">
+  <name>УстановитьИспользованиеИндивидуальныхПравилПересчетаТарифныхСтавокСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить использование индивидуальных правил пересчета тарифных ставок сотрудников</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>ConstantValueManager.ИспользоватьНачислениеЗарплаты</types>
+    <types>ChartOfCalculationTypesObject.Удержания</types>
+    <types>ChartOfCalculationTypesObject.Начисления</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ЗарплатаКадрыРасширенныйСобытия.УстановитьИспользованиеИндивидуальныхПравилПересчетаТарифныхСтавокСотрудниковПриЗаписи</handler>
+</mdclass:EventSubscription>

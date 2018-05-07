@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="da4a76aa-a5c3-4964-a43c-80772242bde1">
+  <name>КонтрольСоответствияНачисленийИВыплатПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контроль соответствия начислений и выплат перед записью</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ЗарплатаКВыплате</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ВзаиморасчетыССотрудникамиРасширенныйСобытия.КонтрольСоответствияНачисленийИВыплатПередЗаписью</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="86503fb2-6297-46ad-86ea-0b73f9a9dbef">
+  <producedTypes>
+    <selectionType typeId="ca587519-b5c7-4f2b-b62b-5432b54b72cd" valueTypeId="08691c50-f581-4215-8966-2f383f30ebdc"/>
+    <listType typeId="4ec0c179-3bd3-4ab2-b360-1165bfbc3a23" valueTypeId="f77fe7b5-2ebc-4364-8190-22d9dc514928"/>
+    <managerType typeId="6ae1001f-eb3a-4e07-9b70-4be116491d93" valueTypeId="c8351f28-c4b5-418f-add5-fe21ea710fec"/>
+  </producedTypes>
+  <name>Командировки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Командировки</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.Командировки.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.Командировка</registeredDocuments>
+  <registeredDocuments>Document.КомандировкиСотрудников</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="3cc2984f-8121-473b-ad75-a5ba2cf1d7e1">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.ПериодРегистрации</references>
+    <references>Document.КомандировкиСотрудников.Attribute.ДатаСобытия</references>
+  </columns>
+  <columns uuid="7732cf28-7f9c-4570-bd70-e4ea5fda064e">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.Сотрудник</references>
+    <references>Document.КомандировкиСотрудников.Attribute.КраткийСоставДокумента</references>
+  </columns>
+  <columns uuid="b91aa037-271f-4277-b93f-3af5dcf4246f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.Организация</references>
+    <references>Document.КомандировкиСотрудников.Attribute.Организация</references>
+  </columns>
+  <columns uuid="6e898f20-72bd-4db3-adaf-61764903a845">
+    <name>Начало</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.ДатаНачала</references>
+  </columns>
+  <columns uuid="7f5fecf4-a5b1-499d-b5b4-765d52878b1a">
+    <name>Окончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.ДатаОкончания</references>
+  </columns>
+  <columns uuid="c17c6bb7-f9e1-46fa-be93-4349a6758bb7">
+    <name>Утвержден</name>
+    <synonym>
+      <key>ru</key>
+      <value>Утвержден</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.ДокументРассчитан</references>
+  </columns>
+  <columns uuid="3d244972-bdce-4782-9088-a00503c67cd4">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.Комментарий</references>
+    <references>Document.КомандировкиСотрудников.Attribute.Комментарий</references>
+  </columns>
+  <columns uuid="77295a44-7516-42fd-abfc-af4cea6bd7e4">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Командировка.Attribute.Ответственный</references>
+    <references>Document.КомандировкиСотрудников.Attribute.Ответственный</references>
+  </columns>
+  <forms uuid="8ebc0cde-280b-4cee-84b9-ca534a46f1d3">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

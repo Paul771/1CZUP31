@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="370dd515-e14d-4564-b4a3-3055846c3cd2">
+  <producedTypes>
+    <selectionType typeId="ee6c9077-56f2-446c-a4d1-fa6c321d5748" valueTypeId="23c10d15-4db0-4474-915b-8828458ed11f"/>
+    <listType typeId="80a5a147-003c-42a1-80da-a20103c689f2" valueTypeId="f32f1ee6-e21e-4bf2-8640-95446d94ab58"/>
+    <managerType typeId="63ab1052-ce6b-4c84-bfc0-7737eaaf66d2" valueTypeId="642c9728-2b1d-4006-b009-ca32955cfba9"/>
+    <recordSetType typeId="3bb25aff-15a5-4687-84f6-ff9796a3bbd2" valueTypeId="1476b8d4-b818-420e-8f75-d5f2af3eb640"/>
+    <recordKeyType typeId="cea493d5-9b02-44c9-833f-ea6c54364c94" valueTypeId="84dd4f59-0004-4d54-a3a0-1f26d39b4b13"/>
+    <recordType typeId="7ad33663-0141-4d8b-ae41-122887597330" valueTypeId="bf7cabac-f13a-4a21-8581-2ef78610083e"/>
+    <recordManagerType typeId="38f53185-3e84-4d2d-8577-48af2e8f9b35" valueTypeId="612d6333-8031-4c37-9a42-38f6e29e767b"/>
+  </producedTypes>
+  <name>ОтборыНазначенияМероприятийАдаптацииУвольнения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отборы назначения мероприятий адаптации и увольнения</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="89b7bad3-1da7-4bc7-9923-02cfada5872f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="fe2b8a9b-efe4-4f77-bcbe-d3b30ab80715">
+    <name>ОбъектНазначения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект назначения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Должности</types>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+      <types>CatalogRef.ШтатноеРасписание</types>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8dec4986-904b-41c8-b215-ee3b1fcb97e7">
+    <name>Мероприятие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мероприятие</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.МероприятияАдаптацииУвольнения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+  </dimensions>
+</mdclass:InformationRegister>

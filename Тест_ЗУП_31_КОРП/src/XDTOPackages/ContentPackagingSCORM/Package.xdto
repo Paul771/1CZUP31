@@ -1,0 +1,73 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.imsglobal.org/xsd/imscp_v1p1">
+	<import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<import namespace="http://www.adlnet.org/xsd/adlcp_v1p3"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="dependency" type="d2p1:dependencyType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="file" type="d2p1:fileType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="item" type="d2p1:itemType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="manifest" type="d2p1:manifestType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="metadata" type="d2p1:metadataType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="organization" type="d2p1:organizationType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="organizations" type="d2p1:organizationsType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="resource" type="d2p1:resourceType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="resources" type="d2p1:resourcesType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="schema" type="d2p1:schemaType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="schemaversion" type="d2p1:schemaversionType"/>
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imscp_v1p1" name="title" type="d2p1:titleType"/>
+	<valueType name="schemaType" base="xs:string" variety="Atomic"/>
+	<valueType name="schemaversionType" base="xs:string" variety="Atomic"/>
+	<valueType name="titleType" base="xs:string" variety="Atomic"/>
+	<objectType name="dependencyType" open="true" sequenced="true">
+		<property name="identifierref" type="xs:string" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="fileType" open="true" sequenced="true">
+		<property name="href" type="xs:anyURI" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:metadata" lowerBound="0"/>
+	</objectType>
+	<objectType name="itemType" open="true" sequenced="true">
+		<property name="identifier" type="xs:ID" lowerBound="1" form="Attribute"/>
+		<property name="identifierref" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property name="isvisible" type="xs:boolean" lowerBound="0" form="Attribute"/>
+		<property name="parameters" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:title" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:item" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:metadata" lowerBound="0"/>
+	</objectType>
+	<objectType name="manifestType" open="true" sequenced="true">
+		<property name="identifier" type="xs:ID" lowerBound="1" form="Attribute"/>
+		<property name="version" type="xs:string" lowerBound="0" form="Attribute"/>
+		<property ref="xml:base" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:metadata" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:organizations"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:resources"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:manifest" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="metadataType" open="true" sequenced="true">
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:schema" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:schemaversion" lowerBound="0"/>
+	</objectType>
+	<objectType name="organizationType" open="true" sequenced="true">
+		<property name="identifier" type="xs:ID" lowerBound="1" form="Attribute"/>
+		<property name="structure" type="xs:string" lowerBound="0" fixed="false" default="hierarchical" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:title" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:item" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:metadata" lowerBound="0"/>
+	</objectType>
+	<objectType name="organizationsType" open="true" sequenced="true">
+		<property name="default" type="xs:IDREF" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:organization" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="resourceType" open="true" sequenced="true">
+		<property name="identifier" type="xs:ID" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlcp_v1p3" ref="d3p1:scormType" lowerBound="0" form="Attribute"/>
+		<property name="type" type="xs:string" lowerBound="1" form="Attribute"/>
+		<property ref="xml:base" lowerBound="0"/>
+		<property name="href" type="xs:anyURI" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:metadata" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:file" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:dependency" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="resourcesType" open="true" sequenced="true">
+		<property ref="xml:base" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imscp_v1p1" ref="d3p1:resource" lowerBound="0" upperBound="-1"/>
+	</objectType>
+</package>

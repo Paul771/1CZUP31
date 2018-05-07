@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1808d962-471b-4ca9-9e1a-958004527d14">
+  <name>ПроверитьНомерДокументаПоДатеЗарплатаКадрыРасширенная</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить номер документа по дате зарплата кадры расширенная</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.УтверждениеТарифнойСетки</types>
+    <types>DocumentObject.Бронь</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ПрефиксацияОбъектовСобытия.ПроверитьНомерДокументаПоДате</handler>
+</mdclass:EventSubscription>

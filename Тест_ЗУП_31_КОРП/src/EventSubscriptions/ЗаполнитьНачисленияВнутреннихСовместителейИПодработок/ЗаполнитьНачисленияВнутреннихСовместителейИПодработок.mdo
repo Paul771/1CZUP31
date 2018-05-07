@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="31fabab0-003d-4067-b916-a6e1bf95e71a">
+  <name>ЗаполнитьНачисленияВнутреннихСовместителейИПодработок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнить начисления внутренних совместителей и подработок</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.УдалитьСостоянияПодработок</types>
+    <types>InformationRegisterRecordSet.КадроваяИсторияСотрудников</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.РасчетЗарплатыРасширенныйСобытия.ЗаполнитьНачисленияВнутреннихСовместителейИПодработок</handler>
+</mdclass:EventSubscription>

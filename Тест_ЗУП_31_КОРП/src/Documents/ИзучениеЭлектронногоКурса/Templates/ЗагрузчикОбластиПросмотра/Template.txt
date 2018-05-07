@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+        .hidden {
+            width:0;
+            height:0;
+            border:0;
+            border:none;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<iframe
+    src="{{АдресКаталогаРесурсов}}"
+    name="ping"
+    id="ping"
+    class="hidden">
+
+</iframe>
+
+<input type="text" id="result"  value="" class="hidden">
+
+<script>
+
+	name = "loader";
+
+    var data = "4002580234"; // Данные, которые передаются для проверки наличия фрейма
+    var end = false; // Проверка окончена
+    var success = false; // Проверка успешно выполнена
+    var viaFrame = !(location.href == "about:blank"); // Проверка через фрейм
+
+    function test() {
+
+        if (viaFrame) {
+
+            // Посылаем во фрейм данные и проверяем, что он их вернул
+
+            try {
+               success = (window.frames.ping.test(data) == data);
+            } catch (err) {
+            }
+
+            ready();
+
+        } else {
+
+            try {
+                window.frames.ping.postMessage(data, "*")
+            } catch (err) {
+            }
+
+        }
+
+
+    }
+
+    function ready(message) {
+
+        if (!end) {
+
+            var resultInput = document.getElementById("result");
+            resultInput.value = (success) ? data : document.getElementById("ping").getAttribute('src');
+            resultInput.click(); // Вызываем 1С
+
+        }
+
+        end = true; // Закончили проверку
+    }
+
+    function listener(event) {
+
+        if ( event && event.data == data ) {
+            success = true;
+        }
+
+        ready();
+
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener("message", listener);
+    } else {
+        // IE8
+        window.attachEvent("onmessage", listener);
+    }
+
+    setTimeout(ready, 1000); // Заканчиваем проверку через 1 сек.
+
+</script>
+
+</body>
+</html>

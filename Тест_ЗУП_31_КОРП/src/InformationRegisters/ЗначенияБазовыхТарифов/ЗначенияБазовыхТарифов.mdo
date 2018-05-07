@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bc2b0333-8fc9-4441-90f5-d62a15e7de1c">
+  <producedTypes>
+    <selectionType typeId="a6786e82-40e1-4691-af2d-ca761c42ab60" valueTypeId="009411e3-c20b-4bde-a1e9-26d69948e3c3"/>
+    <listType typeId="4d36172e-5abe-4363-b55e-ce7281a46635" valueTypeId="8d11d192-4d3a-4134-8775-0e6bb4f869cf"/>
+    <managerType typeId="472e8317-37b1-435a-8755-0b64a20ed77c" valueTypeId="13773015-38c9-4b8f-817b-630469ffd29a"/>
+    <recordSetType typeId="33deafa4-4621-4df1-8cfc-5842f086fae8" valueTypeId="c73866a4-9c0f-4906-bf23-c870f8289dd4"/>
+    <recordKeyType typeId="9391507c-8e83-42e6-bbe8-5cf7172c1a76" valueTypeId="55fffbd8-abb0-4a9d-8d16-1c9aee1f03fa"/>
+    <recordType typeId="3817c1cd-b340-467b-91ad-25a5a849590e" valueTypeId="347c948b-dca0-427e-b2aa-f81d593b0494"/>
+    <recordManagerType typeId="a53e90aa-b737-4821-a00c-fb41de4978d8" valueTypeId="bc07a8a2-704c-4476-b6eb-4ab9a7c9df4b"/>
+  </producedTypes>
+  <name>ЗначенияБазовыхТарифов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Значения базовых тарифов</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ЗначенияБазовыхТарифов.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="bafbf709-7648-40df-b191-d91ebb8c91e8">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="0efc1040-b25e-45cf-9824-c8f295f0958c">
+    <name>ТарифнаяСетка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тарифная группа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ТарифныеСетки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="bcaae75a-7cba-49c8-a5e9-be0d698030c8">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

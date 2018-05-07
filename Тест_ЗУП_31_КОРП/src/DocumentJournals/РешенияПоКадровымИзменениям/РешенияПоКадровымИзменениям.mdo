@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f83772b1-7140-4d7c-b4d2-61dda734faa3">
+  <producedTypes>
+    <selectionType typeId="79460249-dde4-4edf-aa68-673345cbc707" valueTypeId="061377cc-7889-4a50-847f-dbe1b90c2f97"/>
+    <listType typeId="38aa7b79-1b43-4e70-bba1-264f0a6f245c" valueTypeId="79d4e850-9d85-407d-8542-d805dde6a5a4"/>
+    <managerType typeId="fde5ac3d-391b-4153-beb9-ed8cf5feab67" valueTypeId="8db171ee-c428-4d8a-bb83-855f72a1d84f"/>
+  </producedTypes>
+  <name>РешенияПоКадровымИзменениям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Решения по кадровым изменениям</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.РешенияПоКадровымИзменениям.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.РешениеОбУвольнении</registeredDocuments>
+  <registeredDocuments>Document.РешениеОКадровомПереводе</registeredDocuments>
+  <registeredDocuments>Document.РешениеОбОтпускеПоУходуЗаРебенком</registeredDocuments>
+  <registeredDocuments>Document.РешениеОВозвратеИзОтпускаПоУходуЗаРебенком</registeredDocuments>
+  <registeredDocuments>Document.РешениеОВосстановленииВДолжности</registeredDocuments>
+  <registeredDocuments>Document.РешениеОПриемеНаРаботу</registeredDocuments>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="b71e528d-fa5a-497f-a22c-99ad10d32ad0">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.РешениеОбОтпускеПоУходуЗаРебенком.Attribute.Организация</references>
+    <references>Document.РешениеОбУвольнении.Attribute.Организация</references>
+    <references>Document.РешениеОВозвратеИзОтпускаПоУходуЗаРебенком.Attribute.Организация</references>
+    <references>Document.РешениеОКадровомПереводе.Attribute.Организация</references>
+    <references>Document.РешениеОВосстановленииВДолжности.Attribute.Организация</references>
+    <references>Document.РешениеОПриемеНаРаботу.Attribute.Организация</references>
+  </columns>
+  <columns uuid="5686d01d-2414-437f-a3af-98c43c2d6bc3">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.РешениеОВосстановленииВДолжности.Attribute.Сотрудник</references>
+    <references>Document.РешениеОбОтпускеПоУходуЗаРебенком.Attribute.ОсновнойСотрудник</references>
+    <references>Document.РешениеОбУвольнении.Attribute.Сотрудник</references>
+    <references>Document.РешениеОВозвратеИзОтпускаПоУходуЗаРебенком.Attribute.ОсновнойСотрудник</references>
+    <references>Document.РешениеОКадровомПереводе.Attribute.Сотрудник</references>
+    <references>Document.РешениеОПриемеНаРаботу.Attribute.ФизическоеЛицо</references>
+  </columns>
+  <columns uuid="01a40ce1-ebaf-45e4-9954-55dbeef9e729">
+    <name>ДатаСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата события</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.РешениеОбОтпускеПоУходуЗаРебенком.Attribute.ДатаНачала</references>
+    <references>Document.РешениеОбУвольнении.Attribute.ДатаУвольнения</references>
+    <references>Document.РешениеОВозвратеИзОтпускаПоУходуЗаРебенком.Attribute.ДатаВозврата</references>
+    <references>Document.РешениеОВосстановленииВДолжности.Attribute.ДатаВосстановления</references>
+    <references>Document.РешениеОКадровомПереводе.Attribute.ДатаНачала</references>
+    <references>Document.РешениеОПриемеНаРаботу.Attribute.ДатаПриема</references>
+  </columns>
+  <columns uuid="abb7c2f6-6894-40fa-8bd9-0a8152b49f99">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.РешениеОбОтпускеПоУходуЗаРебенком.Attribute.Ответственный</references>
+    <references>Document.РешениеОбУвольнении.Attribute.Ответственный</references>
+    <references>Document.РешениеОВозвратеИзОтпускаПоУходуЗаРебенком.Attribute.Ответственный</references>
+    <references>Document.РешениеОВосстановленииВДолжности.Attribute.Ответственный</references>
+    <references>Document.РешениеОКадровомПереводе.Attribute.Ответственный</references>
+    <references>Document.РешениеОПриемеНаРаботу.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="e7572944-f9ba-437f-af08-a65674cfa3a7">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.РешениеОбОтпускеПоУходуЗаРебенком.Attribute.Комментарий</references>
+    <references>Document.РешениеОбУвольнении.Attribute.Комментарий</references>
+    <references>Document.РешениеОВозвратеИзОтпускаПоУходуЗаРебенком.Attribute.Комментарий</references>
+    <references>Document.РешениеОВосстановленииВДолжности.Attribute.Комментарий</references>
+    <references>Document.РешениеОКадровомПереводе.Attribute.Комментарий</references>
+    <references>Document.РешениеОПриемеНаРаботу.Attribute.Комментарий</references>
+  </columns>
+  <forms uuid="7f1ba3a0-9908-4367-95ce-9cab0904cca8">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

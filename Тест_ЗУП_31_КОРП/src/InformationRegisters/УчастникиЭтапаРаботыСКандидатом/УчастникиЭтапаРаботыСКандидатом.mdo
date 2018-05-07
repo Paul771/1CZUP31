@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f82ee95b-0f50-46bc-9553-5e7d07a903cb">
+  <producedTypes>
+    <selectionType typeId="f036eece-fb49-433e-84cb-66c3c224b5da" valueTypeId="1f1619b6-2bcd-417a-bdae-15c61f224525"/>
+    <listType typeId="9f2bbe99-42b5-4c47-a7d8-b62dba5a6f58" valueTypeId="0cbd436d-8b95-4c84-9612-c69a0758f873"/>
+    <managerType typeId="dd2ddaee-4768-4d18-ad30-ea0e72a4b90e" valueTypeId="3c42f746-0c0b-4524-9133-26c4a2ae831b"/>
+    <recordSetType typeId="d6806087-7f31-43ef-87a6-66d315ee823c" valueTypeId="3fa5dab4-5588-4958-b877-c1e943c67fdd"/>
+    <recordKeyType typeId="86e98905-dd99-4054-a2b5-f6758f130b3e" valueTypeId="3316f6be-8f83-4196-8253-4f07d1137557"/>
+    <recordType typeId="febdf538-0258-42a5-8a62-6ad6a5a00d5f" valueTypeId="6f82aaf1-1d95-495b-80eb-0a8cbb9fb1d2"/>
+    <recordManagerType typeId="7e4fa918-9d12-44f7-b0db-5529c45ea931" valueTypeId="7680d822-061c-4925-87c2-d000b92e3711"/>
+  </producedTypes>
+  <name>УчастникиЭтапаРаботыСКандидатом</name>
+  <synonym>
+    <key>ru</key>
+    <value>Участники этапа работы с кандидатом</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="102b455d-2e2c-4e0d-98ed-5cd9d8d1d343">
+    <name>Кандидат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кандидат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Кандидаты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Кандидат, этапы работы с которым описываются</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5da0040d-3efe-4998-96f8-1a5a7282ecb6">
+    <name>ЭтапРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап работы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЭтапыРаботыСКандидатами</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="941e6e1b-945c-4539-b8db-ef81331f92aa">
+    <name>Участник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

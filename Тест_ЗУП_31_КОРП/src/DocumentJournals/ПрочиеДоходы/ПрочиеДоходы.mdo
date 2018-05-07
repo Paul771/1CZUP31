@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="367de4c4-80a1-400c-9e96-b82021312c59">
+  <producedTypes>
+    <selectionType typeId="ad39be05-d055-4dcc-a593-098fb3de21be" valueTypeId="8f70177d-8f40-4ccc-8d8f-4e8559dde796"/>
+    <listType typeId="7fa330fb-96c5-410d-907a-f489c4d7f4bf" valueTypeId="057428de-55e0-4dba-84b5-f30a7e5db62d"/>
+    <managerType typeId="a76ec0c7-bbc7-43f2-a58f-87ed0a8ca3b7" valueTypeId="df951fec-f72b-4b13-b6ba-e0a349ab7eff"/>
+  </producedTypes>
+  <name>ПрочиеДоходы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Прочие доходы</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.ПрочиеДоходы.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ВыплатаБывшимСотрудникам</registeredDocuments>
+  <registeredDocuments>Document.ДивидендыФизическимЛицам</registeredDocuments>
+  <registeredDocuments>Document.РегистрацияПрочихДоходов</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="c6e90b99-85b7-439e-9527-1e93d1ab257d">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.ПериодРегистрации</references>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.ПериодРегистрации</references>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.ПериодРегистрации</references>
+  </columns>
+  <columns uuid="0ce0075e-006e-4ece-be6a-27056a494acb">
+    <name>ДатаВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата выплаты</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.ДатаВыплаты</references>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.ПланируемаяДатаВыплаты</references>
+  </columns>
+  <columns uuid="11a38028-dfc2-4960-9fca-89f0b8a2610e">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.Организация</references>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.Организация</references>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.Организация</references>
+  </columns>
+  <columns uuid="566878ec-d14b-4d75-bfd1-d8658c4ed33a">
+    <name>ВсегоВыплачено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Всего выплачено</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.ВсегоВыплачено</references>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.ВсегоВыплачено</references>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.ВсегоВыплачено</references>
+  </columns>
+  <columns uuid="d61988ce-74a6-4ed9-a56e-9efad8750f15">
+    <name>ПолучателиДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатели доходов</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.КраткийСоставДокумента</references>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.КраткийСоставДокумента</references>
+  </columns>
+  <columns uuid="45f02382-510e-4300-afd9-3d25b68bf2ee">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.Ответственный</references>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.Ответственный</references>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="35cc66c5-379e-4432-ae65-852ce1104838">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВыплатаБывшимСотрудникам.Attribute.Комментарий</references>
+    <references>Document.ДивидендыФизическимЛицам.Attribute.Комментарий</references>
+    <references>Document.РегистрацияПрочихДоходов.Attribute.Комментарий</references>
+  </columns>
+  <forms uuid="cd8097b6-a385-4ef7-bac3-c08bb53326de">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

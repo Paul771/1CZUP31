@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="756d0956-d759-420f-b90b-afe4cde8af56">
+  <name>ОбменЗарплата3Бухгалтерия3РегистрацияДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен &quot;Зарплата и управление персоналом 3 - Бухгалтерия предприятия 3&quot;. Перед записью документа.</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПогашениеЗаймаСотруднику</types>
+    <types>DocumentObject.ОтражениеЗарплатыВБухучете</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыРаздатчиком</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыПеречислением</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыВБанк</types>
+    <types>DocumentObject.ВыплатаДепонированнойЗарплаты</types>
+    <types>DocumentObject.СправкиПоНДФЛДляРасчетаПоНалогуНаПрибыль</types>
+    <types>DocumentObject.ДоговорЗаймаСотруднику</types>
+    <types>DocumentObject.ДепонированиеЗарплаты</types>
+    <types>DocumentObject.ВыдачаЗаймаСотруднику</types>
+    <types>DocumentObject.РегламентированныйОтчет</types>
+    <types>DocumentObject.НачислениеОценочныхОбязательствПоОтпускам</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыВКассу</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбменДаннымиСобытияЗарплатаИУправлениеПерсоналом.ОбменЗарплата3Бухгалтерия3ПередЗаписьюДокумента</handler>
+</mdclass:EventSubscription>

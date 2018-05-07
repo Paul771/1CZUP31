@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9824c552-5cfa-4f7b-95d6-1f184d8537a9">
+  <producedTypes>
+    <selectionType typeId="cebd76a2-a06a-4735-86e7-06b01c36353c" valueTypeId="bebb11f3-bce6-43e7-865d-d25438ec3332"/>
+    <listType typeId="e55bd37d-ac96-4168-b92a-35016de35bb4" valueTypeId="4c3968bc-2a3e-4037-bdea-b133ac4b9cab"/>
+    <managerType typeId="2d1f5a31-f814-4578-a7eb-0ed9b34dd160" valueTypeId="27defe81-db88-4e19-bef2-b5ec728fcf73"/>
+    <recordSetType typeId="e1f806c2-7155-4729-8290-45325f816c4d" valueTypeId="32c7393e-f0b4-4f00-89fc-d766c0dae7f1"/>
+    <recordKeyType typeId="0b32f6d6-5cfa-482c-979a-c42bd91c3206" valueTypeId="4cdc9243-4fdc-43f9-a1e2-86dde4c5293b"/>
+    <recordType typeId="7e6cc7a7-5ad0-4e42-8fc3-c948f04d8d5e" valueTypeId="cd74f690-5c62-432e-b1c2-2e6a69c2aa90"/>
+    <recordManagerType typeId="b371487a-35d9-4d7a-9002-f0e8679171d8" valueTypeId="95b655f5-79fe-479b-ad44-b94f465283b3"/>
+  </producedTypes>
+  <name>НастройкаВопросовДляСобеседования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройка вопросов для собеседования</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <explanation>
+    <key>ru</key>
+    <value>Предназначен для хранения настроек интерпретации результатов проведенных собеседований по состоянию на момент определения этапов собеседования в вакансии</value>
+  </explanation>
+  <resources uuid="b88e6436-1600-4153-ada9-69745553a2cd">
+    <name>Балл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Балл</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="02d1fc43-6b4d-4938-8354-31e3738f5dc1">
+    <name>ЭлементарныйВопросВопросаДляСобеседования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Элементарный вопрос вопроса для собеседования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ВопросыДляАнкетирования</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f2979380-a40b-4bee-b46d-71ea811afa37">
+    <name>ОтветНаВопросВопросаДляСобеседования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответ на вопрос вопроса для собеседования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВариантыОтветовАнкет</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fde4d19c-a124-48fc-bd2a-ac9a570db8ad">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="4d11a8a6-4abc-449c-a86a-440f9f7c0e7a">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Вакансии</types>
+      <types>CatalogRef.ПрофилиДолжностей</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ce27e916-3166-46aa-b3ec-cf58b5e8d1a2">
+    <name>ВопросДляСобеседования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вопрос для собеседования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВопросыДляСобеседования</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9c1d229f-cd91-44d3-9b2a-37297b16a0a1">
+    <name>ЭлементарныйВопрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Элементарный вопрос</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ВопросыДляАнкетирования</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8d522183-f8a7-4b09-92e9-c999d686828d">
+    <name>ОтветНаВопрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответ на вопрос</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВариантыОтветовАнкет</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e1c260bf-baa5-4a99-9317-8411d29101b1">
+    <name>ХарактеристикаПерсонала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика персонала</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ХарактеристикиПерсонала</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fa7159db-ab1d-4f2f-b2b8-27511b42fe13">
+    <name>ЗначениеХарактеристики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение характеристики</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЗначенияХарактеристикПерсонала</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

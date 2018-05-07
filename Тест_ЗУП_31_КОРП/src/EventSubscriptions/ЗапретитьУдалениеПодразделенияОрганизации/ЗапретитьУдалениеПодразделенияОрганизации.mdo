@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d5f66749-3fd8-408f-8c08-d440ce981076">
+  <name>ЗапретитьУдалениеПодразделенияОрганизации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Запретить удаление подразделения организации</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.ПодразделенияОрганизаций</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.КадровыйУчетРасширенный.ПодразделенияОрганизацийПередЗаписьюПередЗаписью</handler>
+</mdclass:EventSubscription>

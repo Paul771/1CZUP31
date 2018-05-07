@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9f0109d0-417f-4904-9d37-fb32f6e6a0ff">
+  <producedTypes>
+    <selectionType typeId="c1c345af-0509-4892-b9fb-b29c26591450" valueTypeId="c5f693bd-d5f0-4594-84bd-d1f2e8ca7c4d"/>
+    <listType typeId="759a3246-ac50-426d-8aa5-ba8b0c603223" valueTypeId="de8c8330-735b-48b4-a337-7bf49bf705ea"/>
+    <managerType typeId="653d3010-d06c-42b5-a4b2-93d1af25b0dc" valueTypeId="faabf410-0bca-4bd5-9c61-8c0feefbfc33"/>
+    <recordSetType typeId="24bae9ff-aba4-4ba6-986e-64cfdd5a8752" valueTypeId="d70028a5-f49d-43e1-bd6b-b53d14989707"/>
+    <recordKeyType typeId="4edbd397-0c9e-4c7e-a384-8beb0d8470e8" valueTypeId="448eb53f-494a-4c1e-a89d-29c7ddcadb86"/>
+    <recordType typeId="30003735-ca4b-4128-b2ac-71465fe77dd7" valueTypeId="b9024814-be5b-4284-b3bc-b6da8a78686d"/>
+    <recordManagerType typeId="70961e30-e5f4-4504-a015-aae7d06eef11" valueTypeId="7c387ba9-fefc-49b5-acb4-4ff3f1391279"/>
+  </producedTypes>
+  <name>ИдентификаторыEStaff</name>
+  <synonym>
+    <key>ru</key>
+    <value>Идентификаторы E-Staff Рекрутер</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="3bdd6703-ec44-4eda-9e53-f7edd910b11e">
+    <name>ИдентификаторОбъекта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор объекта</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c96e4913-3f13-4d29-9b13-b55445d9a116">
+    <name>ОбъектСсылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект ссылка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+      <types>CatalogRef.ИсточникиИнформацииОКандидатах</types>
+      <types>CatalogRef.ГруппыДоступаФизическихЛиц</types>
+      <types>CatalogRef.Валюты</types>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+      <types>CatalogRef.Кандидаты</types>
+      <types>CatalogRef.Вакансии</types>
+      <types>CatalogRef.ПричиныОткрытияВакансий</types>
+      <types>CatalogRef.ШтатноеРасписание</types>
+      <types>CatalogRef.ЯзыкиНародовМира</types>
+      <types>CatalogRef.СтраныМира</types>
+      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

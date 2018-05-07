@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="de38dc87-40ec-48f1-91c5-caba3ac3083e">
+  <producedTypes>
+    <selectionType typeId="fb043cf8-db06-4d34-8cfa-b7da7570f71c" valueTypeId="2a5f9306-ae1a-441b-b659-d7b92955b3b2"/>
+    <listType typeId="6d32dcdd-10e1-410c-b081-6be54a1d8d38" valueTypeId="ba28f4de-2107-45ff-87ef-4cd5299147f0"/>
+    <managerType typeId="6835d131-e03b-41ed-ae73-c1014bb99787" valueTypeId="38613530-cc76-4710-b6f5-983c8fd0a2c0"/>
+    <recordSetType typeId="6bfed7e5-2fdf-4854-a398-d61bfc6f1d20" valueTypeId="23dd7afb-8b4e-402e-92c2-7fe5063589b2"/>
+    <recordKeyType typeId="410c1fd6-b6e8-4f07-a341-2f958c27d8c4" valueTypeId="c9c7bfb0-ce27-4f55-9d63-65c63716eded"/>
+    <recordType typeId="63a1485d-dd94-438e-99c3-eec3afe9b9e8" valueTypeId="913c08fd-638c-4725-b267-7886f0e4631a"/>
+    <recordManagerType typeId="d71c98c7-2d20-43b5-a49c-6a2339673370" valueTypeId="654a1e3b-f658-445b-ad0f-440b5164a6d9"/>
+  </producedTypes>
+  <name>СостоянияЧатовЧатботов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния чатов чатботов</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="7b07c073-05f6-43d9-a37f-c0d7933a1860">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СостоянияЧатаЧатбота</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="975917d9-ca95-4056-acb2-766723e3259b">
+    <name>Чатбот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чатбот</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Чатботы</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5ebd7d1b-eac3-40e4-8880-5b6f69d4bb9d">
+    <name>Чат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЧатыЧатботов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

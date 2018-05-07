@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e6ff6381-6db2-49ac-ab00-ae0876a0ae8b">
+  <name>ОбновитьАналогичныеРабочиеМеста</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обновить аналогичные рабочие места</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПодготовкаСпецоценкиУсловийТруда</types>
+    <types>DocumentObject.РезультатыСпецоценкиУсловийТруда</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОхранаТруда.ОбновитьАналогичныеРабочиеМеста</handler>
+</mdclass:EventSubscription>

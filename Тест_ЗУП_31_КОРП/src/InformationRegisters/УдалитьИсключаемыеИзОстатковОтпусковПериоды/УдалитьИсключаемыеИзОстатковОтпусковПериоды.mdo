@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="017e0580-ed75-451b-8ca9-ad306854243e">
+  <producedTypes>
+    <selectionType typeId="701b0c55-a615-4caa-9b6f-a5180e3058c7" valueTypeId="b23bb60f-d3b8-42b0-b75e-f109dfc48e10"/>
+    <listType typeId="4a935d8e-71fe-4485-b009-b8f971f479e2" valueTypeId="4dace622-3bf9-4034-926a-49c37cf1aeb4"/>
+    <managerType typeId="25203774-2955-40a7-939f-655e903d944d" valueTypeId="311b25c0-42df-4a93-92b6-cba56ba87180"/>
+    <recordSetType typeId="513e6e0c-cef9-435c-ba47-52c29dd6625b" valueTypeId="c684c047-466a-44bb-8dbb-6f3560fdde0e"/>
+    <recordKeyType typeId="cbab2b4d-a286-4a5e-b5c8-297480790933" valueTypeId="a0fc4d60-58e5-449b-a8fd-57a2f5e3e9ef"/>
+    <recordType typeId="0a8d2807-ad35-4bba-8bca-cf4bcc327aea" valueTypeId="aff7a37e-fdaf-480e-bfba-f7d78bc69854"/>
+    <recordManagerType typeId="9870e351-e503-4b0d-b53b-9aedff063ef8" valueTypeId="e0e5e248-00c1-4d90-bcac-4fc776a4e697"/>
+  </producedTypes>
+  <name>УдалитьИсключаемыеИзОстатковОтпусковПериоды</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) исключаемые из остатков отпусков периоды</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="344eb30e-902b-438a-b8e5-28ccc2e55f69">
+    <name>ДатаНачалаОтсутствия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала отсутствия</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5323a8e4-0d3a-4239-bf75-a9d1ddc8a203">
+    <name>ДатаОкончанияОтсутствия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания отсутствия</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="61934c06-6fb8-4a5a-88ce-7be5db842bc0">
+    <name>ЯвляетсяОтпускомБезСохраненияЗарплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Является отпуском без сохранения зарплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="b383315e-af9a-4af3-a6b1-61b57308e830">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

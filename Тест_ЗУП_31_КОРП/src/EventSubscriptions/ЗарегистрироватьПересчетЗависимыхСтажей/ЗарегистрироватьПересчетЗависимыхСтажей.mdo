@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c25e6eae-52a6-47c7-a766-c6b89a38ba85">
+  <name>ЗарегистрироватьПересчетЗависимыхСтажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрировать пересчет зависимых стажей</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.Должности</types>
+    <types>CatalogObject.ШтатноеРасписание</types>
+    <types>CatalogObject.ТерриторииВыполненияРабот</types>
+    <types>CatalogObject.ПодразделенияОрганизаций</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.АвтоматическийРасчетСтажейФизическихЛиц.ЗарегистрироватьПересчетЗависимыхСтажей</handler>
+</mdclass:EventSubscription>

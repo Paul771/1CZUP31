@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ЛьготыСотрудников</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Должность</dataPath>
+			<field>Должность</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДолжностьПоШтатномуРасписанию</dataPath>
+			<field>ДолжностьПоШтатномуРасписанию</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность по штатному расписанию</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтказалисьОтИспользования</dataPath>
+			<field>ОтказалисьОтИспользования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказались от использования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИмеютВПакете</dataPath>
+			<field>ИмеютВПакете</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имеют в пакете</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДобавленных</dataPath>
+			<field>КоличествоДобавленных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество добавленных</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВыбранных</dataPath>
+			<field>КоличествоВыбранных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество выбранных</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредоставленаНаВыбор</dataPath>
+			<field>ПредоставленаНаВыбор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предоставлена на выбор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Льгота</dataPath>
+			<field>Льгота</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДобавилиВПакет</dataPath>
+			<field>ДобавилиВПакет</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавили в пакет</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоУдаленных</dataPath>
+			<field>КоличествоУдаленных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество удаленных</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДоступных</dataPath>
+			<field>КоличествоДоступных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество доступных</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизическоеЛицо</dataPath>
+			<field>ФизическоеЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физическое лицо</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	Сотрудники.Ссылка КАК Сотрудник,
+	&amp;НачалоПериода КАК НачалоПериода,
+	&amp;ОкончаниеПериода КАК ОкончаниеПериода
+ПОМЕСТИТЬ ВТСотрудники
+ИЗ
+	Справочник.Сотрудники КАК Сотрудники
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Сотрудники.Сотрудник,
+	Сотрудники.ОкончаниеПериода КАК Период
+ПОМЕСТИТЬ ВТИзмеренияДатыДляСрезаПоследних
+ИЗ
+	ВТСотрудники КАК Сотрудники
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗНАЧЕНИЕ(Справочник.Сотрудники.ПустаяСсылка) КАК Сотрудник,
+	"" КАК ТабельныйНомер,
+	ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка) КАК ФизическоеЛицо,
+	ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка) КАК Организация,
+	ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка) КАК Подразделение,
+	ЗНАЧЕНИЕ(Справочник.Должности.ПустаяСсылка) КАК Должность,
+	ЗНАЧЕНИЕ(Справочник.ШтатноеРасписание.ПустаяСсылка) КАК ДолжностьПоШтатномуРасписанию
+ПОМЕСТИТЬ Представления_КадровыеДанныеСотрудников
+ИЗ
+	ВТИзмеренияДатыДляСрезаПоследних КАК ИзмеренияДатыДляСрезаПоследних
+ГДЕ
+	"ТолькоРазрешенные" = ИСТИНА
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КадровыеДанныеСотрудников.Сотрудник КАК Сотрудник,
+	КадровыеДанныеСотрудников.ФизическоеЛицо КАК ФизическоеЛицо,
+	КадровыеДанныеСотрудников.Организация КАК Организация,
+	КадровыеДанныеСотрудников.Подразделение КАК Подразделение,
+	КадровыеДанныеСотрудников.Должность КАК Должность,
+	КадровыеДанныеСотрудников.ДолжностьПоШтатномуРасписанию КАК ДолжностьПоШтатномуРасписанию
+ПОМЕСТИТЬ ВТКадровыеДанныеСотрудников
+{ВЫБРАТЬ
+	Сотрудник.*,
+	ФизическоеЛицо.*,
+	Организация.*,
+	Подразделение.*,
+	Должность.*,
+	ДолжностьПоШтатномуРасписанию.*}
+ИЗ
+	Представления_КадровыеДанныеСотрудников КАК КадровыеДанныеСотрудников
+{ГДЕ
+	КадровыеДанныеСотрудников.Организация.*,
+	КадровыеДанныеСотрудников.Подразделение.*,
+	КадровыеДанныеСотрудников.Должность.*,
+	КадровыеДанныеСотрудников.ДолжностьПоШтатномуРасписанию.*}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПакетыЛьготСотрудникамПоШтатномуРасписанию.Позиция,
+	ПакетыЛьготСотрудникамПоШтатномуРасписанию.Льгота
+ПОМЕСТИТЬ ВТИндивидуальныеЛьготыПозиций
+ИЗ
+	РегистрСведений.ПакетыЛьготСотрудникамПоШтатномуРасписанию КАК ПакетыЛьготСотрудникамПоШтатномуРасписанию
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ЛимитыЛьготСотрудникамПоШтатномуРасписанию КАК ЛимитыЛьготСотрудникамПоШтатномуРасписанию
+		ПО ПакетыЛьготСотрудникамПоШтатномуРасписанию.Организация = ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Организация
+			И ПакетыЛьготСотрудникамПоШтатномуРасписанию.Подразделение = ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Подразделение
+			И ПакетыЛьготСотрудникамПоШтатномуРасписанию.Должность = ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Должность
+			И ПакетыЛьготСотрудникамПоШтатномуРасписанию.Позиция = ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Позиция
+			И (ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Позиция &lt;&gt; ЗНАЧЕНИЕ(Справочник.ШтатноеРасписание.ПустаяСсылка))
+			И (НЕ ЛимитыЛьготСотрудникамПоШтатномуРасписанию.ДоступныВсеЛьготы)
+			И (ПакетыЛьготСотрудникамПоШтатномуРасписанию.Льгота.КатегорияНачисленияИлиНеоплаченногоВремени = ЗНАЧЕНИЕ(Перечисление.КатегорииНачисленийИНеоплаченногоВремени.ВыбираемаяСотрудникомЛьгота))
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Позиция,
+	Начисления.Ссылка
+ИЗ
+	РегистрСведений.ЛимитыЛьготСотрудникамПоШтатномуРасписанию КАК ЛимитыЛьготСотрудникамПоШтатномуРасписанию
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовРасчета.Начисления КАК Начисления
+		ПО (ЛимитыЛьготСотрудникамПоШтатномуРасписанию.ДоступныВсеЛьготы)
+			И (ЛимитыЛьготСотрудникамПоШтатномуРасписанию.Позиция &lt;&gt; ЗНАЧЕНИЕ(Справочник.ШтатноеРасписание.ПустаяСсылка))
+			И (Начисления.КатегорияНачисленияИлиНеоплаченногоВремени = ЗНАЧЕНИЕ(Перечисление.КатегорииНачисленийИНеоплаченногоВремени.ВыбираемаяСотрудникомЛьгота))
+			И (НЕ Начисления.ВАрхиве)
+			И (НЕ Начисления.ПометкаУдаления)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ИндивидуальныеЛьготыПозиций.Льгота КАК Льгота,
+	КадровыеДанные.ФизическоеЛицо КАК ФизическоеЛицо,
+	1 КАК КоличествоДоступных
+ПОМЕСТИТЬ ВТПредоставленныеНаВыборЛьготы
+ИЗ
+	ВТИндивидуальныеЛьготыПозиций КАК ИндивидуальныеЛьготыПозиций
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТКадровыеДанныеСотрудников КАК КадровыеДанные
+		ПО ИндивидуальныеЛьготыПозиций.Позиция = КадровыеДанные.ДолжностьПоШтатномуРасписанию
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	Сотрудники.Сотрудник.ФизическоеЛицо
+ПОМЕСТИТЬ ВТФизическиеЛица
+ИЗ
+	ВТСотрудники КАК Сотрудники
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(ИндивидуальныеЛьготыФизическихЛиц.Дата) КАК Дата,
+	ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо
+ПОМЕСТИТЬ ВТМаксимальныеДатыИндивидуальныхЛьготНаНачалоПериода
+ИЗ
+	РегистрСведений.ИндивидуальныеЛьготыФизическихЛиц КАК ИндивидуальныеЛьготыФизическихЛиц
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТФизическиеЛица КАК ФизическиеЛица
+		ПО ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо = ФизическиеЛица.СотрудникФизическоеЛицо
+			И (ИндивидуальныеЛьготыФизическихЛиц.Дата &lt;= &amp;НачалоПериода)
+
+СГРУППИРОВАТЬ ПО
+	ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИндивидуальныеЛьготыФизическихЛиц.Дата,
+	ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо,
+	ИндивидуальныеЛьготыФизическихЛиц.Льгота
+ПОМЕСТИТЬ ВТИндивидуальныеЛьготыНаНачалоПериода
+ИЗ
+	РегистрСведений.ИндивидуальныеЛьготыФизическихЛиц КАК ИндивидуальныеЛьготыФизическихЛиц
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТМаксимальныеДатыИндивидуальныхЛьготНаНачалоПериода КАК МаксимальныеДатыИндивидуальныхЛьготНаНачалоПериода
+		ПО ИндивидуальныеЛьготыФизическихЛиц.Дата = МаксимальныеДатыИндивидуальныхЛьготНаНачалоПериода.Дата
+			И ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо = МаксимальныеДатыИндивидуальныхЛьготНаНачалоПериода.ФизическоеЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(ИндивидуальныеЛьготыФизическихЛиц.Дата) КАК Дата,
+	ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо
+ПОМЕСТИТЬ ВТМаксимальныеДатыИндивидуальныхЛьготНаКонецПериода
+ИЗ
+	РегистрСведений.ИндивидуальныеЛьготыФизическихЛиц КАК ИндивидуальныеЛьготыФизическихЛиц
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТФизическиеЛица КАК ФизическиеЛица
+		ПО ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо = ФизическиеЛица.СотрудникФизическоеЛицо
+			И (ИндивидуальныеЛьготыФизическихЛиц.Дата &lt;= &amp;ОкончаниеПериода)
+
+СГРУППИРОВАТЬ ПО
+	ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИндивидуальныеЛьготыФизическихЛиц.Дата,
+	ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо,
+	ИндивидуальныеЛьготыФизическихЛиц.Льгота
+ПОМЕСТИТЬ ВТИндивидуальныеЛьготыНаКонецПериода
+ИЗ
+	РегистрСведений.ИндивидуальныеЛьготыФизическихЛиц КАК ИндивидуальныеЛьготыФизическихЛиц
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТМаксимальныеДатыИндивидуальныхЛьготНаКонецПериода КАК МаксимальныеДатыИндивидуальныхЛьготНаКонецПериода
+		ПО ИндивидуальныеЛьготыФизическихЛиц.Дата = МаксимальныеДатыИндивидуальныхЛьготНаКонецПериода.Дата
+			И ИндивидуальныеЛьготыФизическихЛиц.ФизическоеЛицо = МаксимальныеДатыИндивидуальныхЛьготНаКонецПериода.ФизическоеЛицо
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИндивидуальныеЛьготыНаКонецПериода.Льгота КАК Льгота,
+	ИндивидуальныеЛьготыНаКонецПериода.ФизическоеЛицо КАК ФизическоеЛицо,
+	1 КАК КоличествоДобавленных
+ПОМЕСТИТЬ ВТДобавленныеВПакетИндивидуальныеЛьготы
+ИЗ
+	ВТИндивидуальныеЛьготыНаКонецПериода КАК ИндивидуальныеЛьготыНаКонецПериода
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИндивидуальныеЛьготыНаНачалоПериода КАК ИндивидуальныеЛьготыНаНачалоПериода
+		ПО ИндивидуальныеЛьготыНаКонецПериода.Льгота = ИндивидуальныеЛьготыНаНачалоПериода.Льгота
+			И ИндивидуальныеЛьготыНаКонецПериода.ФизическоеЛицо = ИндивидуальныеЛьготыНаНачалоПериода.ФизическоеЛицо
+ГДЕ
+	ИндивидуальныеЛьготыНаНачалоПериода.ФизическоеЛицо ЕСТЬ NULL 
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИндивидуальныеЛьготыНаНачалоПериода.Льгота КАК Льгота,
+	ИндивидуальныеЛьготыНаНачалоПериода.ФизическоеЛицо КАК ФизическоеЛицо,
+	1 КАК КоличествоУдаленных
+ПОМЕСТИТЬ ВТУдаленныеИзПакетаИндивидуальныеЛьготы
+ИЗ
+	ВТИндивидуальныеЛьготыНаНачалоПериода КАК ИндивидуальныеЛьготыНаНачалоПериода
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТИндивидуальныеЛьготыНаКонецПериода КАК ИндивидуальныеЛьготыНаКонецПериода
+		ПО ИндивидуальныеЛьготыНаНачалоПериода.Льгота = ИндивидуальныеЛьготыНаКонецПериода.Льгота
+			И ИндивидуальныеЛьготыНаНачалоПериода.ФизическоеЛицо = ИндивидуальныеЛьготыНаКонецПериода.ФизическоеЛицо
+ГДЕ
+	ИндивидуальныеЛьготыНаКонецПериода.ФизическоеЛицо ЕСТЬ NULL 
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИндивидуальныеЛьготыНаКонецПериода.Льгота КАК Льгота,
+	ИндивидуальныеЛьготыНаКонецПериода.ФизическоеЛицо КАК ФизическоеЛицо,
+	1 КАК КоличествоВыбранных
+ПОМЕСТИТЬ ВТВыбранныеИндивидуальныеЛьготы
+ИЗ
+	ВТИндивидуальныеЛьготыНаКонецПериода КАК ИндивидуальныеЛьготыНаКонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПредоставленныеНаВыборЛьготы.Льгота КАК Льгота,
+	ПредоставленныеНаВыборЛьготы.ФизическоеЛицо КАК ФизическоеЛицо,
+	ПредоставленныеНаВыборЛьготы.КоличествоДоступных КАК ПредоставленаНаВыбор,
+	ВЫБОР
+		КОГДА ВыбранныеИндивидуальныеЛьготы.КоличествоВыбранных ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ ВыбранныеИндивидуальныеЛьготы.КоличествоВыбранных
+	КОНЕЦ КАК ИмеютВПакете,
+	ВЫБОР
+		КОГДА ДобавленныеВПакетИндивидуальныеЛьготы.КоличествоДобавленных ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ ДобавленныеВПакетИндивидуальныеЛьготы.КоличествоДобавленных
+	КОНЕЦ КАК ДобавилиВПакет,
+	ВЫБОР
+		КОГДА УдаленныеИзПакетаИндивидуальныеЛьготы.КоличествоУдаленных ЕСТЬ NULL 
+			ТОГДА 0
+		ИНАЧЕ УдаленныеИзПакетаИндивидуальныеЛьготы.КоличествоУдаленных
+	КОНЕЦ КАК ОтказалисьОтИспользования
+{ВЫБРАТЬ
+	Льгота.*,
+	ФизическоеЛицо.*,
+	ПредоставленаНаВыбор,
+	ИмеютВПакете,
+	ДобавилиВПакет,
+	ОтказалисьОтИспользования}
+ИЗ
+	ВТПредоставленныеНаВыборЛьготы КАК ПредоставленныеНаВыборЛьготы
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТВыбранныеИндивидуальныеЛьготы КАК ВыбранныеИндивидуальныеЛьготы
+		ПО ПредоставленныеНаВыборЛьготы.Льгота = ВыбранныеИндивидуальныеЛьготы.Льгота
+			И ПредоставленныеНаВыборЛьготы.ФизическоеЛицо = ВыбранныеИндивидуальныеЛьготы.ФизическоеЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТДобавленныеВПакетИндивидуальныеЛьготы КАК ДобавленныеВПакетИндивидуальныеЛьготы
+		ПО ПредоставленныеНаВыборЛьготы.Льгота = ДобавленныеВПакетИндивидуальныеЛьготы.Льгота
+			И ПредоставленныеНаВыборЛьготы.ФизическоеЛицо = ДобавленныеВПакетИндивидуальныеЛьготы.ФизическоеЛицо
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТУдаленныеИзПакетаИндивидуальныеЛьготы КАК УдаленныеИзПакетаИндивидуальныеЛьготы
+		ПО ПредоставленныеНаВыборЛьготы.Льгота = УдаленныеИзПакетаИндивидуальныеЛьготы.Льгота
+			И ПредоставленныеНаВыборЛьготы.ФизическоеЛицо = УдаленныеИзПакетаИндивидуальныеЛьготы.ФизическоеЛицо
+{ГДЕ
+	ПредоставленныеНаВыборЛьготы.Льгота.*,
+	ПредоставленныеНаВыборЛьготы.ФизическоеЛицо.*,
+	ПредоставленныеНаВыборЛьготы.КоличествоДоступных,
+	ВыбранныеИндивидуальныеЛьготы.КоличествоВыбранных,
+	ДобавленныеВПакетИндивидуальныеЛьготы.КоличествоДобавленных,
+	УдаленныеИзПакетаИндивидуальныеЛьготы.КоличествоУдаленных}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>ДобавилиВПакет</dataPath>
+		<expression>Сумма(ДобавилиВПакет)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИмеютВПакете</dataPath>
+		<expression>Сумма(ИмеютВПакете)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтказалисьОтИспользования</dataPath>
+		<expression>Сумма(ОтказалисьОтИспользования)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПредоставленаНаВыбор</dataPath>
+		<expression>Сумма(ПредоставленаНаВыбор)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ОкончаниеПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Окончание периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ИспользованиеИндивидуальныхПакетовЛьгот</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Использование индивидуальных пакетов льгот</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПредоставленаНаВыбор</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предоставлена на выбор, чел.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИмеютВПакете</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имеют в своем пакете, чел.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДобавилиВПакет</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Добавили в свой пакет в заданном периоде, чел.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтказалисьОтИспользования</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отказались от использования льготы в заданном периоде, чел.</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a286d071-f62e-45ef-8e3c-da18aa9f6b00</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>11f2a615-cf2c-4f54-8912-513a4f040481</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Должность</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>7e563ca3-bdbe-4acf-8f5c-3969d4c4fae2</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ДолжностьПоШтатномуРасписанию</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>af3bb65f-5c6d-4800-86f8-97e769025f64</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ОкончаниеПериода</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>25269d1a-5dec-4186-9bfd-52dd5cac7e6a</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Льгота</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

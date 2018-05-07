@@ -1,0 +1,1034 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтоимостьИспорченногоОборудования</dataPath>
+			<field>СтоимостьИспорченногоОборудования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость испорченного оборудования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Последствия</dataPath>
+			<field>Последствия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Последствия</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидПроисшествия</dataPath>
+			<field>ВидПроисшествия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид происшествия</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХарактерПовреждений</dataPath>
+			<field>ХарактерПовреждений</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характер повреждений</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пострадавший</dataPath>
+			<field>Пострадавший</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пострадавший</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НесчастныйСлучай</dataPath>
+			<field>НесчастныйСлучай</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Несчастный случай</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммарныйМатериальныйУщерб</dataPath>
+			<field>СуммарныйМатериальныйУщерб</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Суммарный материальный ущерб</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнаяПричина</dataPath>
+			<field>ОсновнаяПричина</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная причина</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГрупповаяТравма</dataPath>
+			<field>ГрупповаяТравма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Групповая травма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтепеньТяжестиТравмы</dataPath>
+			<field>СтепеньТяжестиТравмы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Степень тяжести травмы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидИСтепеньОпьянения</dataPath>
+			<field>ВидИСтепеньОпьянения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид и степень опьянения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтоимостьРазрушенныхЗданий</dataPath>
+			<field>СтоимостьРазрушенныхЗданий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоимость разрушенных зданий</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрочиеРасходы</dataPath>
+			<field>ПрочиеРасходы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочие расходы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОпьянениеПострадавшего</dataPath>
+			<field>ОпьянениеПострадавшего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Опьянение пострадавшего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	НесчастныйСлучайНаПроизводствеПричиныПроисшествия.Ссылка,
+	ЕСТЬNULL(МИНИМУМ(НесчастныйСлучайНаПроизводствеПричиныПроисшествия.НомерСтроки), 0) КАК НомерСтроки
+ПОМЕСТИТЬ ВТПричиныПроисшествия
+ИЗ
+	Документ.НесчастныйСлучайНаПроизводстве.ПричиныПроисшествия КАК НесчастныйСлучайНаПроизводствеПричиныПроисшествия
+
+СГРУППИРОВАТЬ ПО
+	НесчастныйСлучайНаПроизводствеПричиныПроисшествия.Ссылка
+
+ИМЕЮЩИЕ
+	МИНИМУМ(НесчастныйСлучайНаПроизводствеПричиныПроисшествия.НомерСтроки) &lt;&gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	НесчастныйСлучайНаПроизводствеПричиныПроисшествия.Ссылка,
+	НесчастныйСлучайНаПроизводствеПричиныПроисшествия.Причина
+ПОМЕСТИТЬ ВТОсновныеПричиныПроисшествия
+ИЗ
+	Документ.НесчастныйСлучайНаПроизводстве.ПричиныПроисшествия КАК НесчастныйСлучайНаПроизводствеПричиныПроисшествия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТПричиныПроисшествия КАК ПричиныПроисшествия
+		ПО НесчастныйСлучайНаПроизводствеПричиныПроисшествия.Ссылка = ПричиныПроисшествия.Ссылка
+			И НесчастныйСлучайНаПроизводствеПричиныПроисшествия.НомерСтроки = ПричиныПроисшествия.НомерСтроки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	НесчастныйСлучайНаПроизводстве.Ссылка КАК НесчастныйСлучай,
+	НесчастныйСлучайНаПроизводстве.ГрупповаяТравма КАК ГрупповаяТравма,
+	НесчастныйСлучайНаПроизводствеПострадавшие.Пострадавший КАК Пострадавший,
+	НесчастныйСлучайНаПроизводстве.Организация КАК Организация,
+	НесчастныйСлучайНаПроизводстве.Подразделение КАК Подразделение,
+	НесчастныйСлучайНаПроизводстве.ВидПроисшествия КАК ВидПроисшествия,
+	НесчастныйСлучайНаПроизводстве.СтепеньТяжестиТравмы КАК СтепеньТяжестиТравмы,
+	ОсновныеПричиныПроисшествия.Причина КАК ОсновнаяПричина,
+	ПоследствияНесчастногоСлучаяПострадавшие.Последствия КАК Последствия,
+	НесчастныйСлучайНаПроизводствеПострадавшие.ХарактерПовреждений КАК ХарактерПовреждений,
+	НесчастныйСлучайНаПроизводствеПострадавшие.ВидИСтепеньОпьянения
+ПОМЕСТИТЬ СписокНСиПострадавших
+ИЗ
+	Документ.НесчастныйСлучайНаПроизводстве КАК НесчастныйСлучайНаПроизводстве
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.НесчастныйСлучайНаПроизводстве.Пострадавшие КАК НесчастныйСлучайНаПроизводствеПострадавшие
+		ПО НесчастныйСлучайНаПроизводстве.Ссылка = НесчастныйСлучайНаПроизводствеПострадавшие.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТОсновныеПричиныПроисшествия КАК ОсновныеПричиныПроисшествия
+		ПО НесчастныйСлучайНаПроизводстве.Ссылка = ОсновныеПричиныПроисшествия.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПоследствияНесчастногоСлучая.Пострадавшие КАК ПоследствияНесчастногоСлучаяПострадавшие
+		ПО НесчастныйСлучайНаПроизводстве.Ссылка = ПоследствияНесчастногоСлучаяПострадавшие.Ссылка.ДокументОснование
+			И (НесчастныйСлучайНаПроизводствеПострадавшие.Пострадавший = ПоследствияНесчастногоСлучаяПострадавшие.Пострадавший)
+ГДЕ
+	НесчастныйСлучайНаПроизводстве.ДатаПроисшествия МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ СписокНСиПострадавших.Пострадавший) КАК КолвоПострадавших,
+	СписокНСиПострадавших.НесчастныйСлучай
+ПОМЕСТИТЬ КолчествоПострадавшихВсего
+ИЗ
+	СписокНСиПострадавших КАК СписокНСиПострадавших
+
+СГРУППИРОВАТЬ ПО
+	СписокНСиПострадавших.НесчастныйСлучай
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПоследствияНесчастногоСлучая.ДокументОснование КАК НесчастныйСлучай,
+	ПоследствияНесчастногоСлучая.СуммарныйМатериальныйУщерб,
+	ПоследствияНесчастногоСлучая.СтоимостьИспорченногоОборудования,
+	ПоследствияНесчастногоСлучая.СтоимостьРазрушенныхЗданий,
+	ПоследствияНесчастногоСлучая.ПрочиеРасходы
+ПОМЕСТИТЬ МатериальныйУщерб
+ИЗ
+	Документ.ПоследствияНесчастногоСлучая КАК ПоследствияНесчастногоСлучая
+ГДЕ
+	ПоследствияНесчастногоСлучая.ДатаПроисшествия МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МатериальныйУщерб.НесчастныйСлучай,
+	СписокНСиПострадавших.Пострадавший,
+	ВЫРАЗИТЬ(МатериальныйУщерб.СуммарныйМатериальныйУщерб / КолчествоПострадавшихВсего.КолвоПострадавших КАК ЧИСЛО(15, 2)) КАК СуммарныйМатериальныйУщерб,
+	ВЫРАЗИТЬ(МатериальныйУщерб.СтоимостьИспорченногоОборудования / КолчествоПострадавшихВсего.КолвоПострадавших КАК ЧИСЛО(15, 2)) КАК СтоимостьИспорченногоОборудования,
+	ВЫРАЗИТЬ(МатериальныйУщерб.СтоимостьРазрушенныхЗданий / КолчествоПострадавшихВсего.КолвоПострадавших КАК ЧИСЛО(15, 2)) КАК СтоимостьРазрушенныхЗданий,
+	ВЫРАЗИТЬ(МатериальныйУщерб.ПрочиеРасходы / КолчествоПострадавшихВсего.КолвоПострадавших КАК ЧИСЛО(15, 2)) КАК ПрочиеРасходы
+ПОМЕСТИТЬ РаспределениеМатериальногоУщербаПоПострадавшим
+ИЗ
+	МатериальныйУщерб КАК МатериальныйУщерб
+		ЛЕВОЕ СОЕДИНЕНИЕ СписокНСиПострадавших КАК СписокНСиПострадавших
+		ПО МатериальныйУщерб.НесчастныйСлучай = СписокНСиПострадавших.НесчастныйСлучай
+		ЛЕВОЕ СОЕДИНЕНИЕ КолчествоПострадавшихВсего КАК КолчествоПострадавшихВсего
+		ПО МатериальныйУщерб.НесчастныйСлучай = КолчествоПострадавшихВсего.НесчастныйСлучай
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Погрешность.Пострадавший,
+	Погрешность.НесчастныйСлучай,
+	СУММА(Погрешность.СуммарныйМатериальныйУщерб) КАК СуммарныйМатериальныйУщерб,
+	СУММА(Погрешность.СтоимостьИспорченногоОборудования) КАК СтоимостьИспорченногоОборудования,
+	СУММА(Погрешность.СтоимостьРазрушенныхЗданий) КАК СтоимостьРазрушенныхЗданий,
+	СУММА(Погрешность.ПрочиеРасходы) КАК ПрочиеРасходы
+ПОМЕСТИТЬ ОкруглениеМатериальногоУщербаПоПострадавшим
+ИЗ
+	(ВЫБРАТЬ
+		ПерваяСтрокаЗапроса.Пострадавший КАК Пострадавший,
+		ПерваяСтрокаЗапроса.НесчастныйСлучай КАК НесчастныйСлучай,
+		СУММА(ЕСТЬNULL(МатериальныйУщерб.СуммарныйМатериальныйУщерб, 0)) КАК СуммарныйМатериальныйУщерб,
+		СУММА(ЕСТЬNULL(МатериальныйУщерб.СтоимостьИспорченногоОборудования, 0)) КАК СтоимостьИспорченногоОборудования,
+		СУММА(ЕСТЬNULL(МатериальныйУщерб.СтоимостьРазрушенныхЗданий, 0)) КАК СтоимостьРазрушенныхЗданий,
+		СУММА(ЕСТЬNULL(МатериальныйУщерб.ПрочиеРасходы, 0)) КАК ПрочиеРасходы
+	ИЗ
+		(ВЫБРАТЬ
+			МАКСИМУМ(СписокНСиПострадавших.Пострадавший) КАК Пострадавший,
+			СписокНСиПострадавших.НесчастныйСлучай КАК НесчастныйСлучай
+		ИЗ
+			СписокНСиПострадавших КАК СписокНСиПострадавших
+		
+		СГРУППИРОВАТЬ ПО
+			СписокНСиПострадавших.НесчастныйСлучай) КАК ПерваяСтрокаЗапроса
+			ЛЕВОЕ СОЕДИНЕНИЕ МатериальныйУщерб КАК МатериальныйУщерб
+			ПО ПерваяСтрокаЗапроса.НесчастныйСлучай = МатериальныйУщерб.НесчастныйСлучай
+	
+	СГРУППИРОВАТЬ ПО
+		ПерваяСтрокаЗапроса.Пострадавший,
+		ПерваяСтрокаЗапроса.НесчастныйСлучай
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ПерваяСтрокаЗапроса.Пострадавший,
+		ПерваяСтрокаЗапроса.НесчастныйСлучай,
+		СУММА(ЕСТЬNULL(-РаспределениеМатериальногоУщербаПоПострадавшим.СуммарныйМатериальныйУщерб, 0)),
+		СУММА(ЕСТЬNULL(-РаспределениеМатериальногоУщербаПоПострадавшим.СтоимостьИспорченногоОборудования, 0)),
+		СУММА(ЕСТЬNULL(-РаспределениеМатериальногоУщербаПоПострадавшим.СтоимостьРазрушенныхЗданий, 0)),
+		СУММА(ЕСТЬNULL(-РаспределениеМатериальногоУщербаПоПострадавшим.ПрочиеРасходы, 0))
+	ИЗ
+		(ВЫБРАТЬ
+			МАКСИМУМ(СписокНСиПострадавших.Пострадавший) КАК Пострадавший,
+			СписокНСиПострадавших.НесчастныйСлучай КАК НесчастныйСлучай
+		ИЗ
+			СписокНСиПострадавших КАК СписокНСиПострадавших
+		
+		СГРУППИРОВАТЬ ПО
+			СписокНСиПострадавших.НесчастныйСлучай) КАК ПерваяСтрокаЗапроса
+			ЛЕВОЕ СОЕДИНЕНИЕ РаспределениеМатериальногоУщербаПоПострадавшим КАК РаспределениеМатериальногоУщербаПоПострадавшим
+			ПО ПерваяСтрокаЗапроса.НесчастныйСлучай = РаспределениеМатериальногоУщербаПоПострадавшим.НесчастныйСлучай
+	
+	СГРУППИРОВАТЬ ПО
+		ПерваяСтрокаЗапроса.Пострадавший,
+		ПерваяСтрокаЗапроса.НесчастныйСлучай) КАК Погрешность
+
+СГРУППИРОВАТЬ ПО
+	Погрешность.Пострадавший,
+	Погрешность.НесчастныйСлучай
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Итого.НесчастныйСлучай,
+	Итого.Пострадавший,
+	СУММА(Итого.СуммарныйМатериальныйУщерб) КАК СуммарныйМатериальныйУщерб,
+	СУММА(Итого.СтоимостьИспорченногоОборудования) КАК СтоимостьИспорченногоОборудования,
+	СУММА(Итого.СтоимостьРазрушенныхЗданий) КАК СтоимостьРазрушенныхЗданий,
+	СУММА(Итого.ПрочиеРасходы) КАК ПрочиеРасходы
+ПОМЕСТИТЬ РаспредленыйМатериальныйУщерб
+ИЗ
+	(ВЫБРАТЬ
+		РаспределениеМатериальногоУщербаПоПострадавшим.НесчастныйСлучай КАК НесчастныйСлучай,
+		РаспределениеМатериальногоУщербаПоПострадавшим.Пострадавший КАК Пострадавший,
+		РаспределениеМатериальногоУщербаПоПострадавшим.СуммарныйМатериальныйУщерб КАК СуммарныйМатериальныйУщерб,
+		РаспределениеМатериальногоУщербаПоПострадавшим.СтоимостьИспорченногоОборудования КАК СтоимостьИспорченногоОборудования,
+		РаспределениеМатериальногоУщербаПоПострадавшим.СтоимостьРазрушенныхЗданий КАК СтоимостьРазрушенныхЗданий,
+		РаспределениеМатериальногоУщербаПоПострадавшим.ПрочиеРасходы КАК ПрочиеРасходы
+	ИЗ
+		РаспределениеМатериальногоУщербаПоПострадавшим КАК РаспределениеМатериальногоУщербаПоПострадавшим
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ОкруглениеМатериальногоУщербаПоПострадавшим.НесчастныйСлучай,
+		ОкруглениеМатериальногоУщербаПоПострадавшим.Пострадавший,
+		ОкруглениеМатериальногоУщербаПоПострадавшим.СуммарныйМатериальныйУщерб,
+		ОкруглениеМатериальногоУщербаПоПострадавшим.СтоимостьИспорченногоОборудования,
+		ОкруглениеМатериальногоУщербаПоПострадавшим.СтоимостьРазрушенныхЗданий,
+		ОкруглениеМатериальногоУщербаПоПострадавшим.ПрочиеРасходы
+	ИЗ
+		ОкруглениеМатериальногоУщербаПоПострадавшим КАК ОкруглениеМатериальногоУщербаПоПострадавшим) КАК Итого
+
+СГРУППИРОВАТЬ ПО
+	Итого.НесчастныйСлучай,
+	Итого.Пострадавший
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СписокНСиПострадавших.НесчастныйСлучай,
+	СписокНСиПострадавших.Пострадавший,
+	СписокНСиПострадавших.Организация,
+	СписокНСиПострадавших.Подразделение,
+	СписокНСиПострадавших.ВидПроисшествия,
+	СписокНСиПострадавших.СтепеньТяжестиТравмы,
+	СписокНСиПострадавших.ОсновнаяПричина,
+	СписокНСиПострадавших.Последствия,
+	СписокНСиПострадавших.ХарактерПовреждений,
+	ВЫБОР
+		КОГДА НЕ СписокНСиПострадавших.ВидИСтепеньОпьянения ПОДОБНО """"
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК ОпьянениеПострадавшего,
+	СписокНСиПострадавших.ВидИСтепеньОпьянения,
+	РаспредленыйМатериальныйУщерб.СуммарныйМатериальныйУщерб,
+	РаспредленыйМатериальныйУщерб.СтоимостьИспорченногоОборудования,
+	РаспредленыйМатериальныйУщерб.СтоимостьРазрушенныхЗданий,
+	РаспредленыйМатериальныйУщерб.ПрочиеРасходы,
+	СписокНСиПострадавших.ГрупповаяТравма КАК ГрупповаяТравма
+ИЗ
+	СписокНСиПострадавших КАК СписокНСиПострадавших
+		ЛЕВОЕ СОЕДИНЕНИЕ РаспредленыйМатериальныйУщерб КАК РаспредленыйМатериальныйУщерб
+		ПО СписокНСиПострадавших.Пострадавший = РаспредленыйМатериальныйУщерб.Пострадавший
+			И СписокНСиПострадавших.НесчастныйСлучай = РаспредленыйМатериальныйУщерб.НесчастныйСлучай</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>КоличествоНС</dataPath>
+		<expression>НесчастныйСлучай</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество несчастных случаев</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоНСГрупповых</dataPath>
+		<expression>ВЫБОР КОГДА ГрупповаяТравма ТОГДА НесчастныйСлучай ИНАЧЕ NULL КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество групповых несчастных случаев</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоНСТяжелых</dataPath>
+		<expression>ВЫБОР КОГДА СтепеньТяжестиТравмы = ЗНАЧЕНИЕ(Перечисление.СтепениТяжестиТравмыНаПроизводстве.Тяжелая) ТОГДА НесчастныйСлучай ИНАЧЕ NULL КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество тяжелых несчастных случаев</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоНСоСмертельнымИсходом</dataPath>
+		<expression>ВЫБОР КОГДА СтепеньТяжестиТравмы = ЗНАЧЕНИЕ(Перечисление.СтепениТяжестиТравмыНаПроизводстве.СоСмертельнымИсходом) ТОГДА НесчастныйСлучай ИНАЧЕ NULL КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество несчастных случаев со смертельным исходом</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КолВоПострадавший</dataPath>
+		<expression>Пострадавший</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество пострадавших</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КолВоПострадавшийВСостоянииОпьянения</dataPath>
+		<expression>ВЫБОР КОГДА ОпьянениеПострадавшего ТОГДА Пострадавший ИНАЧЕ NULL КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество пострадавших в состоянии алкогольного опьянения</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+	</calculatedField>
+	<totalField>
+		<dataPath>КоличествоНС</dataPath>
+		<expression>Количество(Различные КоличествоНС)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНСГрупповых</dataPath>
+		<expression>Количество(Различные КоличествоНСГрупповых)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНСТяжелых</dataPath>
+		<expression>Количество(Различные КоличествоНСТяжелых)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНСоСмертельнымИсходом</dataPath>
+		<expression>Количество(Различные КоличествоНСоСмертельнымИсходом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрочиеРасходы</dataPath>
+		<expression>Сумма(ПрочиеРасходы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьИспорченногоОборудования</dataPath>
+		<expression>Сумма(СтоимостьИспорченногоОборудования)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СтоимостьРазрушенныхЗданий</dataPath>
+		<expression>Сумма(СтоимостьРазрушенныхЗданий)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммарныйМатериальныйУщерб</dataPath>
+		<expression>Сумма(СуммарныйМатериальныйУщерб)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолВоПострадавший</dataPath>
+		<expression>Количество(Различные КолВоПострадавший)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КолВоПострадавшийВСостоянииОпьянения</dataPath>
+		<expression>Количество(Различные КолВоПострадавшийВСостоянииОпьянения)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>СведенияОНесчастныхСлучаях</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сведения о несчастных случаях</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНС</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНСТяжелых</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тяжелых несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНСоСмертельнымИсходом</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Несчастных случаев со смертельным исходом</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНСГрупповых</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Групповых несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>4490b36f-e883-453c-a0f4-1f58aac3fbe7</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о несчастных случаях</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ВидПроисшествия</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПричиныНесчастныхСлучаев</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Причины несчастных случаев</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНС</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНСТяжелых</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тяжелых несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНСоСмертельнымИсходом</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Несчастных случаев со смертельным исходом</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНСГрупповых</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Групповых несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>470e9927-7055-4f46-8c58-f9c74c3ac636</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о несчастных случаях</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОсновнаяПричина</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>СведенияОПострадавших</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сведения о пострадавших</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолВоПострадавший</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пострадавших</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КолВоПострадавшийВСостоянииОпьянения</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пострадавших в состоянии алкогольного опьянения</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>2ad32ca8-650c-41ce-b77c-dc57dad845c1</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о несчастных случаях</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Последствия</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>УщербОтНесчастныхСлучаев</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ущерб от несчастных случаев</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоНС</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Несчастных случаев</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммарныйМатериальныйУщерб</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтоимостьРазрушенныхЗданий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтоимостьИспорченногоОборудования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрочиеРасходы</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>988e5f5b-10e1-4136-913f-5addefb986d0</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о несчастных случаях</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ВидПроисшествия</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

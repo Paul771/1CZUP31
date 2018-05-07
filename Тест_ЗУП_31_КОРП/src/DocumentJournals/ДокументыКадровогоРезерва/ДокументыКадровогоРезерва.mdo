@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="728ff1f4-1c6a-4596-9bb7-5b7af138cb48">
+  <producedTypes>
+    <selectionType typeId="cde7edc5-e760-4067-9c8f-860b33526e85" valueTypeId="94fbaaec-9184-4326-8d9e-1479f1e2eea0"/>
+    <listType typeId="fe18d2f5-a78d-48aa-bcc7-db58823a53b4" valueTypeId="0ae0920d-1a3a-4b35-8632-b32742531fb2"/>
+    <managerType typeId="7212abd5-fa80-46b0-a122-63648d99cb8c" valueTypeId="eb4a10f7-7c3a-41d9-8d19-fb9851f7e33b"/>
+  </producedTypes>
+  <name>ДокументыКадровогоРезерва</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы кадрового резерва</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.ДокументыКадровогоРезерва.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ВключениеВКадровыйРезерв</registeredDocuments>
+  <registeredDocuments>Document.ИсключениеИзКадровогоРезерва</registeredDocuments>
+  <registeredDocuments>Document.ЗаявкаНаВключениеВКадровыйРезерв</registeredDocuments>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="523a3f84-40e7-4a5a-8bf6-cc8de7b4bdbf">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ВключениеВКадровыйРезерв.Attribute.Подразделение</references>
+    <references>Document.ИсключениеИзКадровогоРезерва.Attribute.Подразделение</references>
+    <references>Document.ЗаявкаНаВключениеВКадровыйРезерв.Attribute.Подразделение</references>
+  </columns>
+  <columns uuid="fc03bbd0-52ce-4a01-9fd1-29119997b500">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ИсключениеИзКадровогоРезерва.Attribute.ФизическоеЛицо</references>
+    <references>Document.ЗаявкаНаВключениеВКадровыйРезерв.Attribute.ФизическоеЛицо</references>
+    <references>Document.ВключениеВКадровыйРезерв.Attribute.КраткийСоставДокумента</references>
+  </columns>
+  <columns uuid="7f46d4f5-93e4-4fd6-b17b-0e5a0b35451a">
+    <name>ДатаСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата события</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.ЗаявкаНаВключениеВКадровыйРезерв.Attribute.ДатаВыдвижения</references>
+    <references>Document.ВключениеВКадровыйРезерв.Attribute.ДатаРассмотрения</references>
+    <references>Document.ИсключениеИзКадровогоРезерва.Attribute.ДатаИсключения</references>
+  </columns>
+  <forms uuid="ac8792ba-8aa6-4bc6-858d-3b06944d7501">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

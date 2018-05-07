@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c24a8075-e143-4387-b63e-e4fceb9b6346">
+  <producedTypes>
+    <selectionType typeId="d1ffc521-691d-4c78-b4e0-9388eb4d9de3" valueTypeId="a78df3c7-b46f-44b3-98cf-ed1d002a4054"/>
+    <listType typeId="f9f01d37-2111-4974-b6a3-347e644c6384" valueTypeId="11723dfc-c5fb-42ed-a5ed-8d71271e94cc"/>
+    <managerType typeId="c1845874-c6de-4c7c-aa1b-67a19e5244d3" valueTypeId="e10365b0-4c41-491b-85a4-c3619bc73881"/>
+    <recordSetType typeId="cfcb73bb-14c9-4f2e-a156-1f457736427b" valueTypeId="03486298-2edf-4b51-b16b-80fe36ac2f78"/>
+    <recordKeyType typeId="2eb8504c-0e87-4706-a6f7-331d65109e8b" valueTypeId="f74ed146-5cf0-443e-b8d9-21d45cc9b33f"/>
+    <recordType typeId="af0c9ee9-6727-4eb5-b412-d907d06eeb98" valueTypeId="6644f571-0b25-46c0-aa8b-e1ecd6ab7524"/>
+    <recordManagerType typeId="80b36bdf-2b6f-47b0-966e-c4521a47b01c" valueTypeId="ce53445d-5cc0-41eb-b6d0-a82d41547d7c"/>
+  </producedTypes>
+  <name>ОценкаПозицийШтатногоРасписанияПоКритериям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оценка позиций штатного расписания по критериям</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="aa6f044a-21aa-4ae4-83a6-f1cf68351ceb">
+    <name>Значение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="a19a1c70-9cbb-41d4-9664-9270b032b02d">
+    <name>Позиция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Позиция</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Должности</types>
+      <types>CatalogRef.ШтатноеРасписание</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6dafb94c-9f63-4ef6-81fa-753f4e197b65">
+    <name>КритерийОценки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Критерий оценки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КритерииОценкиПозицийШтатногоРасписания</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

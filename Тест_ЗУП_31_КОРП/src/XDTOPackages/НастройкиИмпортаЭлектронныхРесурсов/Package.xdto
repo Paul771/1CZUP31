@@ -1,0 +1,32 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://v8.1c.ru/kms/1/ImportFilesSettings">
+	<import namespace="http://v8.1c.ru/8.1/data/enterprise/current-config"/>
+	<import namespace="http://v8.1c.ru/8.1/data/core"/>
+	<objectType name="Файлы">
+		<property xmlns:d3p1="http://v8.1c.ru/kms/1/ImportFilesSettings" name="Файл" type="d3p1:Файл" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Файл">
+		<property name="ИмяФайла" type="xs:string"/>
+		<property name="ЭтоКаталог" type="xs:boolean"/>
+		<property name="Преобразовать" type="xs:boolean" lowerBound="0"/>
+		<property name="Скрыть" type="xs:boolean" lowerBound="0"/>
+		<property name="ДатаЗагрузки" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Подборка" type="d3p1:CatalogRef.ТеорияЭлектронныхКурсов" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ресурс" type="d3p1:CatalogRef.ЭлектронныеРесурсы" lowerBound="0"/>
+		<property name="СоздаватьСсылки" type="xs:boolean" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ВариантЗагрузкиКартинок" type="d3p1:EnumRef.ВариантыЗагрузкиКартинокДокументовЭлектронныхКурсов" lowerBound="0"/>
+	</objectType>
+	<objectType name="Картинки">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ВариантЗагрузкиКартинок" type="d3p1:EnumRef.ВариантыЗагрузкиКартинокДокументовЭлектронныхКурсов" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/kms/1/ImportFilesSettings" name="СерияКартинок" type="d3p1:СерияКартинок" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="СерияКартинок">
+		<property name="Имя" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/kms/1/ImportFilesSettings" name="Картинка" type="d3p1:Картинка" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="Картинка">
+		<property name="Имя" type="xs:string"/>
+		<property name="Ширина" type="xs:integer"/>
+		<property name="Высота" type="xs:integer"/>
+		<property name="Размер" type="xs:integer"/>
+	</objectType>
+</package>

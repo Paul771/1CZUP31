@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="570489e6-bfc3-406b-b024-6b27370e1e2f">
+  <name>ЗаполнитьОрганизацииНабораЗаписейПоПодразделениям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнить организации набора записей по подразделениям</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ЗначенияОперативныхПоказателейРасчетаЗарплатыПодразделений</types>
+    <types>InformationRegisterRecordSet.ЗначенияРазовыхПоказателейРасчетаЗарплатыПодразделений</types>
+    <types>InformationRegisterRecordSet.ЗначенияПериодическихПоказателейРасчетаЗарплатыПодразделений</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РасчетЗарплатыРасширенныйСобытия.ЗаполнитьОрганизацииНабораЗаписейПоПодразделениямПередЗаписью</handler>
+</mdclass:EventSubscription>

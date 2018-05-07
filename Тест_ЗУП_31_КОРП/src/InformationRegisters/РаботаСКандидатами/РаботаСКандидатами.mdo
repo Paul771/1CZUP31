@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e8d5d0f-bf46-4a14-94d2-e685ba9cca1a">
+  <producedTypes>
+    <selectionType typeId="8fc0c71b-3c31-498d-8ddb-0b3e8dd36689" valueTypeId="29326237-52e5-4758-b75c-aff9fa7a878c"/>
+    <listType typeId="f13410d3-88d8-4fca-ae3c-e7c57844b1f0" valueTypeId="b2c5b280-7563-43c7-9169-ffc16c5a7191"/>
+    <managerType typeId="439403e3-6269-4ce7-b6a8-f91d32936b91" valueTypeId="73d10f14-d739-4fe6-b6da-43af597fb996"/>
+    <recordSetType typeId="922d5c56-6046-48b1-9ba9-bd3e9a82599a" valueTypeId="24c2f3c0-afba-457b-a1f8-46c2f8202eba"/>
+    <recordKeyType typeId="1867fefb-958e-4ae6-acfc-57f1de67b475" valueTypeId="9ebc04a9-cbb2-4278-bc6f-0b252d5c0f5c"/>
+    <recordType typeId="7866dfed-c829-4177-bce4-25b95817f9d5" valueTypeId="73da5527-d8cc-4aec-8c9f-98c011570255"/>
+    <recordManagerType typeId="e8656540-e153-4788-8529-25903e0406ac" valueTypeId="73076106-4f58-483a-befb-beafd35d96b8"/>
+  </producedTypes>
+  <name>РаботаСКандидатами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Работа с кандидатами</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <explanation>
+    <key>ru</key>
+    <value>Сведения прохождении кандидатами этапов взаимодействия</value>
+  </explanation>
+  <resources uuid="70ee0de7-7a50-4511-9ffd-23a307256bb1">
+    <name>ЭтапРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап работы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЭтапыРаботыСКандидатами</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Этап работы с кандидатом</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="c3cf15e1-3d20-4419-9037-2d77b348aab1">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <multiLine>true</multiLine>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="2777649f-2a3b-40e2-a03e-7f78d85e501f">
+    <name>СостояниеЭтапа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние этапа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.СостоянияЭтаповРаботыСКандидатами</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f16a3cb0-2f2c-4905-93b4-d0684a681d32">
+    <name>ШаблонАнкеты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон анкеты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ШаблоныАнкет</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6cf35180-1d36-49aa-94fb-aeb535d79948">
+    <name>ПричинаОтклонения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отклонения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПричиныОтклоненияКандидатов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="57393bcf-7225-4d8d-b7b3-2d0657135479">
+    <name>ПериодОкончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период окончание</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f302606f-aa34-4461-8f64-a2c2b5dbd59b">
+    <name>Бронь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бронь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Бронь</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="078fb495-5cda-4c04-9a75-993da16fe05b">
+    <name>Кандидат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кандидат</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Кандидаты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Кандидат, этапы работы с которым описываются</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="b3cfd05e-0d46-4b95-bc33-19832201fa72">
+    <name>ЭтапРаботыСКандидатом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап работы с кандидатом</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

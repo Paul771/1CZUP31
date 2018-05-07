@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="53bd4871-813d-40f6-8ffb-5d01a83781a0">
+  <name>СостояниеСотрудниковУдалениеЗаработанныхПравНаОтпуск</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояние сотрудников удаление заработанных прав на отпуск</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.СостоянияСотрудников</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОстаткиОтпусковСобытия.УдалениеЗаработанныхПравНаОтпускПередЗаписью</handler>
+</mdclass:EventSubscription>

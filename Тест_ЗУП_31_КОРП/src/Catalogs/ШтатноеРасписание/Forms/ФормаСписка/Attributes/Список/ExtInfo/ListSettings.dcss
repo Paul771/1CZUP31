@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:chm="http://v8.1c.ru/8.2/data/chart" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<filter>
+		<viewMode>Normal</viewMode>
+		<userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</userSettingID>
+	</filter>
+	<order>
+		<item xsi:type="OrderItemField">
+			<field>ГруппаПозицийПодразделения</field>
+			<orderType>Desc</orderType>
+		</item>
+		<item xsi:type="OrderItemField">
+			<field>ПорядокПодразделений</field>
+			<orderType>Asc</orderType>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item xsi:type="OrderItemField">
+			<field>ПорядокДолжностей</field>
+			<orderType>Asc</orderType>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item xsi:type="OrderItemField">
+			<field>РазрядКатегория.РеквизитДопУпорядочивания</field>
+			<orderType>Asc</orderType>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item xsi:type="OrderItemField">
+			<field>Наименование</field>
+			<orderType>Asc</orderType>
+			<viewMode>Normal</viewMode>
+		</item>
+		<viewMode>Normal</viewMode>
+		<userSettingID>74151644-3846-46d1-8afc-c44b1bf54b06</userSettingID>
+	</order>
+	<conditionalAppearance>
+		<item>
+			<selection/>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Утверждена</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">false</right>
+				</item>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ГруппаПозицийПодразделения</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">false</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value bold="true" italic="false" kind="StyleItem" ref="style:NormalTextFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item>
+			<selection/>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Закрыта</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">true</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value bold="false" italic="false" kind="StyleItem" ref="style:NormalTextFont" strikeout="true" underline="false" xsi:type="v8ui:Font"/>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item>
+			<selection>
+				<item>
+					<field>Наименование</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ГруппаПозицийПодразделения</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">true</right>
+				</item>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Закрыта</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">false</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>Шрифт</dcscor:parameter>
+					<dcscor:value bold="true" italic="false" kind="StyleItem" ref="style:NormalTextFont" strikeout="false" underline="false" xsi:type="v8ui:Font"/>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item>
+			<selection>
+				<item>
+					<field>КоличествоСтавок</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">КоличествоСтавок</left>
+					<comparisonType>Less</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item>
+			<selection>
+				<item>
+					<field>СтавокЗанято</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">СтавокЗанято</left>
+					<comparisonType>Less</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item>
+			<selection>
+				<item>
+					<field>СтавокСвободно</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">СтавокСвободно</left>
+					<comparisonType>Less</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+		</item>
+		<item>
+			<selection>
+				<item>
+					<field>СтавокЗанято</field>
+				</item>
+				<item>
+					<field>СтавокСвободно</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Ссылка</left>
+					<comparisonType>Filled</comparisonType>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ=4</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</item>
+		<viewMode>Normal</viewMode>
+		<userSettingID>e6977e39-fab7-444f-b2e3-6f64109d89c3</userSettingID>
+	</conditionalAppearance>
+	<itemsViewMode>Normal</itemsViewMode>
+	<itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</itemsUserSettingID>
+</Settings>

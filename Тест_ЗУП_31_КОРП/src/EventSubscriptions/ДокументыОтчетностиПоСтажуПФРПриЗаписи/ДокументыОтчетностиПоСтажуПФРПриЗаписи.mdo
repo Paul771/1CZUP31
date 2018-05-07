@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ca6959ef-d5e3-4c96-a33b-8a485fe324ae">
+  <name>ДокументыОтчетностиПоСтажуПФРПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы отчетности по стажу ПФРПри записи</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ПачкаРазделов6РасчетаРСВ_1</types>
+    <types>DocumentObject.ПачкаДокументовСЗВ_6_1</types>
+    <types>DocumentObject.РеестрСЗВ_6_2</types>
+    <types>DocumentObject.ПачкаДокументовСЗВ_6_4</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.УчетСтажаПФРСобытия.ДокументыОтчетностиПоСтажуПФРПриЗаписи</handler>
+</mdclass:EventSubscription>

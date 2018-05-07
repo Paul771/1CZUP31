@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9a99d58e-521d-43ed-a52b-2fa1559dfd15">
+  <name>ПроверитьВторичныеЗаписиНачисленийЗависящихОтСтажа</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить вторичные записи начислений зависящих от стажа</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.СтажиФизическихЛиц</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РасчетЗарплатыРасширенныйСобытия.ЗапомнитьИзмененияСтажейФизическихЛицПередЗаписью</handler>
+</mdclass:EventSubscription>

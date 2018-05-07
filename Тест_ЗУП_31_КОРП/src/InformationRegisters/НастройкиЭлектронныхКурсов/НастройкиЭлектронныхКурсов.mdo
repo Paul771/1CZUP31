@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ba890000-8adc-419a-b3f0-a1498f00b824">
+  <producedTypes>
+    <selectionType typeId="ad3ef1cf-35b5-4f0d-ae1d-297e82073460" valueTypeId="1159dfa3-2a8a-42d2-a656-3a80786e6d0e"/>
+    <listType typeId="381be1de-8b91-4520-aa35-29601e25bfe1" valueTypeId="a0a2f178-6a1f-4ba6-a03e-3e18ba5bfa51"/>
+    <managerType typeId="67a55167-f8b6-4a15-a5a5-e7d9488040fa" valueTypeId="0d427397-1ccd-410f-9b35-44d66462e954"/>
+    <recordSetType typeId="91a8c9a2-1d04-4723-9cdf-85ec21ed0d2c" valueTypeId="4f2d8f4c-d73b-469a-bec9-eec553a327a0"/>
+    <recordKeyType typeId="9ef1da61-eedb-4a2e-941c-dc6e4f42df31" valueTypeId="ea745543-d50f-43ed-9d03-cf2cba6a8620"/>
+    <recordType typeId="c64ee6d1-7f25-4c29-968f-809bd54e57b3" valueTypeId="f47df0e8-bd7f-45db-851b-40d715a5551f"/>
+    <recordManagerType typeId="21129c3b-2d6e-4bba-9870-d2dda317d870" valueTypeId="717d62b4-556f-42f1-95aa-f75c67bb1ada"/>
+  </producedTypes>
+  <name>НастройкиЭлектронныхКурсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки электронных курсов</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ca137f41-d0e9-4bdf-91c0-5743a6c2e2c8">
+    <name>РазработчикКурсов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разработчик курсов</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоставщикиЭлектронныхКурсов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="92191016-8e1d-41f4-8e82-3ee51e40a0c1">
+    <name>ИзменятьТолькоСвоиКурсы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменять только свои курсы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если флажок установлен, то можно будет изменить только свои курсы</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cfebd888-2165-43a5-8fc3-1224f6a526fe">
+    <name>ШиринаВидеоПоУмолчанию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ширина видео по умолчанию</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧН=640</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧН=640</value>
+    </editFormat>
+    <toolTip>
+      <key>ru</key>
+      <value>Ширина видео, которая будет установлена по умолчанию при конвертации</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="000a6c99-8099-43de-8657-ba3dee7750d0">
+    <name>ЯзыкИнтерфейса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Язык интерфейса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ЯзыкиИнтерфейсаЭлектронныхКурсов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="669ac474-6945-434f-bb83-22108b642754">
+    <name>ТемаОформления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема оформления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ТемыОформленияЭлектронныхКурсов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <forms uuid="054ac4e5-04a5-43f3-b406-82b42f779740">
+    <name>ФормаРедактированияНастроек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма редактирования настроек</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

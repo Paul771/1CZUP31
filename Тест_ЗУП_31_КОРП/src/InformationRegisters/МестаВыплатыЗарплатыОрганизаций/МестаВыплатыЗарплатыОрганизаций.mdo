@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="811ab18f-b9ba-4d3f-8dc1-3c72d02355ec">
+  <producedTypes>
+    <selectionType typeId="6b1ae753-f6ed-4169-add2-36968c5212a2" valueTypeId="0dc32c1c-1bdf-4cdc-bcb5-be81fbd18c5c"/>
+    <listType typeId="009ce850-a3a8-4dbb-b462-1716bb0c7383" valueTypeId="6fc9c301-809a-47db-88ae-4d546de6a9a9"/>
+    <managerType typeId="4979906f-d785-48b1-a839-cb4c1cb5ccd1" valueTypeId="50719484-56b1-40bf-8a5c-45bebbc1b4f1"/>
+    <recordSetType typeId="712778b0-237a-4f12-82b0-39527339d60d" valueTypeId="034bb937-6835-4489-97cb-1f806cb6c3a9"/>
+    <recordKeyType typeId="3cb61357-3d0b-4a9e-b1f4-20adb81a757e" valueTypeId="15dda1ae-dc25-476d-b5d2-11395869fbbc"/>
+    <recordType typeId="94e7860f-bb28-47da-bba8-b2be0dace10f" valueTypeId="4129f6a1-a4ea-4cae-b0a8-153976a8917f"/>
+    <recordManagerType typeId="f3756fc6-fcad-4a62-a0a8-d7e9713cecef" valueTypeId="de98022a-4f0a-4f0c-8ee2-264da213058a"/>
+  </producedTypes>
+  <name>МестаВыплатыЗарплатыОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Места выплаты зарплаты организаций</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8972d49c-6eb9-4fa2-8bdf-fbe3945dd30d">
+    <name>Вид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ВидыМестВыплатыЗарплаты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cefa3974-0b96-4520-86b9-405eb952f948">
+    <name>МестоВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место выплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DefinedType.МестоВыплатыЗарплатыСотрудников</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="32690f67-39ed-4fe9-9701-c6e54a7c6abf">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

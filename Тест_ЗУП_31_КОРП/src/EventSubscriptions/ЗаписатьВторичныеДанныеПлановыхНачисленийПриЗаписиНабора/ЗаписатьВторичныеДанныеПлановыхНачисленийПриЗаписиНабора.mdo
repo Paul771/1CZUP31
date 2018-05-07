@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="82d9b394-3fdf-41c3-9b34-4b10b638a9a4">
+  <name>ЗаписатьВторичныеДанныеПлановыхНачисленийПриЗаписиНабора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Записать вторичные данные плановых начислений при записи набора</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.ГрафикРаботыСотрудников</types>
+    <types>InformationRegisterRecordSet.ЗначенияПериодическихПоказателейРасчетаЗарплатыСотрудников</types>
+    <types>InformationRegisterRecordSet.ПлановыеНачисления</types>
+    <types>InformationRegisterRecordSet.КадроваяИсторияСотрудников</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.ПлановыеНачисленияСотрудниковСобытия.ЗаписатьВторичныеДанныеПлановыхНачисленийПриЗаписиНабора</handler>
+</mdclass:EventSubscription>

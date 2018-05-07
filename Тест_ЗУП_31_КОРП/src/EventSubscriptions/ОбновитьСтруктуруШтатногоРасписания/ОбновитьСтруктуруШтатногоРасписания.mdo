@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c24ae7dd-a8b8-43b1-929b-86e56f6b56ec">
+  <name>ОбновитьСтруктуруШтатногоРасписания</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обновить структуру штатного расписания</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.ШтатноеРасписание</types>
+    <types>CatalogObject.ПодразделенияОрганизаций</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.УправлениеШтатнымРасписанием.ОбновитьСтруктуруШтатногоРасписанияПриЗаписи</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="00db49b1-48a9-4847-8ca0-b88ff731c3cd">
+  <producedTypes>
+    <objectType typeId="5be36a49-f72a-4228-950f-4e554c796b9a" valueTypeId="43899843-2ca2-40dd-8f95-5e4805f3b2d2"/>
+    <managerType typeId="5f84071c-e252-4807-92d1-a667fb27f260" valueTypeId="1734338d-faee-4da1-885a-9eb788af74a2"/>
+  </producedTypes>
+  <name>АнализНДФЛКВозврату</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ НДФЛ к возврату</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.АнализНДФЛКВозврату.Form.Форма</defaultForm>
+  <attributes uuid="6efc1d9c-b82a-4a03-95c7-9735c7288d3c">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="15bedd88-1e4a-4f56-a3ec-e233d5624b3a">
+    <name>РезультатАнализаПоОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат анализа по организации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f1e2ddf0-37bd-4ed8-b04e-bf4ee6fd34ac">
+    <name>РезультатыАнализаПоСотрудникам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результаты анализа по сотрудникам</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="dbc6c7bf-95c2-4917-ad68-00c28a7f771b">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

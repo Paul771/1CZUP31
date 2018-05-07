@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="613fedc5-6f39-4693-b672-dc46fa2631f5">
+  <name>ЗапретИзмененияИспользованияКадровогоУчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Запрет изменения использования кадрового учета</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>ConstantValueManager.ИспользоватьКадровыйУчет</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ЗарплатаКадрыРасширенныйСобытия.ЗапретИзмененияИспользованияКадровогоУчетаПередЗаписью</handler>
+</mdclass:EventSubscription>

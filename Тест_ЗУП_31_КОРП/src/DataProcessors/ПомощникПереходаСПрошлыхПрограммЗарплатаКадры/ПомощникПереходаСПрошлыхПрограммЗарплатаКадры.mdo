@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0edf7b10-de7d-4f26-bcdb-1abc3c5f5b8e">
+  <producedTypes>
+    <objectType typeId="8d59bb84-4c20-4bb6-9d6e-9178767c62f6" valueTypeId="b396637c-1b2e-46a7-88ce-e85a43ccd33c"/>
+    <managerType typeId="896b9d35-4e3f-42b8-9245-d85ed8dc8a84" valueTypeId="badf7a51-4675-41e1-9994-396fb5dd2902"/>
+  </producedTypes>
+  <name>ПомощникПереходаСПрошлыхПрограммЗарплатаКадры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Помощник перехода с прошлых программ</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПомощникПереходаСПрошлыхПрограммЗарплатаКадры.Form.ФормаПомощника</defaultForm>
+  <attributes uuid="8cb104a3-de63-42c1-9cdd-b49702892864">
+    <name>МесяцНачалаЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц начала эксплуатации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="1cf19032-9504-4eef-b465-8736b17a635b">
+    <name>ФормаПомощника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма помощника</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="9e7f9e26-fea6-4a35-8d93-c346af6089e2">
+    <name>ПравилаОбслуживанияВыгрузкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правила обслуживания выгрузки данных</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="9ae5d190-8171-4b67-ae95-715e8001242e">
+    <name>СписокОшибок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список ошибок</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+  <templates uuid="4c56f534-b230-4f1e-b400-d35eb07aaff3">
+    <name>ОбработкаВыгрузкиЗаписиСтажаПФР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработка выгрузки записи стажа ПФР</value>
+    </synonym>
+    <comment></comment>
+    <templateType>BinaryData</templateType>
+  </templates>
+  <templates uuid="65e784ba-5949-42f3-b9ad-8497ddafa6a6">
+    <name>ПравилаЗагрузкиДанныхЗаписиСтажаПФР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правила загрузки данных записи стажа ПФР</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <commands uuid="e8eb1e29-2311-4ca7-b323-955d101cf854">
+    <name>ПереходСПрошлыхПрограмм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перенос сведений о стаже ПФР из прошлых программ</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelSeeAlso</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

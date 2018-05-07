@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="63a6c403-d718-44f8-980b-bdb6d798a8ca">
+  <producedTypes>
+    <selectionType typeId="589b488e-97c1-428f-969c-aba4ee3e0f65" valueTypeId="f4529e9d-c613-492a-9060-02a833f1587c"/>
+    <listType typeId="edbc95ad-80bb-4fa5-a64e-18a9e850746a" valueTypeId="9aba0fb3-b26f-48f2-aeb8-e535aff45b2d"/>
+    <managerType typeId="1a5dc4ae-d0c9-4eef-acce-baf9fb47924c" valueTypeId="b0e21d3f-ecb8-4bf9-bce6-6fbda672db0f"/>
+    <recordSetType typeId="f6418127-87ef-4b53-801f-4f785efda628" valueTypeId="da1b9ac8-6a79-40c1-869c-44c49ac1582a"/>
+    <recordKeyType typeId="7126e96e-16e9-4da8-be33-b9ea1db508c1" valueTypeId="7544c511-67ee-48f4-9df3-31f4f5f11e0a"/>
+    <recordType typeId="63a60de0-e9b3-4c68-8ca0-acce42fd93b9" valueTypeId="8ff26bcd-6914-4e8a-b69d-9d72831f0db5"/>
+    <recordManagerType typeId="e8586014-e742-42a0-8e39-1bf20cfdde17" valueTypeId="e82a0506-0970-478b-8ca5-920e95552ed8"/>
+  </producedTypes>
+  <name>РабочиеМестаУдержаний</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рабочие места удержаний</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3fa433bb-6cc1-48ef-b1af-4f77115ad654">
+    <name>РабочееМесто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочее место</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="da48161c-2d7c-4f45-b6d4-a54e77979e46">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="82028a76-5350-4044-ac08-51ba88cc9ac6">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ПрикреплениеКПрограммамМедицинскогоСтрахования</types>
+      <types>DocumentRef.УдержаниеВСчетРасчетовПоПрочимОперациям</types>
+      <types>DocumentRef.УдержаниеДобровольныхВзносовВНПФ</types>
+      <types>DocumentRef.ДанныеДляРасчетаЗарплаты</types>
+      <types>DocumentRef.УдержаниеПрофсоюзныхВзносов</types>
+      <types>DocumentRef.УдержаниеДобровольныхСтраховыхВзносов</types>
+      <types>DocumentRef.ПостоянноеУдержаниеВПользуТретьихЛиц</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

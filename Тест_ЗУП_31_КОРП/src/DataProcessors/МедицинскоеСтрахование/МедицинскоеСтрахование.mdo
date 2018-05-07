@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b251273e-0d8c-4b6f-a5a5-924101857599">
+  <producedTypes>
+    <objectType typeId="a4090eac-513b-4fb6-bd81-27f38993c57b" valueTypeId="c897d6af-55a4-4b41-a473-2f385e5554f9"/>
+    <managerType typeId="b22eaaa5-f61d-4c44-9a80-1b4bc1a0ec36" valueTypeId="6b38571f-c140-47cc-ae74-c55920c142c2"/>
+  </producedTypes>
+  <name>МедицинскоеСтрахование</name>
+  <synonym>
+    <key>ru</key>
+    <value>Медицинское страхование</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.МедицинскоеСтрахование.Form.Форма</defaultForm>
+  <attributes uuid="66f77ae6-4aac-4b8d-88ae-629a91f92116">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="566a42c9-d136-40d6-b310-fc1a772b8753">
+    <name>СтраховаяКомпания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страховая компания</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="2e23b890-0921-4848-9262-83e0628163aa">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="71486e46-4377-4d34-81da-045c443b326a">
+    <name>ДатаНачалаСтрахования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период страхования с</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8b515e75-e983-4126-8e7b-e971abce5668">
+    <name>ДатаОкончанияСтрахования</name>
+    <synonym>
+      <key>ru</key>
+      <value>по</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="d5127163-a728-47ce-a23d-494afa52f4ff">
+    <producedTypes>
+      <objectType typeId="f382fd79-77fd-42f8-8873-5a6e2f0db990" valueTypeId="33dc771b-b3e9-48d4-a1ab-af7719bab027"/>
+      <rowType typeId="7c20448f-4167-409b-9f7b-5874b30149dc" valueTypeId="a8de1c84-5584-45cb-8dac-cd14d167692f"/>
+    </producedTypes>
+    <name>ПрикреплениеСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прикрепление сотрудников</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2c2fb402-c8aa-4f21-89f3-793bedfb6248">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Сотрудники</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.ГоловнаяОрганизация</name>
+        <field>DataProcessor.МедицинскоеСтрахование.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cb9df3f4-bf7b-4009-a640-d9ba9fb84fd6">
+      <name>Команда</name>
+      <synonym>
+        <key>ru</key>
+        <value>Команда</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="a93aad47-3a7e-4f08-b33d-4c1238fb6fcf">
+      <name>ДокументПрикрепления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ прикрепления</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ПрикреплениеКПрограммамМедицинскогоСтрахования</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="05d26477-24d9-49dd-9af5-7e7af1c925dc">
+      <name>НомерСтрокиДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер строки документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6a613e99-5b8e-42e8-a4e2-c3f2c0835726">
+      <name>ПрикреплениеКПрограммеСтрахованияОтложено</name>
+      <synonym>
+        <key>ru</key>
+        <value>Прикрепление к программе страхования отложено</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f7548193-a120-40ad-a0a8-3ac01256ed48">
+    <producedTypes>
+      <objectType typeId="65fd83a3-fc75-4f38-80b2-fedd0723cbb2" valueTypeId="6149c4d6-c137-4808-ab93-427bef47c617"/>
+      <rowType typeId="646be7f2-3323-4071-90cb-2ea856697fcb" valueTypeId="a423cf67-231f-4b7d-9e6b-477c32d1c0c7"/>
+    </producedTypes>
+    <name>ОткреплениеСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Открепление сотрудников</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a6efe47a-ebc3-482f-b9c8-8669487d14e5">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.Сотрудники</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.ГоловнаяОрганизация</name>
+        <field>DataProcessor.МедицинскоеСтрахование.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a016f1d4-7168-4cf5-b2ec-23601e37ff75">
+      <name>Команда</name>
+      <synonym>
+        <key>ru</key>
+        <value>Команда</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="cd514902-76bd-4548-b61a-a411a7279480">
+      <name>ДатаОткрепления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата открепления</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4517729b-c7e1-4929-9af8-f9f66e82fe0c">
+      <name>ДокументОткрепления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ открепления</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>DocumentRef.ОткреплениеОтПрограммМедицинскогоСтрахования</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9b372c6d-c7a7-4068-bc51-6302d242c95e">
+      <name>НомерСтрокиДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер строки документа</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8cb76393-7107-42d9-bdb7-f27812366a29">
+      <name>ОткреплениеОтПрограммыСтрахованияОтложено</name>
+      <synonym>
+        <key>ru</key>
+        <value>Открепление от программы страхования отложено</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="479500f5-75ac-47d9-930c-f094f2c0ec14">
+    <name>ФормаНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="93dde580-6086-4067-9d49-050221712416">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="37420d6c-0d9a-4ff5-84f9-6e0c54fa8398">
+    <name>ФормаДокументУдостоверяющийЛичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документ удостоверяющий личность</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="a70ba153-716f-4d10-8ba0-0717dbb1f9c9">
+    <name>МедицинскоеСтрахование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Медицинское страхование</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3a417d51-8b40-406e-9e8a-cce0c1c64c2e">
+  <name>ПроверитьНеобходимостьПерерасчетаСреднегоЗаработкаОбщий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить необходимость перерасчета среднего заработка общий</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ДанныеОНачисленияхДляРасчетаСреднегоЗаработкаОбщий</types>
+    <types>AccumulationRegisterRecordSet.ДанныеОВремениДляРасчетаСреднегоОбщий</types>
+    <types>InformationRegisterRecordSet.КоэффициентИндексацииЗаработка</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.УчетСреднегоЗаработкаСобытия.ПроверитьНеобходимостьПерерасчетаСреднегоЗаработкаОбщий</handler>
+</mdclass:EventSubscription>

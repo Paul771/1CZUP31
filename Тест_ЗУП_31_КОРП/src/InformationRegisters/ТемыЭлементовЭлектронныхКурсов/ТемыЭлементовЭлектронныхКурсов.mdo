@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4ce32c30-5aff-41ac-b3b3-5e60722d52fa">
+  <producedTypes>
+    <selectionType typeId="33609512-f545-4fa4-9052-e692d1cfdab7" valueTypeId="f40f9ee3-cdde-4db5-b8d0-3403fcab4c6d"/>
+    <listType typeId="dad11330-6c7d-4eaa-ba88-71d9ec1ce167" valueTypeId="cd953f9f-3088-4f82-af2a-89cd1decb5b5"/>
+    <managerType typeId="8f6ed314-4475-4647-a58c-cfd89f32a088" valueTypeId="2e6fdc42-2fc5-47e3-b7a6-888f8fba7799"/>
+    <recordSetType typeId="57f09c98-bb96-4820-a60e-a561421913ee" valueTypeId="67ab9532-40b2-4404-8ac3-9ae0be4ee90e"/>
+    <recordKeyType typeId="6e77b1c9-f37b-48e7-a4a0-0767b0e14832" valueTypeId="f92a3f5d-4993-4d36-b21d-2e26f0a36db7"/>
+    <recordType typeId="fdea92df-4a30-4f2d-b0a2-1ec2915365bf" valueTypeId="74356b82-4bfa-4a70-82b2-43e93970df78"/>
+    <recordManagerType typeId="3f03dfee-d95e-4f62-a385-ad74e8c407b0" valueTypeId="d3e5bff7-fada-4e35-aeb1-a29dd886ebb7"/>
+  </producedTypes>
+  <name>ТемыЭлементовЭлектронныхКурсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Темы элементов электронных курсов</value>
+  </synonym>
+  <comment></comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Тема рубрикатора</value>
+  </recordPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Темы рубрикатора</value>
+  </listPresentation>
+  <attributes uuid="bf54a54d-ec15-4237-8f61-5fc2b1ed4e72">
+    <name>ДатаИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата изменения записи</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9ee38179-3197-4c36-ad07-aad6e5c24fcf">
+    <name>ВесВопроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вес вопроса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вес вопроса в рубрике</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:StringValue">
+      <value>0</value>
+    </minValue>
+    <maxValue xsi:type="core:StringValue">
+      <value>100</value>
+    </maxValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>1</value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="3c84a2cf-2840-465c-9dbd-742284a29abe">
+    <name>СсылкаНаЭлементКурса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка на элемент курса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ТеорияЭлектронныхКурсов</types>
+      <types>CatalogRef.ТерминыЭлектронныхГлоссариев</types>
+      <types>CatalogRef.УдалитьТекстыЭлектронныхКурсов</types>
+      <types>CatalogRef.ЭлектронныеГлоссарии</types>
+      <types>CatalogRef.ЭлектронныеРесурсы</types>
+      <types>CatalogRef.ЭлектронныеКурсы</types>
+      <types>CatalogRef.ЭлементыЭлектронныхРесурсов</types>
+      <types>CatalogRef.ТестовыеВопросы</types>
+      <types>CatalogRef.ЭлектронныеТесты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Элемент рубрики</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="de357985-3ed4-4dce-bbf1-743fe030c9cc">
+    <name>Рубрикатор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рубрикатор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЭлектронныеРубрикаторы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Рубрикатор объекта</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+  </dimensions>
+  <dimensions uuid="7a43e983-1645-4d0f-9605-8b0e82d89c7e">
+    <name>ЭлементРубрикатора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема рубрикатора</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ТемыЭлектронныхРубрикаторов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Рубрика объекта</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.ТемыЭлементовЭлектронныхКурсов.Dimension.Рубрикатор</field>
+    </choiceParameterLinks>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="83b4312b-8941-4145-acfd-8ac570c7c218">
+    <name>Поставщик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПоставщикиЭлектронныхКурсов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Разработчик контента</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <commands uuid="848465de-faaf-4135-9e3d-258fc2a67e6d">
+    <name>РубрикиОбъекта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Темы элемента</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.ТеорияЭлектронныхКурсов</types>
+      <types>CatalogRef.ТерминыЭлектронныхГлоссариев</types>
+      <types>CatalogRef.УдалитьТекстыЭлектронныхКурсов</types>
+      <types>CatalogRef.ЭлектронныеГлоссарии</types>
+      <types>CatalogRef.ЭлектронныеРесурсы</types>
+      <types>CatalogRef.ЭлементыЭлектронныхРесурсов</types>
+      <types>CatalogRef.ЭлектронныеТесты</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="5468065a-39e2-4547-9df7-9e9d718b831c">
+    <name>РубрикиЭлектронногоРесурса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Темы электронного ресурса</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.ЭлектронныеКурсы</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="3f3e44c4-a460-453e-8b40-18137626bcf3">
+    <name>РубрикиВопроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Темы вопроса</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.ТестовыеВопросы</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:InformationRegister>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="533294f3-641a-4352-b507-703d6b396fcc">
+  <name>ПроверитьИзменениеЗависимыхСтажей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить изменение зависимых стажей</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.Должности</types>
+    <types>CatalogObject.ШтатноеРасписание</types>
+    <types>CatalogObject.ТерриторииВыполненияРабот</types>
+    <types>CatalogObject.ПодразделенияОрганизаций</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.АвтоматическийРасчетСтажейФизическихЛиц.ПроверитьИзменениеЗависимыхСтажей</handler>
+</mdclass:EventSubscription>

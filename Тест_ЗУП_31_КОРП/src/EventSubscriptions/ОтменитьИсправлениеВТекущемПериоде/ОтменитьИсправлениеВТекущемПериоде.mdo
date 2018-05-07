@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8cf7a01f-2aab-46d6-9a29-2ec9f6a8a790">
+  <name>ОтменитьИсправлениеВТекущемПериоде</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отменить исправление в текущем периоде</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.ОплатаПоСреднемуЗаработку</types>
+    <types>DocumentObject.Премия</types>
+    <types>DocumentObject.ОтпускБезСохраненияОплаты</types>
+    <types>DocumentObject.БольничныйЛист</types>
+    <types>DocumentObject.Командировка</types>
+    <types>DocumentObject.Отпуск</types>
+    <types>DocumentObject.СторнированиеНачислений</types>
+    <types>DocumentObject.ПрогулНеявка</types>
+    <types>DocumentObject.ОтпускПоУходуЗаРебенком</types>
+  </source>
+  <event>UndoPosting</event>
+  <handler>CommonModule.ИсправлениеДокументовЗарплатаКадры.ОтменитьИсправлениеВТекущемПериоде</handler>
+</mdclass:EventSubscription>

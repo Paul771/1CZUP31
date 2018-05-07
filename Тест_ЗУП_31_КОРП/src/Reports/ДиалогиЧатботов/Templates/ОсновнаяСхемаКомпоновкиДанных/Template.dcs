@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСообщения</dataPath>
+			<field>ДатаСообщения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Чат</dataPath>
+			<field>Чат</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТекстСообщения</dataPath>
+			<field>ТекстСообщения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Чатбот</dataPath>
+			<field>Чатбот</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Собеседник</dataPath>
+			<field>Собеседник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Собеседник</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отправитель</dataPath>
+			<field>Отправитель</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПоследнегоСообщения</dataPath>
+			<field>ДатаПоследнегоСообщения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последнего сообщения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	АктуальныеЧаты.Чат КАК Чат,
+	МАКСИМУМ(АктуальныеЧаты.ДатаПоследнегоСообщения) КАК ДатаПоследнегоСообщения
+ПОМЕСТИТЬ ВТАктуальныеЧаты
+ИЗ
+	(ВЫБРАТЬ РАЗЛИЧНЫЕ
+		ПринятыеСообщенияЧатботов.Чат КАК Чат,
+		МАКСИМУМ(ПринятыеСообщенияЧатботов.ДатаСообщения) КАК ДатаПоследнегоСообщения
+	ИЗ
+		РегистрСведений.ПринятыеСообщенияЧатботов КАК ПринятыеСообщенияЧатботов
+	{ГДЕ
+		(ПринятыеСообщенияЧатботов.ДатаСообщения МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)}
+	
+	СГРУППИРОВАТЬ ПО
+		ПринятыеСообщенияЧатботов.Чат
+	
+	ОБЪЕДИНИТЬ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		ОтправленныеСообщенияЧатботов.Чат,
+		МАКСИМУМ(ОтправленныеСообщенияЧатботов.ДатаСообщения)
+	ИЗ
+		РегистрСведений.ОтправленныеСообщенияЧатботов КАК ОтправленныеСообщенияЧатботов
+	{ГДЕ
+		(ОтправленныеСообщенияЧатботов.ДатаСообщения МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода)}
+	
+	СГРУППИРОВАТЬ ПО
+		ОтправленныеСообщенияЧатботов.Чат) КАК АктуальныеЧаты
+
+СГРУППИРОВАТЬ ПО
+	АктуальныеЧаты.Чат
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ПринятыеСообщенияЧатботов.Чат КАК Чат,
+	ПринятыеСообщенияЧатботов.Отправитель КАК Собеседник
+ПОМЕСТИТЬ ВТСобеседникиЧатов
+ИЗ
+	РегистрСведений.ПринятыеСообщенияЧатботов КАК ПринятыеСообщенияЧатботов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТАктуальныеЧаты КАК АктуальныеЧаты
+		ПО (АктуальныеЧаты.Чат = ПринятыеСообщенияЧатботов.Чат)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПринятыеСообщенияЧатботов.Чатбот КАК Чатбот,
+	ПринятыеСообщенияЧатботов.Чат КАК Чат,
+	ПринятыеСообщенияЧатботов.Отправитель КАК Отправитель,
+	ПринятыеСообщенияЧатботов.Отправитель КАК Собеседник,
+	ПринятыеСообщенияЧатботов.ДатаСообщения КАК ДатаСообщения,
+	ПринятыеСообщенияЧатботов.ТекстСообщения КАК ТекстСообщения,
+	АктуальныеЧаты.ДатаПоследнегоСообщения КАК ДатаПоследнегоСообщения
+ИЗ
+	РегистрСведений.ПринятыеСообщенияЧатботов КАК ПринятыеСообщенияЧатботов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТАктуальныеЧаты КАК АктуальныеЧаты
+		ПО (АктуальныеЧаты.Чат = ПринятыеСообщенияЧатботов.Чат)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ОтправленныеСообщенияЧатботов.Чатбот,
+	ОтправленныеСообщенияЧатботов.Чат,
+	ОтправленныеСообщенияЧатботов.Чатбот,
+	СобеседникиЧатов.Собеседник,
+	ОтправленныеСообщенияЧатботов.ДатаСообщения,
+	ОтправленныеСообщенияЧатботов.ТекстСообщения,
+	АктуальныеЧаты.ДатаПоследнегоСообщения
+ИЗ
+	РегистрСведений.ОтправленныеСообщенияЧатботов КАК ОтправленныеСообщенияЧатботов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТАктуальныеЧаты КАК АктуальныеЧаты
+		ПО (АктуальныеЧаты.Чат = ОтправленныеСообщенияЧатботов.Чат)
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТСобеседникиЧатов КАК СобеседникиЧатов
+		ПО (СобеседникиЧатов.Чат = ОтправленныеСообщенияЧатботов.Чат)
+
+УПОРЯДОЧИТЬ ПО
+	ДатаПоследнегоСообщения УБЫВ,
+	Чат,
+	ДатаСообщения</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ДиалогиЧатботов</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Диалоги чатботов</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Отправитель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаСообщения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТекстСообщения</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Чатбот</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>8abd6536-2057-4d42-b82c-531c2873b9e1</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Чат</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>645b6bc7-d124-4b51-b73b-cccb040584e3</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisWeek</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>efc0d2b6-73c2-46d4-ae55-427ab21a2514</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Чатбот</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Чат</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

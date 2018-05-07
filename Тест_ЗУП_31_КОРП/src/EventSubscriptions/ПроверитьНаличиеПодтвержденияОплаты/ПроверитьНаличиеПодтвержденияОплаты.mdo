@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bb868685-0435-48bb-b121-3d479d25c61a">
+  <name>ПроверитьНаличиеПодтвержденияОплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить наличие подтверждения оплаты</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DefinedType.ОснованиеВыплатыДоходовОбъект</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.УчетФактическиПолученныхДоходовРасширенный.ПроверитьНаличиеПодтвержденияОплатыПриЗаписи</handler>
+</mdclass:EventSubscription>

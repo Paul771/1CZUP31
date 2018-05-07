@@ -1,0 +1,1697 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetUnion">
+		<name>Основной</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапРаботыСКандидатом.ДатаНачалаЭтапа</dataPath>
+			<field>ЭтапРаботыСКандидатом.ДатаНачалаЭтапа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапРаботыСКандидатом.ДлительностьЭтапа</dataPath>
+			<field>ЭтапРаботыСКандидатом.ДлительностьЭтапа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Средняя длительность этапа (дней)</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧДЦ='1'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапРаботыСКандидатом</dataPath>
+			<field>ЭтапРаботыСКандидатом</field>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Кандидат</dataPath>
+			<field>Кандидат</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапРаботыСКандидатом.ДатаОкончанияЭтапа</dataPath>
+			<field>ЭтапРаботыСКандидатом.ДатаОкончанияЭтапа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вакансия</dataPath>
+			<field>Вакансия</field>
+			<presentationExpression>ВЫБОР КОГДА ЗначениеЗаполнено(Вакансия) ТОГДА Вакансия Иначе НСтр("ru = 'Вакансия не указана'") КОНЕЦ</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизическоеЛицо</dataPath>
+			<field>ФизическоеЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физическое лицо</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ЭтапВакансии</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап вакансии</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ПериодВакансии</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период вакансии</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапВакансии.Состояние</dataPath>
+			<field>ЭтапВакансии.Состояние</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодВакансии.НачалоПериода</dataPath>
+			<field>ПериодВакансии.НачалоПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период вакансии.Начало периода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодВакансии.КонецПериода</dataPath>
+			<field>ПериодВакансии.КонецПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период вакансии.Конец периода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодВакансии.Закрыт</dataPath>
+			<field>ПериодВакансии.Закрыт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период вакансии.Закрыт</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапВакансии.Длительность</dataPath>
+			<field>ЭтапВакансии.Длительность</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап вакансии.Длительность</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапВакансии.Возобновление</dataPath>
+			<field>ЭтапВакансии.Возобновление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап вакансии.Возобновление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапВакансии.ДатаУстановки</dataPath>
+			<field>ЭтапВакансии.ДатаУстановки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап вакансии.Дата установки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<item xsi:type="DataSetQuery">
+			<name>Кандидаты</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапРаботыСКандидатом.ДатаНачалаЭтапа</dataPath>
+				<field>ДатаНачалаЭтапа</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапРаботыСКандидатом.ДлительностьЭтапа</dataPath>
+				<field>ДлительностьЭтапа</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Средняя длительность этапа (дней)</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">ЧДЦ='1'</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапРаботыСКандидатом</dataPath>
+				<field>ЭтапРаботы</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Кандидат</dataPath>
+				<field>Кандидат</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапРаботыСКандидатом.ДатаОкончанияЭтапа</dataPath>
+				<field>ДатаОкончанияЭтапа</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Вакансия</dataPath>
+				<field>Вакансия</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вакансия</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ФизическоеЛицо</dataPath>
+				<field>ФизическоеЛицо</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Физическое лицо</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Кандидаты.Ссылка КАК Кандидат,
+	РаботаСКандидатами.ЭтапРаботы КАК ЭтапРаботы,
+	РаботаСКандидатами.Период КАК ДатаНачалаЭтапа,
+	МИНИМУМ(ЕСТЬNULL(РаботаСКандидатамиОкончанияЭтапов.Период, РаботаСКандидатами.Кандидат.ДатаРешения)) КАК ДатаОкончанияЭтапа
+ПОМЕСТИТЬ ЭтапыРаботы
+ИЗ
+	Справочник.Кандидаты КАК Кандидаты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РаботаСКандидатами КАК РаботаСКандидатами
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.РаботаСКандидатами КАК РаботаСКандидатамиОкончанияЭтапов
+			ПО РаботаСКандидатами.Кандидат = РаботаСКандидатамиОкончанияЭтапов.Кандидат
+				И РаботаСКандидатами.Период &lt; РаботаСКандидатамиОкончанияЭтапов.Период
+				И (РаботаСКандидатами.Кандидат.ДатаРешения &gt;= РаботаСКандидатамиОкончанияЭтапов.Период
+					ИЛИ РаботаСКандидатами.Кандидат.ДатаРешения = ДАТАВРЕМЯ(1, 1, 1))
+		ПО (РаботаСКандидатами.Кандидат = Кандидаты.Ссылка)
+ГДЕ
+	Кандидаты.ДатаРегистрации МЕЖДУ &amp;НачалоПериода И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И НЕ Кандидаты.ПометкаУдаления
+
+СГРУППИРОВАТЬ ПО
+	Кандидаты.Ссылка,
+	РаботаСКандидатами.ЭтапРаботы,
+	РаботаСКандидатами.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЭтапыРаботы.Кандидат КАК Кандидат,
+	ЭтапыРаботы.ЭтапРаботы КАК ЭтапРаботы,
+	РАЗНОСТЬДАТ(ЭтапыРаботы.ДатаНачалаЭтапа, ВЫБОР
+			КОГДА ЭтапыРаботы.ДатаОкончанияЭтапа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА &amp;ТекущаяДата
+			ИНАЧЕ ЭтапыРаботы.ДатаОкончанияЭтапа
+		КОНЕЦ, ДЕНЬ) КАК ДлительностьЭтапа,
+	ЭтапыРаботы.ДатаНачалаЭтапа КАК ДатаНачалаЭтапа,
+	ЭтапыРаботы.ДатаОкончанияЭтапа КАК ДатаОкончанияЭтапа,
+	ЭтапыРаботы.Кандидат.Вакансия КАК Вакансия,
+	ЭтапыРаботы.Кандидат.ФизическоеЛицо КАК ФизическоеЛицо
+ИЗ
+	ЭтапыРаботы КАК ЭтапыРаботы
+
+УПОРЯДОЧИТЬ ПО
+	Кандидат,
+	ДатаНачалаЭтапа</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>Вакансии</name>
+			<field xsi:type="DataSetFieldFolder">
+				<dataPath>ЭтапВакансии</dataPath>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Этап вакансии</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldFolder">
+				<dataPath>ПериодВакансии</dataPath>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период вакансии</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Вакансия</dataPath>
+				<field>Вакансия</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапВакансии.Состояние</dataPath>
+				<field>Состояние</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапВакансии.Длительность</dataPath>
+				<field>Длительность</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Этап вакансии.Длительность</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапВакансии.Возобновление</dataPath>
+				<field>Возобновление</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Этап вакансии.Возобновление</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодВакансии.НачалоПериода</dataPath>
+				<field>НачалоПериода</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период вакансии.Начало периода</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЭтапВакансии.ДатаУстановки</dataPath>
+				<field>ДатаУстановки</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Этап вакансии.Дата установки</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодВакансии.КонецПериода</dataPath>
+				<field>КонецПериода</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период вакансии.Конец периода</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодВакансии.Закрыт</dataPath>
+				<field>Закрыт</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период вакансии.Закрыт</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СостоянияВакансий.Вакансия КАК Вакансия,
+	МАКСИМУМ(СостоянияВакансийДо.Период) КАК ПериодДо,
+	СостоянияВакансий.Состояние КАК Состояние,
+	СостоянияВакансий.Период КАК Период,
+	МИНИМУМ(СостоянияВакансийПосле.Период) КАК ПериодПосле
+ПОМЕСТИТЬ СмежныеПериоды
+ИЗ
+	РегистрСведений.СостоянияВакансий КАК СостоянияВакансий
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияВакансий КАК СостоянияВакансийДо
+		ПО СостоянияВакансий.Вакансия = СостоянияВакансийДо.Вакансия
+			И СостоянияВакансий.Период &gt; СостоянияВакансийДо.Период
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияВакансий КАК СостоянияВакансийПосле
+		ПО СостоянияВакансий.Вакансия = СостоянияВакансийПосле.Вакансия
+			И СостоянияВакансий.Период &lt; СостоянияВакансийПосле.Период
+ГДЕ
+	НЕ СостоянияВакансий.Вакансия.ПометкаУдаления
+
+СГРУППИРОВАТЬ ПО
+	СостоянияВакансий.Вакансия,
+	СостоянияВакансий.Период,
+	СостоянияВакансий.Состояние
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СмежныеПериоды.Вакансия КАК Вакансия,
+	СмежныеПериоды.ПериодДо КАК ПериодДо,
+	СостоянияВакансийДо.Состояние КАК СостояниеДо,
+	СмежныеПериоды.Период КАК Период,
+	СмежныеПериоды.Состояние КАК Состояние,
+	СмежныеПериоды.ПериодПосле КАК ПериодПосле,
+	СостоянияВакансийПосле.Состояние КАК СостояниеПосле,
+	ВЫБОР
+		КОГДА СмежныеПериоды.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Открыта)
+				И СмежныеПериоды.ПериодПосле ЕСТЬ НЕ NULL 
+			ТОГДА РАЗНОСТЬДАТ(СмежныеПериоды.Период, ДОБАВИТЬКДАТЕ(СмежныеПериоды.ПериодПосле, СЕКУНДА, 1), ДЕНЬ)
+		ИНАЧЕ 0
+	КОНЕЦ КАК Длительность,
+	ВЫБОР
+		КОГДА СмежныеПериоды.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Открыта)
+			ТОГДА ЕСТЬNULL(СостоянияВакансийДо.Состояние, ЛОЖЬ) = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Приостановлена)
+	КОНЕЦ КАК Возобновление
+ПОМЕСТИТЬ СмежныеСостояния
+ИЗ
+	СмежныеПериоды КАК СмежныеПериоды
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияВакансий КАК СостоянияВакансийДо
+		ПО СмежныеПериоды.Вакансия = СостоянияВакансийДо.Вакансия
+			И СмежныеПериоды.ПериодДо = СостоянияВакансийДо.Период
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияВакансий КАК СостоянияВакансийПосле
+		ПО СмежныеПериоды.Вакансия = СостоянияВакансийПосле.Вакансия
+			И СмежныеПериоды.ПериодПосле = СостоянияВакансийПосле.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НачалаПолныхПериодов.Вакансия КАК Вакансия,
+	НачалаПолныхПериодов.Период КАК НачалоПериода,
+	МИНИМУМ(ОкончанияПолныхПериодов.Период) КАК КонецПериода
+ПОМЕСТИТЬ ПолныеПериоды
+ИЗ
+	СмежныеСостояния КАК НачалаПолныхПериодов
+		ЛЕВОЕ СОЕДИНЕНИЕ СмежныеСостояния КАК ОкончанияПолныхПериодов
+		ПО НачалаПолныхПериодов.Вакансия = ОкончанияПолныхПериодов.Вакансия
+			И НачалаПолныхПериодов.Период &lt; ОкончанияПолныхПериодов.Период
+			И (ОкончанияПолныхПериодов.СостояниеПосле ЕСТЬ NULL
+				ИЛИ ОкончанияПолныхПериодов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Отменена)
+				ИЛИ ОкончанияПолныхПериодов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Закрыта))
+ГДЕ
+	НачалаПолныхПериодов.Возобновление = ЛОЖЬ
+
+СГРУППИРОВАТЬ ПО
+	НачалаПолныхПериодов.Вакансия,
+	НачалаПолныхПериодов.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПолныеПериоды.Вакансия КАК Вакансия,
+	ПолныеПериоды.НачалоПериода КАК НачалоПериода,
+	ПолныеПериоды.КонецПериода КАК КонецПериода,
+	СмежныеСостояния.Состояние КАК Состояние,
+	СмежныеСостояния.Период КАК ДатаУстановки,
+	СмежныеСостояния.Длительность КАК Длительность,
+	СмежныеСостояния.Возобновление КАК Возобновление,
+	ВЫБОР
+		КОГДА КонечныеСостояния.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Закрыта)
+			ТОГДА ИСТИНА
+		КОГДА КонечныеСостояния.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Отменена)
+			ТОГДА ЛОЖЬ
+	КОНЕЦ КАК Закрыт
+ИЗ
+	ПолныеПериоды КАК ПолныеПериоды
+		ЛЕВОЕ СОЕДИНЕНИЕ СмежныеСостояния КАК СмежныеСостояния
+		ПО ПолныеПериоды.Вакансия = СмежныеСостояния.Вакансия
+			И (СмежныеСостояния.Период МЕЖДУ ПолныеПериоды.НачалоПериода И ПолныеПериоды.КонецПериода
+				ИЛИ СмежныеСостояния.Период &gt;= ПолныеПериоды.НачалоПериода
+					И ПолныеПериоды.КонецПериода ЕСТЬ NULL)
+		ЛЕВОЕ СОЕДИНЕНИЕ СмежныеСостояния КАК КонечныеСостояния
+		ПО ПолныеПериоды.Вакансия = КонечныеСостояния.Вакансия
+			И ПолныеПериоды.КонецПериода = КонечныеСостояния.Период
+ГДЕ
+	ПолныеПериоды.НачалоПериода &lt;= &amp;КонецПериода
+	И (ПолныеПериоды.КонецПериода &gt;= &amp;НачалоПериода
+			ИЛИ ПолныеПериоды.КонецПериода ЕСТЬ NULL)
+
+УПОРЯДОЧИТЬ ПО
+	Вакансия,
+	ДатаУстановки</query>
+		</item>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СотрудникиСтаж</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизическоеЛицо</dataPath>
+			<field>ФизическоеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГрадацияСтажа.НомерМесяцаСтажа</dataPath>
+			<field>КоличествоМесяцев</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Градация стажа.Номер месяца стажа</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<presentationExpression>"Достигшие стажа " + Строка(ГрадацияСтажа.НомерМесяцаСтажа) + " мес."</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник.СтажРаботы</dataPath>
+			<field>СтажРаботы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник.Стаж работы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник.ДатаПриема</dataPath>
+			<field>ДатаПриема</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник.Дата приема</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник.ДатаУвольнения</dataPath>
+			<field>ДатаУвольнения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник.Дата увольнения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник.ИспытательныйСрок</dataPath>
+			<field>ИспытательныйСрок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник.Испытательный срок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГрадацияСтажа</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Градация стажа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	0 КАК Цифра
+ПОМЕСТИТЬ Цифры
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	1
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	2
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	3
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	4
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	5
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	6
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	7
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	8
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	9
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Цифры.Цифра + Цифры10.Цифра * 10 + Цифры100.Цифра * 100 КАК КоличествоМесяцев
+ПОМЕСТИТЬ ВТМесяцы
+ИЗ
+	Цифры КАК Цифры
+		ЛЕВОЕ СОЕДИНЕНИЕ Цифры КАК Цифры10
+		ПО (ИСТИНА)
+		ЛЕВОЕ СОЕДИНЕНИЕ Цифры КАК Цифры100
+		ПО (ИСТИНА)
+ГДЕ
+	&amp;ОтборПоМесяцам
+{ГДЕ
+	(Цифры.Цифра + Цифры10.Цифра * 10 + Цифры100.Цифра * 100 В (&amp;Месяцы))}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;КонецПериода КАК Период,
+	Сотрудники.Ссылка КАК Сотрудник
+ПОМЕСТИТЬ ВТСотрудники
+ИЗ
+	Справочник.Сотрудники КАК Сотрудники
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЗНАЧЕНИЕ(Справочник.Сотрудники.ПустаяСсылка) КАК Сотрудник,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ДатаПриема,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ДатаУвольнения,
+	ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка) КАК ФизическоеЛицо,
+	ВТСотрудники.Период КАК Период
+ПОМЕСТИТЬ Представления_КадровыеДанныеСотрудников
+ИЗ
+	ВТСотрудники КАК ВТСотрудники
+ГДЕ
+	"ТолькоРазрешенные" = ИСТИНА
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КадровыеДанныеСотрудников.Сотрудник КАК Сотрудник,
+	КадровыеДанныеСотрудников.ФизическоеЛицо КАК ФизическоеЛицо,
+	ВЫБОР
+		КОГДА КадровыеДанныеСотрудников.ДатаПриема = ДАТАВРЕМЯ(1, 1, 1)
+				ИЛИ КадровыеДанныеСотрудников.ДатаПриема &gt; КадровыеДанныеСотрудников.ДатаУвольнения
+					И НЕ КадровыеДанныеСотрудников.ДатаУвольнения = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(КадровыеДанныеСотрудников.ДатаПриема, ВЫБОР
+					КОГДА КадровыеДанныеСотрудников.ДатаУвольнения = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА &amp;ТекущаяДата
+					ИНАЧЕ КадровыеДанныеСотрудников.ДатаУвольнения
+				КОНЕЦ, МЕСЯЦ)
+	КОНЕЦ КАК СтажРаботы,
+	ЕСТЬNULL(ИспытательныеСроки.ИспытательныйСрок, 0) КАК ИспытательныйСрок,
+	КадровыеДанныеСотрудников.ДатаПриема КАК ДатаПриема,
+	КадровыеДанныеСотрудников.ДатаУвольнения КАК ДатаУвольнения,
+	Месяцы.КоличествоМесяцев КАК КоличествоМесяцев
+ИЗ
+	Представления_КадровыеДанныеСотрудников КАК КадровыеДанныеСотрудников
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ПриемНаРаботу.Сотрудник КАК Сотрудник,
+			ПриемНаРаботу.ДлительностьИспытательногоСрока КАК ИспытательныйСрок
+		ИЗ
+			Документ.ПриемНаРаботу КАК ПриемНаРаботу
+		
+		ОБЪЕДИНИТЬ ВСЕ
+		
+		ВЫБРАТЬ
+			ПриемНаРаботуСпискомСотрудники.Сотрудник,
+			ПриемНаРаботуСпискомСотрудники.ДлительностьИспытательногоСрока
+		ИЗ
+			Документ.ПриемНаРаботуСписком.Сотрудники КАК ПриемНаРаботуСпискомСотрудники) КАК ИспытательныеСроки
+		ПО КадровыеДанныеСотрудников.Сотрудник = ИспытательныеСроки.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТМесяцы КАК Месяцы
+		ПО (ВЫБОР
+				КОГДА КадровыеДанныеСотрудников.ДатаПриема = ДАТАВРЕМЯ(1, 1, 1)
+					ТОГДА 0
+				ИНАЧЕ РАЗНОСТЬДАТ(КадровыеДанныеСотрудников.ДатаПриема, ВЫБОР
+							КОГДА КадровыеДанныеСотрудников.ДатаУвольнения = ДАТАВРЕМЯ(1, 1, 1)
+								ТОГДА &amp;ТекущаяДата
+							ИНАЧЕ КадровыеДанныеСотрудников.ДатаУвольнения
+						КОНЕЦ, МЕСЯЦ)
+			КОНЕЦ &gt;= Месяцы.КоличествоМесяцев)</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>Основной</sourceDataSet>
+		<destinationDataSet>СотрудникиСтаж</destinationDataSet>
+		<sourceExpression>ФизическоеЛицо</sourceExpression>
+		<destinationExpression>ФизическоеЛицо</destinationExpression>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>КоличествоЭтаповРаботыСКандидатом</dataPath>
+		<expression>ЭтапРаботыСКандидатом</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество этапов работы с кандидатом</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоКандидатов.Поступило</dataPath>
+		<expression>Кандидат</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество кандидатов.Поступило</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоКандидатов.Согласовано</dataPath>
+		<expression>ВЫБОР КОГДА Кандидат.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСогласования.Согласовано) ТОГДА Кандидат КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество кандидатов.Согласовано</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоВакансий.Открыто</dataPath>
+		<expression>ВЫБОР КОГДА ЭтапВакансии.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Открыта) И НЕ ЭтапВакансии.Возобновление И ЭтапВакансии.ДатаУстановки &gt;= &amp;НачалоПериода И ЭтапВакансии.ДатаУстановки &lt;= &amp;КонецПериода ТОГДА 1 КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество вакансий.Открыто</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоВакансий.Возобновлено</dataPath>
+		<expression>ВЫБОР КОГДА ЭтапВакансии.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Открыта) И ЭтапВакансии.Возобновление И ЭтапВакансии.ДатаУстановки &gt;= &amp;НачалоПериода И ЭтапВакансии.ДатаУстановки &lt;= &amp;КонецПериода ТОГДА 1 КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество вакансий.Возобновлено</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоВакансий.Отменено</dataPath>
+		<expression>ВЫБОР КОГДА ЭтапВакансии.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Отменена) И ЭтапВакансии.ДатаУстановки &gt;= &amp;НачалоПериода И ЭтапВакансии.ДатаУстановки &lt;= &amp;КонецПериода ТОГДА 1 КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество вакансий.Отменено</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоВакансий.Закрыто</dataPath>
+		<expression>ВЫБОР КОГДА ЭтапВакансии.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Закрыта) И ЭтапВакансии.ДатаУстановки &gt;= &amp;НачалоПериода И ЭтапВакансии.ДатаУстановки &lt;= &amp;КонецПериода ТОГДА 1 КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество вакансий.Закрыто</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоВакансий.Приостановлено</dataPath>
+		<expression>ВЫБОР КОГДА ЭтапВакансии.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Приостановлена) И ЭтапВакансии.ДатаУстановки &gt;= &amp;НачалоПериода И ЭтапВакансии.ДатаУстановки &lt;= &amp;КонецПериода ТОГДА 1 КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество вакансий.Приостановлено</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоКандидатов.Принято</dataPath>
+		<expression>Сотрудник</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество кандидатов.Принято</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Вакансия.СрокЗакрытия</dataPath>
+		<expression>ВЫБОР КОГДА Вакансия.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Закрыта) И ПериодВакансии.Закрыт = ИСТИНА И ЭтапВакансии.ДатаУстановки &lt;= &amp;КонецПериода ТОГДА ЭтапВакансии.Длительность КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вакансия.Срок закрытия</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ='1'</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Вакансия.Просрочка</dataPath>
+		<expression>ВЫБОР КОГДА Вакансия.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияВакансии.Закрыта)  И Вакансия.ПланируемаяДатаЗакрытия &lt; Вакансия.ДатаСостояния Тогда РАЗНОСТЬДАТ(Вакансия.ПланируемаяДатаЗакрытия, Вакансия.ДатаСостояния, "ДЕНЬ") ИНАЧЕ 0 КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вакансия.Просрочка</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧДЦ='1'</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоВакансий.ЗаголовокГруппы</dataPath>
+		<expression>"Количество вакансий"</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество вакансий.Заголовок группы</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоКандидатов.ЗаголовокГруппы</dataPath>
+		<expression>"Количество кандидатов"</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество кандидатов.Заголовок группы</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Вакансии.ЗаголовокГруппы</dataPath>
+		<expression>"Вакансии"</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вакансии.Заголовок группы</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ГрадацияСтажа.СотрудникДостигСтажа</dataPath>
+		<expression>ВЫБОР КОГДА ГрадацияСтажа.НомерМесяцаСтажа &gt; 0 ТОГДА Сотрудник КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Градация стажа.Сотрудник достиг стажа</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Вакансия.СрокЗакрытия</dataPath>
+		<expression>Среднее(ВычислитьВыражениеСГруппировкойМассив ("Сумма(Вакансия.СрокЗакрытия)", "Вакансия"))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Вакансия.Просрочка</dataPath>
+		<expression>Среднее(Вакансия.Просрочка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Вакансия.Просрочка</dataPath>
+		<expression>NULL</expression>
+		<group>Кандидат</group>
+		<group>Сотрудник</group>
+		<group>ФизическоеЛицо</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЭтаповРаботыСКандидатом</dataPath>
+		<expression>Количество(КоличествоЭтаповРаботыСКандидатом)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЭтапРаботыСКандидатом.ДлительностьЭтапа</dataPath>
+		<expression>Среднее(ЭтапРаботыСКандидатом.ДлительностьЭтапа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКандидатов.Поступило</dataPath>
+		<expression>Количество(Различные КоличествоКандидатов.Поступило)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКандидатов.Согласовано</dataPath>
+		<expression>Количество(Различные КоличествоКандидатов.Согласовано)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКандидатов.Принято</dataPath>
+		<expression>Количество(Различные КоличествоКандидатов.Принято)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВакансий.Возобновлено</dataPath>
+		<expression>Сумма(КоличествоВакансий.Возобновлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВакансий.Закрыто</dataPath>
+		<expression>Сумма(КоличествоВакансий.Закрыто)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВакансий.Открыто</dataPath>
+		<expression>Сумма(КоличествоВакансий.Открыто)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВакансий.Отменено</dataPath>
+		<expression>Сумма(КоличествоВакансий.Отменено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВакансий.Приостановлено</dataPath>
+		<expression>Сумма(КоличествоВакансий.Приостановлено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГрадацияСтажа.СотрудникДостигСтажа</dataPath>
+		<expression>Количество(ГрадацияСтажа.СотрудникДостигСтажа)</expression>
+	</totalField>
+	<parameter>
+		<name>ПериодОтбора</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отбора</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтбора.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтбора.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Месяцы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Месяцы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ОтборПоМесяцам</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отбор по месяцам</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+		<expression>ЗначениеЗаполнено(&amp;Месяцы)</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>СтатистикаПодбораПерсонала</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статистика подбора персонала</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Вакансия</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>eee3b10d-c34f-41b2-8f94-850f2691badf</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Вакансия.Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>397e8c25-59c8-445a-a0be-ab4235305b21</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Вакансия.Ответственный</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ac37b7f2-c769-4ba5-a276-5ec50310464e</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">КоличествоКандидатов.Согласовано</dcsset:left>
+					<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только одобренные кандидаты</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>6cc8658a-74dc-4d69-8e20-b7aece32e313</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Вакансия</dcsset:left>
+					<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Не учитывать кандидатов, вакансия для которых не указана</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>6d806a4d-c745-4e43-b415-276bcb667a57</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтбора</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>b090cd03-0aca-4662-a043-24743911e737</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Месяцы</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>f92dd3c8-5365-4327-a1a3-368d65797b04</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипЗаголовкаПолей</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionFieldsTitleType">Short</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЭтапРаботыСКандидатом</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЭтапРаботыСКандидатом.ДлительностьЭтапа</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Поступило</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проходило этап (кол-во кандидатов)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>КоличествоКандидатов.ЗаголовокГруппы</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Поступило</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Согласовано</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Принято</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:use>false</dcsset:use>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Вакансии.ЗаголовокГруппы</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Вакансия.СрокЗакрытия</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Средний срок закрытия (дней)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Вакансия.Просрочка</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Средняя просрочка (дней)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:use>false</dcsset:use>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>КоличествоВакансий.ЗаголовокГруппы</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Открыто</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Приостановлено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Возобновлено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Закрыто</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Отменено</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ГрадацияСтажа.НомерМесяцаСтажа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ГрадацияСтажа.СотрудникДостигСтажа</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>(кол-во сотрудников)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Вакансия.Подразделение</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Вакансия</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПоказателиЭффективностиПодбора</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показатели эффективности подбора персонала</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Вакансия</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>eee3b10d-c34f-41b2-8f94-850f2691badf</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Вакансия.Подразделение</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>397e8c25-59c8-445a-a0be-ab4235305b21</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Вакансия.Ответственный</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>ac37b7f2-c769-4ba5-a276-5ec50310464e</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отвественный</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">КоличествоКандидатов.Согласовано</dcsset:left>
+					<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только одобренные кандидаты</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>6cc8658a-74dc-4d69-8e20-b7aece32e313</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Вакансия</dcsset:left>
+					<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Не учитывать кандидатов, вакансия для которых не указана</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+					<dcsset:userSettingID>3ed5f8ff-392a-4817-a434-08cba5d6175a</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтбора</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>b090cd03-0aca-4662-a043-24743911e737</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТекущаяДата</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Месяцы</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">6</dcscor:value>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>f92dd3c8-5365-4327-a1a3-368d65797b04</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Античный</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипЗаголовкаПолей</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionFieldsTitleType">Short</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ЭтапРаботыСКандидатом</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ЭтапРаботыСКандидатом.ДлительностьЭтапа</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Поступило</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проходило этап (кол-во кандидатов)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>КоличествоКандидатов.ЗаголовокГруппы</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Поступило</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Согласовано</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоКандидатов.Принято</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Вакансии.ЗаголовокГруппы</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Вакансия.СрокЗакрытия</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Средний срок закрытия (дней)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Вакансия.Просрочка</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Средняя просрочка (дней)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>КоличествоВакансий.ЗаголовокГруппы</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Открыто</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Приостановлено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Возобновлено</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Закрыто</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>КоличествоВакансий.Отменено</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">11</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ГрадацияСтажа.НомерМесяцаСтажа</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ГрадацияСтажа.СотрудникДостигСтажа</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>(кол-во сотрудников)</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Вакансия.Ответственный</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

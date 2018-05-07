@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b84cf4f3-b324-44e0-a3ef-f17aa5241fb8">
+  <name>ОбновитьИспользованиеМногофункциональностиВДокументах</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обновить использование многофункциональности в документах</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.ПрофилиГруппДоступа</types>
+    <types>ConstantValueManager.ОграничиватьДоступНаУровнеЗаписей</types>
+    <types>CatalogObject.ГруппыВнешнихПользователей</types>
+    <types>CatalogObject.ГруппыДоступа</types>
+    <types>ConstantValueManager.ИспользоватьНачислениеЗарплаты</types>
+    <types>CatalogObject.ГруппыПользователей</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.РасчетЗарплатыРасширенныйСобытия.ОбновитьИспользованиеМногофункциональностиВДокументахПриЗаписи</handler>
+</mdclass:EventSubscription>

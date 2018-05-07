@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="674e96e8-050c-4cb0-8a89-ed422ed88c2e">
+  <producedTypes>
+    <selectionType typeId="566f38b8-4a5f-49f7-98d7-aaba10cafb2d" valueTypeId="b1c9c04d-cbda-42cd-b57e-c84d685b085b"/>
+    <listType typeId="e706cfab-3d1b-464c-bdea-e0627fb5ba42" valueTypeId="a666fffb-4a8c-4438-8831-aed39ff6a72f"/>
+    <managerType typeId="0a4e5421-a44a-4edf-8f23-d81b3d7c65b1" valueTypeId="06a457ba-390c-48e6-bf8d-d1ca2b6b9a41"/>
+    <recordSetType typeId="9695ed10-6c5a-438f-b277-75549d12f9c2" valueTypeId="6b662282-b960-4645-a472-84a184b3c7d6"/>
+    <recordKeyType typeId="e7e5e730-cf60-4fd7-9d7d-f0ae46764740" valueTypeId="8d5f7821-b300-4ccc-86a4-8f6b8b6a4a0d"/>
+    <recordType typeId="23be6d04-c087-4c3e-8bc5-578e391c4df6" valueTypeId="fa43304b-908f-4774-a4e3-c894f0ac91ea"/>
+    <recordManagerType typeId="8ab1c79d-e7a4-4f3c-a85e-125c35ba1383" valueTypeId="2b3d1b7d-317b-47fe-aa1f-ccb0b9b5027c"/>
+  </producedTypes>
+  <name>УдалитьОценкиВариантовОтвета</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) Оценки вариантов ответа</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Оценка варианта ответа</value>
+  </recordPresentation>
+  <extendedRecordPresentation>
+    <key>ru</key>
+    <value>Оценка варианта ответа</value>
+  </extendedRecordPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Оценки варианта ответа</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Оценки варианта ответа</value>
+  </extendedListPresentation>
+  <resources uuid="569e6000-7264-4550-8833-fce846068cf2">
+    <name>ОценкаОтвета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка ответа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="1a25f1f7-d8c0-4605-9fe6-eb61f62bd6d1">
+    <name>Компетенция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Компетенция</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.КомпетенцииПерсонала</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="76b18832-ce37-4958-ab65-8388250d3ea9">
+    <name>Вопрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вопрос</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ВопросыДляАнкетирования</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c564bef7-8326-4c0b-bbdb-5e78d9e03da7">
+    <name>ВариантОтвета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант ответа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВариантыОтветовАнкет</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="9ba57aaf-dc6d-47c2-9ca7-8e9ee085b82a">
+    <name>ФормаРедактированияОценок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма редактирования оценок</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

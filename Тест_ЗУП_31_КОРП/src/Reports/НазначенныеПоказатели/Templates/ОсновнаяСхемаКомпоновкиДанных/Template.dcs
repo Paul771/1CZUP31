@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Вес</dataPath>
+			<field>Вес</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Позиция</dataPath>
+			<field>Позиция</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Показатель</dataPath>
+			<field>Показатель</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВладелецПоказателя</dataPath>
+			<field>ВладелецПоказателя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец показателя</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтветственныйЗаВводПлана</dataPath>
+			<field>ОтветственныйЗаВводПлана</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МестоВводаЗначений</dataPath>
+			<field>МестоВводаЗначений</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтветственныйЗаВводФакта</dataPath>
+			<field>ОтветственныйЗаВводФакта</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СтруктураПредприятия.Ссылка КАК Подразделение
+ПОМЕСТИТЬ ВТАнализируемыеПодразделения
+ИЗ
+	Справочник.СтруктураПредприятия КАК СтруктураПредприятия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МестоПозицииШтатногоРасписанияВСтруктуреПредприятия.Позиция КАК Позиция,
+	МестоПозицииШтатногоРасписанияВСтруктуреПредприятия.Подразделение КАК Подразделение
+ПОМЕСТИТЬ ВТАнализируемыеПозиции
+ИЗ
+	ВТАнализируемыеПодразделения КАК ВТАнализируемыеПодразделения
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.МестоПозицииШтатногоРасписанияВСтруктуреПредприятия КАК МестоПозицииШтатногоРасписанияВСтруктуреПредприятия
+		ПО ВТАнализируемыеПодразделения.Подразделение = МестоПозицииШтатногоРасписанияВСтруктуреПредприятия.Подразделение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТАнализируемыеПозиции.Подразделение КАК Подразделение,
+	ПоказателиЭффективностиПозицийСрезПоследних.Позиция КАК Позиция,
+	ПоказателиЭффективностиПозицийСрезПоследних.Показатель КАК Показатель,
+	ВТАнализируемыеПозиции.Позиция КАК ВладелецПоказателя,
+	ПоказателиЭффективностиПозицийСрезПоследних.Вес КАК Вес,
+	ПозицииВводаЗначений.ОтветственныйЗаВводФакта КАК ОтветственныйЗаВводФакта,
+	ПозицииВводаЗначений.ОтветственныйЗаВводПлана КАК ОтветственныйЗаВводПлана,
+	ПоказателиЭффективностиПозицийСрезПоследних.МестоВводаЗначений КАК МестоВводаЗначений
+ПОМЕСТИТЬ ВТСобственныеПоказателиПозиций
+ИЗ
+	РегистрСведений.ПоказателиЭффективностиПозиций.СрезПоследних(
+			&amp;Период,
+			Позиция В
+				(ВЫБРАТЬ
+					ВТАнализируемыеПозиции.Позиция КАК Позиция
+				ИЗ
+					ВТАнализируемыеПозиции КАК ВТАнализируемыеПозиции)) КАК ПоказателиЭффективностиПозицийСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПозицииВводаЗначенийПоказателейЭффективности.СрезПоследних(&amp;Период, ) КАК ПозицииВводаЗначений
+		ПО ПоказателиЭффективностиПозицийСрезПоследних.Позиция = ПозицииВводаЗначений.Позиция
+			И ПоказателиЭффективностиПозицийСрезПоследних.Показатель = ПозицииВводаЗначений.Показатель
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТАнализируемыеПозиции КАК ВТАнализируемыеПозиции
+		ПО ПоказателиЭффективностиПозицийСрезПоследних.Позиция = ВТАнализируемыеПозиции.Позиция
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТАнализируемыеПозиции.Позиция КАК Позиция,
+	ВТАнализируемыеПозиции.Подразделение КАК Подразделение
+ПОМЕСТИТЬ ВТНаследующиеПозиции
+ИЗ
+	ВТАнализируемыеПозиции КАК ВТАнализируемыеПозиции
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТСобственныеПоказателиПозиций КАК ВТСобственныеПоказателиПозиций
+		ПО ВТАнализируемыеПозиции.Позиция = ВТСобственныеПоказателиПозиций.Позиция
+ГДЕ
+	ВТСобственныеПоказателиПозиций.Позиция ЕСТЬ NULL
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТНаследующиеПозиции.Подразделение КАК Подразделение
+ПОМЕСТИТЬ ВТПодразделенияНаследующихПозиций
+ИЗ
+	ВТНаследующиеПозиции КАК ВТНаследующиеПозиции
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТПодразделенияНаследующихПозиций.Подразделение КАК Подразделение,
+	ПодчиненностьСтруктурныхЕдиниц.ВышестоящаяСтруктурнаяЕдиница КАК ПодразделениеРодитель,
+	ПодчиненностьСтруктурныхЕдиниц.Уровень КАК Уровень
+ПОМЕСТИТЬ ВТПодразделенийНаследующихПозицийСРодителями
+ИЗ
+	ВТПодразделенияНаследующихПозиций КАК ВТПодразделенияНаследующихПозиций
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПодчиненностьСтруктурныхЕдиниц КАК ПодчиненностьСтруктурныхЕдиниц
+		ПО ВТПодразделенияНаследующихПозиций.Подразделение = ПодчиненностьСтруктурныхЕдиниц.СтруктурнаяЕдиница
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТПодразделенийНаследующихПозицийСРодителями.Подразделение КАК Подразделение,
+	ПоказателиЭффективностиПодразделенийСрезПоследних.Подразделение КАК ВладелецПоказателя,
+	ПоказателиЭффективностиПодразделенийСрезПоследних.Показатель КАК Показатель,
+	ПоказателиЭффективностиПодразделенийСрезПоследних.Вес КАК Вес,
+	ПодразделенияВводаЗначений.ОтветственныйЗаВводПлана КАК ОтветственныйЗаВводПлана,
+	ПодразделенияВводаЗначений.ОтветственныйЗаВводФакта КАК ОтветственныйЗаВводФакта,
+	ПоказателиЭффективностиПодразделенийСрезПоследних.МестоВводаЗначений КАК МестоВводаЗначений,
+	ВТПодразделенийНаследующихПозицийСРодителями.Уровень КАК Уровень
+ПОМЕСТИТЬ ВТВсеПоказателиПодразделенийНаследующихПозиций
+ИЗ
+	ВТПодразделенийНаследующихПозицийСРодителями КАК ВТПодразделенийНаследующихПозицийСРодителями
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПоказателиЭффективностиПодразделений.СрезПоследних(
+				&amp;Период,
+				Подразделение В
+					(ВЫБРАТЬ
+						ВТПодразделенийНаследующихПозицийСРодителями.ПодразделениеРодитель КАК ПодразделениеРодитель
+					ИЗ
+						ВТПодразделенийНаследующихПозицийСРодителями КАК ВТПодразделенийНаследующихПозицийСРодителями)) КАК ПоказателиЭффективностиПодразделенийСрезПоследних
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПодразделенияВводаЗначенийПоказателейЭффективности.СрезПоследних(&amp;Период, ) КАК ПодразделенияВводаЗначений
+			ПО ПоказателиЭффективностиПодразделенийСрезПоследних.МестоВводаЗначений = ПодразделенияВводаЗначений.Подразделение
+				И ПоказателиЭффективностиПодразделенийСрезПоследних.Показатель = ПодразделенияВводаЗначений.Показатель
+		ПО ВТПодразделенийНаследующихПозицийСРодителями.ПодразделениеРодитель = ПоказателиЭффективностиПодразделенийСрезПоследних.Подразделение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.Подразделение КАК Подразделение,
+	МИНИМУМ(ВТВсеПоказателиПодразделенийНаследующихПозиций.Уровень) КАК Уровень
+ПОМЕСТИТЬ ВТУказателиВладельцевПоказателей
+ИЗ
+	ВТВсеПоказателиПодразделенийНаследующихПозиций КАК ВТВсеПоказателиПодразделенийНаследующихПозиций
+
+СГРУППИРОВАТЬ ПО
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.Подразделение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.Подразделение КАК Подразделение,
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.ВладелецПоказателя КАК ВладелецПоказателя,
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.Показатель КАК Показатель,
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.Вес КАК Вес,
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.ОтветственныйЗаВводПлана КАК ОтветственныйЗаВводПлана,
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.ОтветственныйЗаВводФакта КАК ОтветственныйЗаВводФакта,
+	ВТВсеПоказателиПодразделенийНаследующихПозиций.МестоВводаЗначений КАК МестоВводаЗначений
+ПОМЕСТИТЬ ВТНаследуемыеПоказателиПозиций
+ИЗ
+	ВТВсеПоказателиПодразделенийНаследующихПозиций КАК ВТВсеПоказателиПодразделенийНаследующихПозиций
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТУказателиВладельцевПоказателей КАК ВТУказателиВладельцевПоказателей
+		ПО ВТВсеПоказателиПодразделенийНаследующихПозиций.Подразделение = ВТУказателиВладельцевПоказателей.Подразделение
+			И ВТВсеПоказателиПодразделенийНаследующихПозиций.Уровень = ВТУказателиВладельцевПоказателей.Уровень
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТСобственныеПоказателиПозиций.Подразделение КАК Подразделение,
+	ВТСобственныеПоказателиПозиций.Позиция КАК Позиция,
+	ВТСобственныеПоказателиПозиций.Показатель КАК Показатель,
+	ВТСобственныеПоказателиПозиций.ВладелецПоказателя КАК ВладелецПоказателя,
+	ВТСобственныеПоказателиПозиций.Вес КАК Вес,
+	ВТСобственныеПоказателиПозиций.ОтветственныйЗаВводФакта КАК ОтветственныйЗаВводФакта,
+	ВТСобственныеПоказателиПозиций.ОтветственныйЗаВводПлана КАК ОтветственныйЗаВводПлана,
+	ВТСобственныеПоказателиПозиций.МестоВводаЗначений КАК МестоВводаЗначений
+ИЗ
+	ВТСобственныеПоказателиПозиций КАК ВТСобственныеПоказателиПозиций
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТНаследуемыеПоказателиПозиций.Подразделение,
+	ВТНаследующиеПозиции.Позиция,
+	ВТНаследуемыеПоказателиПозиций.Показатель,
+	ВТНаследуемыеПоказателиПозиций.ВладелецПоказателя,
+	ВТНаследуемыеПоказателиПозиций.Вес,
+	ВТНаследуемыеПоказателиПозиций.ОтветственныйЗаВводФакта,
+	ВТНаследуемыеПоказателиПозиций.ОтветственныйЗаВводПлана,
+	ВТНаследуемыеПоказателиПозиций.МестоВводаЗначений
+ИЗ
+	ВТНаследующиеПозиции КАК ВТНаследующиеПозиции
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТНаследуемыеПоказателиПозиций КАК ВТНаследуемыеПоказателиПозиций
+		ПО ВТНаследующиеПозиции.Подразделение = ВТНаследуемыеПоказателиПозиций.Подразделение</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ПоказателиПозиций</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показатели эффективности, позиций штатного расписания</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Позиция</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Показатель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Вес</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВладелецПоказателя</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МестоВводаЗначений</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтветственныйЗаВводПлана</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтветственныйЗаВводФакта</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
+					<dcsset:userSettingID>36545ac9-7e61-4c44-98a6-768973151244</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>78bcd7b1-ae41-4ee4-a30c-385c91ad7196</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назначенные показатели</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Подразделение</dcsset:field>
+						<dcsset:groupType>Hierarchy</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection/>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">style:ToolTipBackColor</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Шрифт</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" height="10" kind="WindowsFont"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Позиция</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Шрифт</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

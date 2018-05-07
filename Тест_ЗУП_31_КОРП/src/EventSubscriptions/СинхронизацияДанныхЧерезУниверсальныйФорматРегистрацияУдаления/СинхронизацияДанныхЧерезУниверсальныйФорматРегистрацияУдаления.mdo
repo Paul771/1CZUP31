@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="df54d5b7-fba5-4ab0-946a-986c1800fbed">
+  <name>СинхронизацияДанныхЧерезУниверсальныйФорматРегистрацияУдаления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация данных через универсальный формат регистрация удаления</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.КлассификаторБанков</types>
+    <types>CatalogObject.ЗарплатныеПроекты</types>
+    <types>CatalogObject.РегистрацииВНалоговомОргане</types>
+    <types>DocumentObject.ОтражениеЗарплатыВБухучете</types>
+    <types>CatalogObject.СпособыОтраженияЗарплатыВБухУчете</types>
+    <types>CatalogObject.ВидыРаботСотрудников</types>
+    <types>CatalogObject.ФизическиеЛица</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыРаздатчиком</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыПеречислением</types>
+    <types>CatalogObject.Организации</types>
+    <types>DocumentObject.ПлатежноеПоручение</types>
+    <types>CatalogObject.БанковскиеСчетаКонтрагентов</types>
+    <types>DocumentObject.НачислениеОценочныхОбязательствПоОтпускам</types>
+    <types>DocumentObject.ВедомостьНаВыплатуЗарплатыВКассу</types>
+    <types>CatalogObject.Контрагенты</types>
+    <types>CatalogObject.Пользователи</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ОбменДаннымиСобытияУниверсальныйФормат.СинхронизацияДанныхЧерезУниверсальныйФорматПередУдалением</handler>
+</mdclass:EventSubscription>

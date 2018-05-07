@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="808910a9-286f-4c9d-ac34-38e781b2a559">
+  <name>СинхронизацияДанныхЧерезУниверсальныйФорматРегистрацияНабора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация данных через универсальный формат регистрация набора</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.ФИОФизическихЛиц</types>
+    <types>InformationRegisterRecordSet.ДокументыФизическихЛиц</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбменДаннымиСобытияУниверсальныйФормат.СинхронизацияДанныхЧерезУниверсальныйФорматПередЗаписьюНабораЗаписей</handler>
+</mdclass:EventSubscription>

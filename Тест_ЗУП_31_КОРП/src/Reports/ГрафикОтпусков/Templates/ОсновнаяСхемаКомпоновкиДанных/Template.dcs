@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>Информационная база</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Данные</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗанятости</dataPath>
+			<field>ВидЗанятости</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГоловнаяОрганизация</dataPath>
+			<field>ГоловнаяОрганизация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Головная организация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПриема</dataPath>
+			<field>ДатаПриема</field>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРождения</dataPath>
+			<field>ДатаРождения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаУвольнения</dataPath>
+			<field>ДатаУвольнения</field>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Должность</dataPath>
+			<field>Должность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИНН</dataPath>
+			<field>ИНН</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МестоРождения</dataPath>
+			<field>МестоРождения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.Владелец</dcscor:choiceParameter>
+							<dcscor:value>Организация</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пол</dataPath>
+			<field>Пол</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>ФИОПолные</presentationExpression>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ТекущаяОрганизация</dcscor:choiceParameter>
+							<dcscor:value>Организация</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.ТекущееПодразделение</dcscor:choiceParameter>
+							<dcscor:value>Подразделение</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтраховойНомерПФР</dataPath>
+			<field>СтраховойНомерПФР</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>СНИЛС</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабельныйНомер</dataPath>
+			<field>ТабельныйНомер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФизическоеЛицо</dataPath>
+			<field>ФизическоеЛицо</field>
+			<presentationExpression>ФИОПолные</presentationExpression>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>СвязиПараметровВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.Организация</dcscor:choiceParameter>
+							<dcscor:value>Организация</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Страна</dataPath>
+			<field>Страна</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гражданство</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Имя</dataPath>
+			<field>Имя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отчество</dataPath>
+			<field>Отчество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Фамилия</dataPath>
+			<field>Фамилия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗастрахованногоЛица</dataPath>
+			<field>ВидЗастрахованногоЛица</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус застрахованного лица</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АдресМестаПроживания</dataPath>
+			<field>АдресМестаПроживания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АдресПоПрописке</dataPath>
+			<field>АдресПоПрописке</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриказОбУвольненииСтатьяТКРФ</dataPath>
+			<field>ПриказОбУвольненииСтатьяТКРФ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФИОПолные</dataPath>
+			<field>ФИОПолные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ФИО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТелефонДомашний</dataPath>
+			<field>ТелефонДомашний</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТелефонРабочий</dataPath>
+			<field>ТелефонРабочий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АдресМестаПроживанияПредставление</dataPath>
+			<field>АдресМестаПроживанияПредставление</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АдресПоПропискеПредставление</dataPath>
+			<field>АдресПоПропискеПредставление</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРегистрации</dataPath>
+			<field>ДатаРегистрации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НаименованиеОрганизации</dataPath>
+			<field>НаименованиеОрганизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НепрерывныйСтажДней</dataPath>
+			<field>НепрерывныйСтажДней</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НепрерывныйСтажЛет</dataPath>
+			<field>НепрерывныйСтажЛет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НепрерывныйСтажМесяцев</dataPath>
+			<field>НепрерывныйСтажМесяцев</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийСтажДней</dataPath>
+			<field>ОбщийСтажДней</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийСтажЛет</dataPath>
+			<field>ОбщийСтажЛет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийСтажМесяцев</dataPath>
+			<field>ОбщийСтажМесяцев</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриказОбУвольненииДата</dataPath>
+			<field>ПриказОбУвольненииДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриказОбУвольненииНомер</dataPath>
+			<field>ПриказОбУвольненииНомер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтажНаНадбавкуЗаВыслугуЛетДней</dataPath>
+			<field>СтажНаНадбавкуЗаВыслугуЛетДней</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтажНаНадбавкуЗаВыслугуЛетЛет</dataPath>
+			<field>СтажНаНадбавкуЗаВыслугуЛетЛет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтажНаНадбавкуЗаВыслугуЛетМесяцев</dataPath>
+			<field>СтажНаНадбавкуЗаВыслугуЛетМесяцев</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТрудовойДоговорДата</dataPath>
+			<field>ТрудовойДоговорДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТрудовойДоговорНомер</dataPath>
+			<field>ТрудовойДоговорНомер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриказОПриемеДатаЗавершенияТрудовогоДоговора</dataPath>
+			<field>ПриказОПриемеДатаЗавершенияТрудовогоДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийНаучноПедагогическийСтажДней</dataPath>
+			<field>ОбщийНаучноПедагогическийСтажДней</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийНаучноПедагогическийСтажЛет</dataPath>
+			<field>ОбщийНаучноПедагогическийСтажЛет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщийНаучноПедагогическийСтажМесяцев</dataPath>
+			<field>ОбщийНаучноПедагогическийСтажМесяцев</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПедагогическийСтажДней</dataPath>
+			<field>ПедагогическийСтажДней</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПедагогическийСтажЛет</dataPath>
+			<field>ПедагогическийСтажЛет</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПедагогическийСтажМесяцев</dataPath>
+			<field>ПедагогическийСтажМесяцев</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СотрудникГоловнаяОрганизация</dataPath>
+			<field>СотрудникГоловнаяОрганизация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Запланирован</dataPath>
+			<field>Запланирован</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидОтпуска</dataPath>
+			<field>ВидОтпуска</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачала</dataPath>
+			<field>ДатаНачала</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОкончания</dataPath>
+			<field>ДатаОкончания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДней</dataPath>
+			<field>КоличествоДней</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПеренесеннаяДатаНачала</dataPath>
+			<field>ПеренесеннаяДатаНачала</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОрганизацияКодПоОКПО</dataPath>
+			<field>ОрганизацияКодПоОКПО</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация код по ОКПО</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтпускПеренесен</dataPath>
+			<field>ОтпускПеренесен</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отпуск перенесен</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументПереноса</dataPath>
+			<field>ДокументПереноса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументПланирования</dataPath>
+			<field>ДокументПланирования</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГодГрафика</dataPath>
+			<field>ГодГрафика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Год графика</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ЧГ=0</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>Информационная база</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПлановыеЕжегодныеОтпуска.ДатаНачала КАК Период,
+	ПлановыеЕжегодныеОтпуска.Сотрудник,
+	ПлановыеЕжегодныеОтпуска.ДатаНачала,
+	ПлановыеЕжегодныеОтпуска.ДатаОкончания,
+	ПлановыеЕжегодныеОтпуска.КоличествоДней,
+	ПлановыеЕжегодныеОтпуска.ВидОтпуска,
+	ПлановыеЕжегодныеОтпуска.ПеренесеннаяДатаНачала,
+	ПлановыеЕжегодныеОтпуска.Перенесен,
+	ПлановыеЕжегодныеОтпуска.Организация,
+	ПлановыеЕжегодныеОтпуска.ДокументПланирования,
+	ПлановыеЕжегодныеОтпуска.ДокументПереноса
+ПОМЕСТИТЬ ВТСотрудники
+ИЗ
+	РегистрСведений.ПлановыеЕжегодныеОтпуска КАК ПлановыеЕжегодныеОтпуска
+ГДЕ
+	ПлановыеЕжегодныеОтпуска.ДатаНачала МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+{ГДЕ
+	ПлановыеЕжегодныеОтпуска.Запланирован КАК Запланирован,
+	ПлановыеЕжегодныеОтпуска.Организация.* КАК Организация,
+	ПлановыеЕжегодныеОтпуска.Сотрудник.* КАК Сотрудник,
+	ПлановыеЕжегодныеОтпуска.Сотрудник.Код КАК ТабельныйНомер,
+	ПлановыеЕжегодныеОтпуска.Сотрудник.ГоловнаяОрганизация.*,
+	ПлановыеЕжегодныеОтпуска.ФизическоеЛицо.*,
+	ПлановыеЕжегодныеОтпуска.ФизическоеЛицо.Пол КАК Пол,
+	ПлановыеЕжегодныеОтпуска.ФизическоеЛицо.ДатаРождения КАК ДатаРождения,
+	ПлановыеЕжегодныеОтпуска.ФизическоеЛицо.ИНН КАК ИНН,
+	ПлановыеЕжегодныеОтпуска.ФизическоеЛицо.СтраховойНомерПФР КАК СтраховойНомерПФР,
+	ПлановыеЕжегодныеОтпуска.ФизическоеЛицо.МестоРождения КАК МестоРождения}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДАТАВРЕМЯ(1, 1, 1) КАК Период,
+	ЗНАЧЕНИЕ(Справочник.Сотрудники.ПустаяСсылка) КАК Сотрудник,
+	"" КАК ТабельныйНомер,
+	ЗНАЧЕНИЕ(Справочник.ФизическиеЛица.ПустаяСсылка) КАК ФизическоеЛицо,
+	ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка) КАК ГоловнаяОрганизация,
+	ЗНАЧЕНИЕ(Перечисление.ВидыЗанятости.ПустаяСсылка) КАК ВидЗанятости,
+	ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка) КАК Организация,
+	ЗНАЧЕНИЕ(Справочник.ПодразделенияОрганизаций.ПустаяСсылка) КАК Подразделение,
+	ЗНАЧЕНИЕ(Справочник.Должности.ПустаяСсылка) КАК Должность,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ДатаПриема,
+	"" КАК ТрудовойДоговорНомер,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ТрудовойДоговорДата,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ПриказОПриемеДатаЗавершенияТрудовогоДоговора,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ДатаУвольнения,
+	ЗНАЧЕНИЕ(Справочник.ОснованияУвольнения.ПустаяСсылка) КАК ПриказОбУвольненииСтатьяТКРФ,
+	"" КАК ПриказОбУвольненииНомер,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ПриказОбУвольненииДата,
+	ЗНАЧЕНИЕ(Перечисление.ПолФизическогоЛица.ПустаяСсылка) КАК Пол,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ДатаРождения,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК ИНН,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК СтраховойНомерПФР,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК МестоРождения,
+	ЗНАЧЕНИЕ(Справочник.СтраныМира.ПустаяСсылка) КАК Страна,
+	ЗНАЧЕНИЕ(Перечисление.ВидыЗастрахованныхЛицОбязательногоСтрахования.ПустаяСсылка) КАК ВидЗастрахованногоЛица,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК Фамилия,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК Имя,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК Отчество,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК ФИОПолные,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК АдресПоПрописке,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК АдресПоПропискеПредставление,
+	ДАТАВРЕМЯ(1, 1, 1) КАК ДатаРегистрации,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК АдресМестаПроживания,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК АдресМестаПроживанияПредставление,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК ТелефонДомашнийПредставление,
+	ВЫРАЗИТЬ("" КАК СТРОКА) КАК ТелефонРабочийПредставление,
+	0 КАК ОбщийСтажДней,
+	0 КАК ОбщийСтажМесяцев,
+	0 КАК ОбщийСтажЛет,
+	0 КАК НепрерывныйСтажДней,
+	0 КАК НепрерывныйСтажМесяцев,
+	0 КАК НепрерывныйСтажЛет,
+	0 КАК СтажНаНадбавкуЗаВыслугуЛетДней,
+	0 КАК СтажНаНадбавкуЗаВыслугуЛетМесяцев,
+	0 КАК СтажНаНадбавкуЗаВыслугуЛетЛет,
+	0 КАК ОбщийНаучноПедагогическийСтажДней,
+	0 КАК ОбщийНаучноПедагогическийСтажМесяцев,
+	0 КАК ОбщийНаучноПедагогическийСтажЛет,
+	0 КАК ПедагогическийСтажДней,
+	0 КАК ПедагогическийСтажМесяцев,
+	0 КАК ПедагогическийСтажЛет
+ПОМЕСТИТЬ Представления_КадровыеДанныеСотрудников
+ИЗ
+	ВТСотрудники КАК ВТСотрудники
+ГДЕ
+	"ТолькоРазрешенные" = ИСТИНА
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Представления_КадровыеДанныеСотрудников.ТабельныйНомер КАК ТабельныйНомер,
+	Представления_КадровыеДанныеСотрудников.ВидЗанятости КАК ВидЗанятости,
+	Представления_КадровыеДанныеСотрудников.ФизическоеЛицо КАК ФизическоеЛицо,
+	Представления_КадровыеДанныеСотрудников.ГоловнаяОрганизация КАК ГоловнаяОрганизация,
+	Представления_КадровыеДанныеСотрудников.Подразделение КАК Подразделение,
+	Представления_КадровыеДанныеСотрудников.Должность КАК Должность,
+	Представления_КадровыеДанныеСотрудников.ДатаПриема КАК ДатаПриема,
+	ВЫБОР
+		КОГДА Представления_КадровыеДанныеСотрудников.ДатаУвольнения &lt;= &amp;КонецПериода
+			ТОГДА Представления_КадровыеДанныеСотрудников.ДатаУвольнения
+		ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
+	КОНЕЦ КАК ДатаУвольнения,
+	Представления_КадровыеДанныеСотрудников.ПриказОбУвольненииСтатьяТКРФ КАК ПриказОбУвольненииСтатьяТКРФ,
+	Представления_КадровыеДанныеСотрудников.ПриказОбУвольненииНомер КАК ПриказОбУвольненииНомер,
+	Представления_КадровыеДанныеСотрудников.ПриказОбУвольненииДата КАК ПриказОбУвольненииДата,
+	Представления_КадровыеДанныеСотрудников.Пол КАК Пол,
+	Представления_КадровыеДанныеСотрудников.ДатаРождения КАК ДатаРождения,
+	Представления_КадровыеДанныеСотрудников.ИНН КАК ИНН,
+	Представления_КадровыеДанныеСотрудников.СтраховойНомерПФР КАК СтраховойНомерПФР,
+	Представления_КадровыеДанныеСотрудников.МестоРождения КАК МестоРождения,
+	Представления_КадровыеДанныеСотрудников.Страна КАК Страна,
+	Представления_КадровыеДанныеСотрудников.ВидЗастрахованногоЛица КАК ВидЗастрахованногоЛица,
+	Представления_КадровыеДанныеСотрудников.Фамилия КАК Фамилия,
+	Представления_КадровыеДанныеСотрудников.Имя КАК Имя,
+	Представления_КадровыеДанныеСотрудников.Отчество КАК Отчество,
+	Представления_КадровыеДанныеСотрудников.ФИОПолные КАК ФИОПолные,
+	Представления_КадровыеДанныеСотрудников.АдресПоПрописке КАК АдресПоПрописке,
+	Представления_КадровыеДанныеСотрудников.АдресПоПропискеПредставление КАК АдресПоПропискеПредставление,
+	Представления_КадровыеДанныеСотрудников.ДатаРегистрации КАК ДатаРегистрации,
+	Представления_КадровыеДанныеСотрудников.АдресМестаПроживания КАК АдресМестаПроживания,
+	Представления_КадровыеДанныеСотрудников.АдресМестаПроживанияПредставление КАК АдресМестаПроживанияПредставление,
+	Представления_КадровыеДанныеСотрудников.ТелефонДомашнийПредставление КАК ТелефонДомашний,
+	Представления_КадровыеДанныеСотрудников.ТелефонРабочийПредставление КАК ТелефонРабочий,
+	Представления_КадровыеДанныеСотрудников.ОбщийСтажДней КАК ОбщийСтажДней,
+	Представления_КадровыеДанныеСотрудников.ОбщийСтажМесяцев КАК ОбщийСтажМесяцев,
+	Представления_КадровыеДанныеСотрудников.ОбщийСтажЛет КАК ОбщийСтажЛет,
+	Представления_КадровыеДанныеСотрудников.НепрерывныйСтажДней КАК НепрерывныйСтажДней,
+	Представления_КадровыеДанныеСотрудников.НепрерывныйСтажМесяцев КАК НепрерывныйСтажМесяцев,
+	Представления_КадровыеДанныеСотрудников.НепрерывныйСтажЛет КАК НепрерывныйСтажЛет,
+	Представления_КадровыеДанныеСотрудников.СтажНаНадбавкуЗаВыслугуЛетДней КАК СтажНаНадбавкуЗаВыслугуЛетДней,
+	Представления_КадровыеДанныеСотрудников.СтажНаНадбавкуЗаВыслугуЛетМесяцев КАК СтажНаНадбавкуЗаВыслугуЛетМесяцев,
+	Представления_КадровыеДанныеСотрудников.СтажНаНадбавкуЗаВыслугуЛетЛет КАК СтажНаНадбавкуЗаВыслугуЛетЛет,
+	Представления_КадровыеДанныеСотрудников.ТрудовойДоговорНомер КАК ТрудовойДоговорНомер,
+	Представления_КадровыеДанныеСотрудников.ТрудовойДоговорДата КАК ТрудовойДоговорДата,
+	Представления_КадровыеДанныеСотрудников.ПриказОПриемеДатаЗавершенияТрудовогоДоговора КАК ПриказОПриемеДатаЗавершенияТрудовогоДоговора,
+	Представления_КадровыеДанныеСотрудников.ОбщийНаучноПедагогическийСтажДней КАК ОбщийНаучноПедагогическийСтажДней,
+	Представления_КадровыеДанныеСотрудников.ОбщийНаучноПедагогическийСтажМесяцев КАК ОбщийНаучноПедагогическийСтажМесяцев,
+	Представления_КадровыеДанныеСотрудников.ОбщийНаучноПедагогическийСтажЛет КАК ОбщийНаучноПедагогическийСтажЛет,
+	Представления_КадровыеДанныеСотрудников.ПедагогическийСтажДней КАК ПедагогическийСтажДней,
+	Представления_КадровыеДанныеСотрудников.ПедагогическийСтажМесяцев КАК ПедагогическийСтажМесяцев,
+	Представления_КадровыеДанныеСотрудников.ПедагогическийСтажЛет КАК ПедагогическийСтажЛет,
+	Сотрудники.Сотрудник КАК Сотрудник,
+	Сотрудники.ДатаНачала КАК ДатаНачала,
+	Сотрудники.ДатаОкончания КАК ДатаОкончания,
+	Сотрудники.КоличествоДней КАК КоличествоДней,
+	Сотрудники.ВидОтпуска КАК ВидОтпуска,
+	Сотрудники.ПеренесеннаяДатаНачала КАК ПеренесеннаяДатаНачала,
+	Сотрудники.Перенесен КАК ОтпускПеренесен,
+	Сотрудники.Организация КАК Организация,
+	Сотрудники.Организация.КодПоОКПО КАК ОрганизацияКодПоОКПО,
+	Сотрудники.Организация.НаименованиеПолное КАК НаименованиеОрганизации,
+	Сотрудники.ДокументПланирования КАК ДокументПланирования,
+	Сотрудники.ДокументПереноса КАК ДокументПереноса,
+	ГОД(Сотрудники.ДатаНачала) КАК ГодГрафика
+{ВЫБРАТЬ
+	ТабельныйНомер,
+	ВидЗанятости.*,
+	ФизическоеЛицо.*,
+	ГоловнаяОрганизация.*,
+	ОрганизацияКодПоОКПО КАК ОрганизацияКодПоОКПО,
+	Подразделение.*,
+	Должность.*,
+	ДатаПриема,
+	ДатаУвольнения,
+	ПриказОбУвольненииСтатьяТКРФ.*,
+	ПриказОбУвольненииНомер,
+	ПриказОбУвольненииДата,
+	Пол.*,
+	ДатаРождения,
+	ИНН,
+	СтраховойНомерПФР,
+	МестоРождения,
+	Страна.*,
+	ВидЗастрахованногоЛица.*,
+	Фамилия,
+	Имя,
+	Отчество,
+	ФИОПолные,
+	АдресПоПрописке,
+	АдресПоПропискеПредставление,
+	ДатаРегистрации,
+	АдресМестаПроживания,
+	АдресМестаПроживанияПредставление,
+	ТелефонДомашний,
+	ТелефонРабочий,
+	НаименованиеОрганизации,
+	ОбщийСтажДней,
+	ОбщийСтажМесяцев,
+	ОбщийСтажЛет,
+	НепрерывныйСтажДней,
+	НепрерывныйСтажМесяцев,
+	НепрерывныйСтажЛет,
+	СтажНаНадбавкуЗаВыслугуЛетДней,
+	СтажНаНадбавкуЗаВыслугуЛетМесяцев,
+	СтажНаНадбавкуЗаВыслугуЛетЛет,
+	ТрудовойДоговорНомер,
+	ТрудовойДоговорДата,
+	ПриказОПриемеДатаЗавершенияТрудовогоДоговора,
+	ОбщийНаучноПедагогическийСтажДней,
+	ОбщийНаучноПедагогическийСтажМесяцев,
+	ОбщийНаучноПедагогическийСтажЛет,
+	ПедагогическийСтажДней,
+	ПедагогическийСтажМесяцев,
+	ПедагогическийСтажЛет,
+	Сотрудник.*,
+	ДатаНачала,
+	ДатаОкончания,
+	КоличествоДней,
+	ВидОтпуска.*,
+	ПеренесеннаяДатаНачала,
+	ОтпускПеренесен,
+	Организация.*,
+	ДокументПланирования.*,
+	ДокументПереноса.*,
+	ГодГрафика}
+ИЗ
+	ВТСотрудники КАК Сотрудники
+		ЛЕВОЕ СОЕДИНЕНИЕ Представления_КадровыеДанныеСотрудников КАК Представления_КадровыеДанныеСотрудников
+		ПО Сотрудники.Сотрудник = Представления_КадровыеДанныеСотрудников.Сотрудник
+			И Сотрудники.Период = Представления_КадровыеДанныеСотрудников.Период
+{ГДЕ
+	Сотрудники.Сотрудник.*,
+	Представления_КадровыеДанныеСотрудников.ТабельныйНомер,
+	Представления_КадровыеДанныеСотрудников.ФизическоеЛицо.*,
+	Представления_КадровыеДанныеСотрудников.ГоловнаяОрганизация.*,
+	Представления_КадровыеДанныеСотрудников.ВидЗанятости.* КАК ВидЗанятости,
+	Представления_КадровыеДанныеСотрудников.Подразделение.*,
+	Представления_КадровыеДанныеСотрудников.Должность.*,
+	Представления_КадровыеДанныеСотрудников.ДатаПриема,
+	Представления_КадровыеДанныеСотрудников.ДатаУвольнения,
+	Представления_КадровыеДанныеСотрудников.Пол,
+	Представления_КадровыеДанныеСотрудников.ДатаРождения,
+	Представления_КадровыеДанныеСотрудников.ИНН,
+	Представления_КадровыеДанныеСотрудников.СтраховойНомерПФР,
+	Представления_КадровыеДанныеСотрудников.МестоРождения,
+	Представления_КадровыеДанныеСотрудников.Страна,
+	Представления_КадровыеДанныеСотрудников.ВидЗастрахованногоЛица,
+	Представления_КадровыеДанныеСотрудников.Фамилия,
+	Представления_КадровыеДанныеСотрудников.Имя,
+	Представления_КадровыеДанныеСотрудников.Отчество,
+	Представления_КадровыеДанныеСотрудников.ФИОПолные,
+	Сотрудники.ДатаНачала,
+	Сотрудники.ДатаОкончания,
+	Сотрудники.ВидОтпуска.*,
+	Сотрудники.Организация.*,
+	Сотрудники.ДокументПереноса.*,
+	Сотрудники.ДокументПланирования.*}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ТабельныйНомер</dataPath>
+		<expression>ПрефиксацияОбъектовКлиентСервер.УдалитьПрефиксыИзНомераОбъекта(ТабельныйНомер, Истина, Истина)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Табельный номер</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>НомерДок</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номер док</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаДок</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата док</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Руководитель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Руководитель</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДолжностьРуководителя</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Должность</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Должности</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>РуководительКадровойСлужбы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Руководитель кадровой службы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ФизическиеЛица</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДолжностьРуководителяКадровойСлужбы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Должность</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Должности</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КлючВарианта</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ключ варианта</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Т7</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>График отпусков (Т-7)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация.КодПоОКПО</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация.Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ГодГрафика</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФИОПолные</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТабельныйНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение.Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Должность</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Должность.Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаНачала</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоДней</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПеренесеннаяДатаНачала</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументПланирования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументПереноса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументПереноса.Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументПереноса.Номер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДокументПереноса.ПереносПоИнициативеСотрудника</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидОтпуска</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидОтпуска.Наименование</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>837a35b7-efb5-4b26-acbf-8833eac0eba5</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Подразделение</dcsset:left>
+					<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>27ba160b-baad-4734-9c08-bdbb1eab1afc</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидОтпуска</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>d77f5ba9-317d-43d2-8022-622a7b643f54</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Должность</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>82958590-3e02-4905-a8d5-d9f868f89aea</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Сотрудник</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>8c0c347d-941c-4417-821f-40393f5c7bc3</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудники</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisYear</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>ca6b8685-bcc5-4ebb-8dfe-d9500eeee42d</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>6f8a88ec-c2e4-4e9d-b262-f4786fdd0a8b</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Руководитель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>cb72df45-41d1-4b7f-8fdb-0474023e0fdc</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДолжностьРуководителя</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>9dbd6882-a842-444e-8a9e-89805aaa664f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РуководительКадровойСлужбы</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>9c7926db-f0fd-4100-87fd-f842ada0fef0</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДолжностьРуководителяКадровойСлужбы</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>61241f2d-e85b-479c-b09b-59da8f8e4baa</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>КлючВарианта</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Т7</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Организация.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Сотрудник.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ГодГрафика</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПараметрыДанных.НомерДок</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ПараметрыДанных.ДатаДок</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

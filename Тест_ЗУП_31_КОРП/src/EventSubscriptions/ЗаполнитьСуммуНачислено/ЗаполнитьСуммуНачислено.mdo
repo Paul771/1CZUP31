@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="75df3a02-c716-4ff8-860d-ae84d81ab794">
+  <name>ЗаполнитьСуммуНачислено</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнить сумму начислено</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.РазовоеНачисление</types>
+    <types>DocumentObject.ОплатаДнейУходаЗаДетьмиИнвалидами</types>
+    <types>DocumentObject.ПризПодарок</types>
+    <types>DocumentObject.ОплатаПоСреднемуЗаработку</types>
+    <types>DocumentObject.Премия</types>
+    <types>DocumentObject.УвольнениеСписком</types>
+    <types>DocumentObject.ПростойСотрудников</types>
+    <types>DocumentObject.ДоходВНатуральнойФорме</types>
+    <types>DocumentObject.БольничныйЛист</types>
+    <types>DocumentObject.Командировка</types>
+    <types>DocumentObject.НачислениеЗарплаты</types>
+    <types>DocumentObject.НачислениеЗаПервуюПоловинуМесяца</types>
+    <types>DocumentObject.Отпуск</types>
+    <types>DocumentObject.МатериальнаяПомощь</types>
+    <types>DocumentObject.Увольнение</types>
+    <types>DocumentObject.НачислениеПоДоговорам</types>
+    <types>DocumentObject.ОтпускПоУходуЗаРебенком</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РасчетЗарплатыРасширенныйСобытия.РасчетЗарплатыРасчетныеДокументыНачисленияПередЗаписью</handler>
+</mdclass:EventSubscription>

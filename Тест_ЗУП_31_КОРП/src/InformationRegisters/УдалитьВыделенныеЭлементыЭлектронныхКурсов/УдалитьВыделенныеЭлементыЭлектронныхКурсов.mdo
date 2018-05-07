@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="27767bf7-5c30-491b-845e-54a5481c6833">
+  <producedTypes>
+    <selectionType typeId="84a10f6e-3e8f-4228-8c60-391ff1b7f1a9" valueTypeId="707ab741-ef77-4ea8-9c82-aca3181e7730"/>
+    <listType typeId="54abb423-1937-4967-8ca3-b24b155e8a7c" valueTypeId="54138fcc-75b8-4ca2-ae5a-5a7cc652d6f1"/>
+    <managerType typeId="eb844ee6-633d-4cd8-b968-009804e191d2" valueTypeId="fe8aeaed-fab3-4730-a3ee-7c421b19944b"/>
+    <recordSetType typeId="ad90ba3e-9487-471e-8f56-f6bd49398845" valueTypeId="0f6ad6dd-15c4-4551-bfa1-320aba08b5d5"/>
+    <recordKeyType typeId="0ce86c99-53b3-4ea3-a5b0-9d2e70c68c98" valueTypeId="0001a531-8a79-4b40-b9c4-5a42cbc55da2"/>
+    <recordType typeId="4b6ca31c-bdd7-45e6-b18e-c0690e3d2a19" valueTypeId="ac0c3532-b300-4b59-8536-1c163e0e0ada"/>
+    <recordManagerType typeId="45361eae-3338-421a-bc7f-443224b61fac" valueTypeId="9f82ce7c-c301-467a-997b-2d77bdbc2cbb"/>
+  </producedTypes>
+  <name>УдалитьВыделенныеЭлементыЭлектронныхКурсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Удалить выделенные элементы электронных курсов</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="759e9ba9-5e7e-43ae-81be-0ac58fd9f470">
+    <name>ДатаОтметки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отметки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата, когда элемент был размещен в избранном</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="5a99e169-3455-4521-8b15-4b39c67e1921">
+    <name>Учащийся</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учащийся</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DefinedType.УчащийсяЭлектронногоОбучения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь, который поместил элемент содержания электронного ресурса в избранное</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a021a691-a6aa-4adb-be20-7bb870d02099">
+    <name>ЭлементСодержания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Элемент содержания</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СодержаниеЭлектронныхКурсов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Элемент содержания, который помещен в избранное</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

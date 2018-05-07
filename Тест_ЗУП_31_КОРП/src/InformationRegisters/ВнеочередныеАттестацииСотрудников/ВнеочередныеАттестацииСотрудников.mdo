@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="55ca8e1f-dde6-4450-9dc8-648125eaf976">
+  <producedTypes>
+    <selectionType typeId="80a215d4-7571-487e-ba82-c4c1bcbcabc2" valueTypeId="b1ccb576-2099-4f44-acb7-2761f8979215"/>
+    <listType typeId="d52faaa2-6716-46d5-8c9c-9757aa537197" valueTypeId="7ffef87d-d16a-40ae-8962-f3f5b08a4c06"/>
+    <managerType typeId="65a4a56a-c9ae-46a3-9c4d-a5780c4fd474" valueTypeId="3775863d-7066-483a-bd4c-2426154ba380"/>
+    <recordSetType typeId="fb0ba7d3-35b6-443e-b866-a250c24177b6" valueTypeId="5b4d1f59-d897-4a06-9660-d86e188610f5"/>
+    <recordKeyType typeId="d22444b0-8429-4085-b0c2-9e7bb3406ba8" valueTypeId="ed7e9380-14b6-4638-9568-752d3f2cefbe"/>
+    <recordType typeId="58c0f43d-fe00-451e-922e-01002581e52d" valueTypeId="795771a5-0537-4e9e-acfe-e6a0ff041ee4"/>
+    <recordManagerType typeId="093f5c79-2319-4e6b-980a-158e95182e85" valueTypeId="78baa12b-328a-4626-b139-622b777ab088"/>
+  </producedTypes>
+  <name>ВнеочередныеАттестацииСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Внеочередные аттестации сотрудников</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="086bf184-2c4d-4d22-af70-d55bb5971082">
+    <name>ДатаВнеочереднойАттестации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата внеочередной аттестации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="e484d8f2-52e0-41ff-8091-010c6d5e3c46">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c3d809fc-e083-42e1-ae85-812e0f5effbe">
+    <name>ВидАттестации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид аттестации</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ВидыАттестацийСотрудников</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ab03a43e-4fd2-418f-9e96-22b8c4f9fb6e">
+  <name>ЗаполнитьНастройкиУчетаСреднегоЗаработка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнить настройки учета среднего заработка</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CatalogObject.ГрафикиРаботыСотрудников</types>
+    <types>ChartOfCalculationTypesObject.Начисления</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.УчетСреднегоЗаработкаСобытия.ЗаполнитьНастройкиУчетаСреднегоЗаработка</handler>
+</mdclass:EventSubscription>

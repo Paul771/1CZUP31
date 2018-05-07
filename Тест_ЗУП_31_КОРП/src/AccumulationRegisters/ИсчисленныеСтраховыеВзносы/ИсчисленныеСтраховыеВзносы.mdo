@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cb6e456c-f949-434e-9ed0-2215ba42f01c">
+  <producedTypes>
+    <selectionType typeId="1764f407-ac29-4eaf-9493-f41b81a2b50a" valueTypeId="cba2c146-924c-447b-a99c-4e23d6057c09"/>
+    <listType typeId="4db36c23-6e0e-497e-8d1b-dc14b8b778a2" valueTypeId="f7e3e7ed-bff5-4d4b-b93e-f18441d2dc27"/>
+    <managerType typeId="53211949-9497-47a1-b9b6-46ab85cfa2bf" valueTypeId="3b3436b2-fccb-4a35-89ce-809c5ef8c875"/>
+    <recordSetType typeId="904ae643-9aca-489d-983e-019597651f7f" valueTypeId="69345273-cb6e-48fd-923d-31025fc7dbdc"/>
+    <recordKeyType typeId="0ba0cdb1-2971-4455-9ea8-7b800d899cf5" valueTypeId="ea0e0ece-b2c8-4cdc-bb49-bae6c67c547b"/>
+    <recordType typeId="287efd2f-ecce-47f1-8c41-55f99b23491e" valueTypeId="8baf4f40-3a1b-4e9c-80eb-553dcf802eb3"/>
+  </producedTypes>
+  <name>ИсчисленныеСтраховыеВзносы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Исчисленные страховые взносы</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="a05b5eaf-d2b7-4980-8c7a-e9e2f0db1e58">
+    <name>ПФРДоПредельнойВеличины</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - с базы до превышения предельной величины, с 1 января 2016 года</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a62a9837-bb79-40d9-ba7f-b578d4d3b4a9">
+    <name>ПФРДоПредельнойВеличиныЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - с базы до превышения предельной величины, с 1 января 2016 года, ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2629a491-3808-4f3a-a36a-8b106beac68d">
+    <name>ПФРСПревышения</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - с базы сверх предельной величины, с 1 января 2016 года</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="4d584315-540c-4803-ab62-3b87e6e65209">
+    <name>ПФРСПревышенияЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - с базы сверх предельной величины, с 1 января 2016 года, ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="50befd47-9034-4cb9-8055-119955aa6205">
+    <name>ПФРПоСуммарномуТарифу</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - по суммарному тарифу с 1 января 2014 года</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0490b1c4-5ba2-456f-a5e3-55bdac48f623">
+    <name>ПФРПоСуммарномуТарифуЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - по суммарному тарифу с 1 января 2014 года, ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="4fc356f2-b580-4d46-9d5c-3abbe327f197">
+    <name>ПФРПоСуммарномуТарифуСПревышения</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР - по суммарному тарифу с 1 января 2014 года, с сумм превышающих предельную базу</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="7d2461de-c7d4-4e02-b48c-21fdc014eafe">
+    <name>ФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФСС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0fbf3165-9ede-4964-8ef0-3b73b46da684">
+    <name>ФССЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФСС ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ad2808f2-7e38-4ac7-95b6-306cc493c995">
+    <name>ФССНесчастныеСлучаи</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФСС, несчастные случаи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9d542fb2-492c-4060-a1b9-fb1505416529">
+    <name>ФФОМС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФФОМС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2e5d2cf2-58bb-4829-9d9c-df3f36dec761">
+    <name>ФФОМСЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФФОМС ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="dc30593f-7afa-4f5a-89c2-3178756cdd7e">
+    <name>ПФРСтраховая</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР Страховая, за 2010 - 2013 годы</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6ef92f18-850f-4195-974e-4a16d89f408d">
+    <name>ПФРНакопительная</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР Накопительная</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="3c6819a7-e1a3-4251-a446-20295798667a">
+    <name>ПФРСтраховаяЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР Страховая ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="666e0f79-9062-48fe-8132-ff5c02f8dd94">
+    <name>ПФРСтраховаяСПревышения</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР Страховая, с сумм превышающих предельную базу</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a10085b0-bb8c-4262-862c-e101c4aa197b">
+    <name>ПФРНакопительнаяЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР Накопительная ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1e39f5ee-aeac-4d0f-8646-1c21f7772b54">
+    <name>ПФРНаДоплатуЛетчикам</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, на доплату летчикам</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="38e9ee23-3855-43bf-a362-e09d05d55f75">
+    <name>ПФРНаДоплатуШахтерам</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, на доплату шахтерам</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d00b4210-076e-4d7d-b261-5fa9c6781be8">
+    <name>ПФРЗаЗанятыхНаПодземныхИВредныхРаботах</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с вредными условиями труда</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ba5a6c1f-18ac-42b4-80d2-364fe81ecfc7">
+    <name>ПФРЗаЗанятыхНаПодземныхИВредныхРаботахОпасный</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с вредными условиями труда, класс опасный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="aeb05517-9fe2-442c-b386-9d74c26bf8fa">
+    <name>ПФРЗаЗанятыхНаПодземныхИВредныхРаботахВредный1</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с вредными условиями труда, класс вредный 3.1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1e5ced8f-3050-45df-a0f2-5fd719619cb1">
+    <name>ПФРЗаЗанятыхНаПодземныхИВредныхРаботахВредный2</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с вредными условиями труда, класс вредный 3.2</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9f59fc7d-d1d7-429e-91a9-85890e36535d">
+    <name>ПФРЗаЗанятыхНаПодземныхИВредныхРаботахВредный3</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с вредными условиями труда, класс вредный 3.3</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="daed426d-9e19-4949-8c5d-dde069a7eaaa">
+    <name>ПФРЗаЗанятыхНаПодземныхИВредныхРаботахВредный4</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с вредными условиями труда, класс вредный 3.4</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1aa2a2fa-6f6b-4d31-9d6a-85daad5564cf">
+    <name>ПФРЗаЗанятыхНаТяжелыхИПрочихРаботах</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с тяжелыми условиями труда</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="90418206-663b-40dd-a5b7-2f1b10fe4ab8">
+    <name>ПФРЗаЗанятыхНаТяжелыхИПрочихРаботахОпасный</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с тяжелыми условиями труда, класс опасный</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1234d1cf-626e-4ce4-8010-1b2fc053ba6c">
+    <name>ПФРЗаЗанятыхНаТяжелыхИПрочихРаботахВредный1</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с тяжелыми условиями труда, класс вредный 3.1</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ad63aa12-22c2-4038-a657-838c68ed6465">
+    <name>ПФРЗаЗанятыхНаТяжелыхИПрочихРаботахВредный2</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с тяжелыми условиями труда, класс вредный 3.2</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2312bd0f-f03a-4b7f-a13e-fee22b7d5919">
+    <name>ПФРЗаЗанятыхНаТяжелыхИПрочихРаботахВредный3</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с тяжелыми условиями труда, класс вредный 3.3</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="8cf5474b-7327-4938-a674-6b2fbd83097a">
+    <name>ПФРЗаЗанятыхНаТяжелыхИПрочихРаботахВредный4</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПФР, за занятых на работах с тяжелыми условиями труда, класс вредный 3.4</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="37ae6ea5-b511-407f-bfd7-b325d7e661b7">
+    <name>ТФОМС</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТФОМС</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="085d3add-2b1d-479b-a6aa-6f11a8385e2c">
+    <name>ТФОМСЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТФОМС ЕНВД</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="e2391536-fc35-44d3-ad7c-8e22585b888d">
+    <name>ДатаПолученияДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата получения дохода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="47d2acfb-bc4a-4837-9e97-6d564ee371c9">
+    <name>ОснованиеДляДоначисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание для доначисления</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.ОснованияДляДоначисленияСтраховыхВзносов</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="bc2d4f28-1ccf-45ce-8718-608d77939762">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="3f9a73c3-f438-4601-992a-f69575b0699c">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d6616f1e-afa4-4ac6-83dc-69c6c8121847">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="33598633-507e-44c1-936a-ccd8d2a5a118">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

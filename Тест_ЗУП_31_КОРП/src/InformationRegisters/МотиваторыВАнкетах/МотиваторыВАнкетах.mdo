@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4fb63fc4-ca5e-4660-a802-52043584710a">
+  <producedTypes>
+    <selectionType typeId="93596f73-38d2-4829-a33e-8f6a616a194d" valueTypeId="ca3a4697-a466-4b01-a4af-e2a5e763b9df"/>
+    <listType typeId="6fb34b87-1e72-428c-954f-cf4b06625a8c" valueTypeId="380c3c8c-864e-43aa-9326-3fa54a46f635"/>
+    <managerType typeId="61ce3233-22d6-40f8-9a8f-7f8367c22920" valueTypeId="ac42550c-02b1-43be-8cd4-120b449ebe06"/>
+    <recordSetType typeId="bd5f40b7-eaa7-45b4-bbe5-63d83ccbe99a" valueTypeId="b78f97e7-0edb-46ae-aeab-39c1d8302af1"/>
+    <recordKeyType typeId="a8468a61-2844-45d8-8940-eec4113d6518" valueTypeId="85cd0412-59a4-4294-920c-ad38df8fd129"/>
+    <recordType typeId="8572bfeb-79ec-4a65-89dd-b70fa8f9ea2e" valueTypeId="c2510daf-834a-4378-b3b9-5cf95dff4fba"/>
+    <recordManagerType typeId="d44fd000-a469-4e6d-8e4f-046c123bed69" valueTypeId="e4314e3e-249e-44fa-82f2-1465aaaa2e0f"/>
+  </producedTypes>
+  <name>МотиваторыВАнкетах</name>
+  <synonym>
+    <key>ru</key>
+    <value>Мотиваторы в анкетах</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="bd4b7afb-4f17-4da7-9d00-e35ab68d11da">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b9fa58b9-3dab-40b1-992e-4eba7241300f">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="3c8b8ff9-db8d-44ca-87b6-3ef4e8acad57">
+    <name>Анкета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Анкета</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.Анкета</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="476f4c19-ff10-4475-ba1f-beffd3e049a1">
+    <name>Мотиватор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мотиватор</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Мотиваторы</types>
+      <types>CatalogRef.Демотиваторы</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

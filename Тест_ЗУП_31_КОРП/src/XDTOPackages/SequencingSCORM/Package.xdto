@@ -1,0 +1,220 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.imsglobal.org/xsd/imsss">
+	<property xmlns:d2p1="http://www.imsglobal.org/xsd/imsss" name="sequencing" type="d2p1:sequencingType"/>
+	<property name="sequencingCollection">
+		<typeDef xsi:type="ObjectType">
+			<property xmlns:d4p1="http://www.imsglobal.org/xsd/imsss" ref="d4p1:sequencing" upperBound="-1"/>
+		</typeDef>
+	</property>
+	<valueType name="childActivityType" base="xsd:token" variety="Atomic">
+		<enumeration>all</enumeration>
+		<enumeration>any</enumeration>
+		<enumeration>none</enumeration>
+		<enumeration>atLeastCount</enumeration>
+		<enumeration>atLeastPercent</enumeration>
+	</valueType>
+	<valueType name="conditionCombinationType" base="xsd:token" variety="Atomic">
+		<enumeration>all</enumeration>
+		<enumeration>any</enumeration>
+	</valueType>
+	<valueType name="conditionOperatorType" base="xsd:token" variety="Atomic">
+		<enumeration>not</enumeration>
+		<enumeration>noOp</enumeration>
+	</valueType>
+	<valueType name="measureType" base="xsd:decimal" variety="Atomic" minInclusive="-1" maxInclusive="1"/>
+	<valueType name="percentType" base="xsd:decimal" variety="Atomic" minInclusive="0" maxInclusive="1"/>
+	<valueType name="randomTimingType" base="xsd:token" variety="Atomic">
+		<enumeration>never</enumeration>
+		<enumeration>once</enumeration>
+		<enumeration>onEachNewAttempt</enumeration>
+	</valueType>
+	<valueType name="rollupActionType" base="xsd:token" variety="Atomic">
+		<enumeration>satisfied</enumeration>
+		<enumeration>notSatisfied</enumeration>
+		<enumeration>completed</enumeration>
+		<enumeration>incomplete</enumeration>
+	</valueType>
+	<valueType name="rollupRuleConditionType" base="xsd:token" variety="Atomic">
+		<enumeration>satisfied</enumeration>
+		<enumeration>objectiveStatusKnown</enumeration>
+		<enumeration>objectiveMeasureKnown</enumeration>
+		<enumeration>completed</enumeration>
+		<enumeration>activityProgressKnown</enumeration>
+		<enumeration>attempted</enumeration>
+		<enumeration>attemptLimitExceeded</enumeration>
+		<enumeration>timeLimitExceeded</enumeration>
+		<enumeration>outsideAvailableTimeRange</enumeration>
+	</valueType>
+	<valueType name="sequencingRuleConditionType" base="xsd:token" variety="Atomic">
+		<enumeration>satisfied</enumeration>
+		<enumeration>objectiveStatusKnown</enumeration>
+		<enumeration>objectiveMeasureKnown</enumeration>
+		<enumeration>objectiveMeasureGreaterThan</enumeration>
+		<enumeration>objectiveMeasureLessThan</enumeration>
+		<enumeration>completed</enumeration>
+		<enumeration>activityProgressKnown</enumeration>
+		<enumeration>attempted</enumeration>
+		<enumeration>attemptLimitExceeded</enumeration>
+		<enumeration>timeLimitExceeded</enumeration>
+		<enumeration>outsideAvailableTimeRange</enumeration>
+		<enumeration>always</enumeration>
+	</valueType>
+	<valueType name="weightType" base="xsd:decimal" variety="Atomic" minInclusive="0" maxInclusive="1"/>
+	<valueType name="exitConditionRuleActionType" base="xsd:token" variety="Atomic">
+		<enumeration>exit</enumeration>
+	</valueType>
+	<valueType name="postConditionRuleActionType" base="xsd:token" variety="Atomic">
+		<enumeration>exitParent</enumeration>
+		<enumeration>exitAll</enumeration>
+		<enumeration>retry</enumeration>
+		<enumeration>retryAll</enumeration>
+		<enumeration>continue</enumeration>
+		<enumeration>previous</enumeration>
+	</valueType>
+	<valueType name="preConditionRuleActionType" base="xsd:token" variety="Atomic">
+		<enumeration>skip</enumeration>
+		<enumeration>disabled</enumeration>
+		<enumeration>hiddenFromChoice</enumeration>
+		<enumeration>stopForwardTraversal</enumeration>
+	</valueType>
+	<objectType name="deliveryControlsType">
+		<property name="tracked" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="completionSetByContent" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="objectiveSetByContent" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+	</objectType>
+	<objectType name="objectiveMappingType">
+		<property name="targetObjectiveID" type="xsd:anyURI" lowerBound="1" form="Attribute"/>
+		<property name="readSatisfiedStatus" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="readNormalizedMeasure" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="writeSatisfiedStatus" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="writeNormalizedMeasure" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+	</objectType>
+	<objectType name="objectiveType">
+		<property name="satisfiedByMeasure" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="minNormalizedMeasure" type="d3p1:measureType" lowerBound="0" fixed="false" default="1.00000"/>
+		<property name="mapInfo" lowerBound="0" upperBound="-1">
+			<typeDef xmlns:d4p1="http://www.imsglobal.org/xsd/imsss" xsi:type="ObjectType" base="d4p1:objectiveMappingType"/>
+		</property>
+	</objectType>
+	<objectType name="objectivesType">
+		<property name="primaryObjective">
+			<typeDef xmlns:d4p1="http://www.imsglobal.org/xsd/imsss" xsi:type="ObjectType" base="d4p1:objectiveType">
+				<property name="objectiveID" type="xsd:anyURI" lowerBound="0" form="Attribute"/>
+			</typeDef>
+		</property>
+		<property name="objective" lowerBound="0" upperBound="-1">
+			<typeDef xmlns:d4p1="http://www.imsglobal.org/xsd/imsss" xsi:type="ObjectType" base="d4p1:objectiveType">
+				<property name="objectiveID" type="xsd:anyURI" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="http://www.imsglobal.org/xsd/imsss" name="exitConditionRuleType" base="d2p1:sequencingRuleType">
+		<property name="ruleAction">
+			<typeDef xsi:type="ObjectType">
+				<property name="action" type="d2p1:exitConditionRuleActionType" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="http://www.imsglobal.org/xsd/imsss" name="postConditionRuleType" base="d2p1:sequencingRuleType">
+		<property name="ruleAction">
+			<typeDef xsi:type="ObjectType">
+				<property name="action" type="d2p1:postConditionRuleActionType" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType xmlns:d2p1="http://www.imsglobal.org/xsd/imsss" name="preConditionRuleType" base="d2p1:sequencingRuleType">
+		<property name="ruleAction">
+			<typeDef xsi:type="ObjectType">
+				<property name="action" type="d2p1:preConditionRuleActionType" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="sequencingRuleType" abstract="true">
+		<property name="ruleConditions" lowerBound="0">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://www.imsglobal.org/xsd/imsss" name="conditionCombination" type="d5p1:conditionCombinationType" lowerBound="0" fixed="false" default="all" form="Attribute"/>
+				<property name="ruleCondition" upperBound="-1">
+					<typeDef xsi:type="ObjectType">
+						<property name="referencedObjective" type="xsd:anyURI" lowerBound="0" form="Attribute"/>
+						<property xmlns:d7p1="http://www.imsglobal.org/xsd/imsss" name="measureThreshold" type="d7p1:measureType" lowerBound="0" form="Attribute"/>
+						<property xmlns:d7p1="http://www.imsglobal.org/xsd/imsss" name="operator" type="d7p1:conditionOperatorType" lowerBound="0" fixed="false" default="noOp" form="Attribute"/>
+						<property xmlns:d7p1="http://www.imsglobal.org/xsd/imsss" name="condition" type="d7p1:sequencingRuleConditionType" lowerBound="1" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="sequencingRulesType">
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="preConditionRule" type="d3p1:preConditionRuleType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="exitConditionRule" type="d3p1:exitConditionRuleType" lowerBound="0" upperBound="-1"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="postConditionRule" type="d3p1:postConditionRuleType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="randomizationType">
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="randomizationTiming" type="d3p1:randomTimingType" lowerBound="0" fixed="false" default="never" form="Attribute"/>
+		<property name="selectCount" type="xsd:nonNegativeInteger" lowerBound="0" form="Attribute"/>
+		<property name="reorderChildren" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="selectionTiming" type="d3p1:randomTimingType" lowerBound="0" fixed="false" default="never" form="Attribute"/>
+	</objectType>
+	<objectType name="rollupRuleType">
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="childActivitySet" type="d3p1:childActivityType" lowerBound="0" fixed="false" default="all" form="Attribute"/>
+		<property name="minimumCount" type="xsd:nonNegativeInteger" lowerBound="0" fixed="false" default="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="minimumPercent" type="d3p1:percentType" lowerBound="0" fixed="false" default="0" form="Attribute"/>
+		<property name="rollupConditions">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://www.imsglobal.org/xsd/imsss" name="conditionCombination" type="d5p1:conditionCombinationType" lowerBound="0" fixed="false" default="any" form="Attribute"/>
+				<property name="rollupCondition" upperBound="-1">
+					<typeDef xsi:type="ObjectType">
+						<property xmlns:d7p1="http://www.imsglobal.org/xsd/imsss" name="operator" type="d7p1:conditionOperatorType" lowerBound="0" fixed="false" default="noOp" form="Attribute"/>
+						<property xmlns:d7p1="http://www.imsglobal.org/xsd/imsss" name="condition" type="d7p1:rollupRuleConditionType" lowerBound="1" form="Attribute"/>
+					</typeDef>
+				</property>
+			</typeDef>
+		</property>
+		<property name="rollupAction">
+			<typeDef xsi:type="ObjectType">
+				<property xmlns:d5p1="http://www.imsglobal.org/xsd/imsss" name="action" type="d5p1:rollupActionType" lowerBound="1" form="Attribute"/>
+			</typeDef>
+		</property>
+	</objectType>
+	<objectType name="rollupRulesType">
+		<property name="rollupObjectiveSatisfied" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="rollupProgressCompletion" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="objectiveMeasureWeight" type="d3p1:weightType" lowerBound="0" fixed="false" default="1.0000" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="rollupRule" type="d3p1:rollupRuleType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="controlModeType">
+		<property name="choice" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="choiceExit" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="flow" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="forwardOnly" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="useCurrentAttemptObjectiveInfo" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="useCurrentAttemptProgressInfo" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+	</objectType>
+	<objectType name="limitConditionsType">
+		<property name="attemptLimit" type="xsd:nonNegativeInteger" lowerBound="0" form="Attribute"/>
+		<property name="attemptAbsoluteDurationLimit" type="xsd:duration" lowerBound="0" form="Attribute"/>
+		<property name="attemptExperiencedDurationLimit" type="xsd:duration" lowerBound="0" form="Attribute"/>
+		<property name="activityAbsoluteDurationLimit" type="xsd:duration" lowerBound="0" form="Attribute"/>
+		<property name="activityExperiencedDurationLimit" type="xsd:duration" lowerBound="0" form="Attribute"/>
+		<property name="beginTimeLimit" type="xsd:dateTime" lowerBound="0" form="Attribute"/>
+		<property name="endTimeLimit" type="xsd:dateTime" lowerBound="0" form="Attribute"/>
+	</objectType>
+	<objectType name="auxiliaryResourceType">
+		<property name="auxiliaryResourceID" type="xsd:anyURI" lowerBound="1" form="Attribute"/>
+		<property name="purpose" type="xsd:string" lowerBound="1" form="Attribute"/>
+	</objectType>
+	<objectType name="auxiliaryResourcesType">
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="auxiliaryResource" type="d3p1:auxiliaryResourceType" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="sequencingType" open="true" sequenced="true">
+		<property name="ID" type="xsd:ID" lowerBound="0" form="Attribute"/>
+		<property name="IDRef" type="xsd:IDREF" lowerBound="0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="controlMode" type="d3p1:controlModeType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="sequencingRules" type="d3p1:sequencingRulesType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="limitConditions" type="d3p1:limitConditionsType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="auxiliaryResources" type="d3p1:auxiliaryResourcesType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="rollupRules" type="d3p1:rollupRulesType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="objectives" type="d3p1:objectivesType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="randomizationControls" type="d3p1:randomizationType" lowerBound="0"/>
+		<property xmlns:d3p1="http://www.imsglobal.org/xsd/imsss" name="deliveryControls" type="d3p1:deliveryControlsType" lowerBound="0"/>
+	</objectType>
+</package>

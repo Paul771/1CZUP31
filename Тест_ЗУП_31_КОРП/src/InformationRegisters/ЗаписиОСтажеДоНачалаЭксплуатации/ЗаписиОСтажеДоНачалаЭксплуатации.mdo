@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="803841a8-25a6-46b2-98f8-90658b3bb298">
+  <producedTypes>
+    <selectionType typeId="5e09ecb7-2f43-4040-b3b1-cce6cd7b8eb3" valueTypeId="ecce707a-8d8d-40ac-8b48-9ab33e2ac187"/>
+    <listType typeId="3ba77f6f-35a2-4634-a433-4412636d3387" valueTypeId="b093a81b-127a-42b2-ab9e-3687c919a1ab"/>
+    <managerType typeId="18c1635e-a11b-4b57-8f53-8f26d3ffeb93" valueTypeId="8afee575-0bc4-430c-8249-9d729c1f8fdd"/>
+    <recordSetType typeId="a17f8ac1-7f6b-4c34-a1bb-eeede45480ae" valueTypeId="5821ed5b-bdd7-445a-b978-54d88338b40a"/>
+    <recordKeyType typeId="2d873c82-cd97-4da9-8d4c-9cf32d1a0224" valueTypeId="50eaef79-69d5-4dfd-9d91-262fe980110e"/>
+    <recordType typeId="b2dc6ac1-6482-4a7c-8cd4-d9940591234c" valueTypeId="3e381edd-ea11-4355-97df-5f1642b8dba8"/>
+    <recordManagerType typeId="25c999db-0d00-4191-bee9-eca9a8ff582d" valueTypeId="f972d5a9-e205-4d3d-8fe2-a810df7de02b"/>
+  </producedTypes>
+  <name>ЗаписиОСтажеДоНачалаЭксплуатации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Записи о стаже до начала эксплуатации</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6cb4fb23-6c3b-4371-ae77-d1ecdfce5117">
+    <name>ОтчетныйПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчетный период</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг &quot;г.&quot;'; ДЛФ=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг &quot;г.&quot;'; ДЛФ=</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="90e06348-10d1-49d7-ab03-f49f4512b187">
+    <name>ОсобыеУсловияТруда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Особые условия труда</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОсобыеУсловияТрудаПФР</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="97403455-24ec-4504-9115-3309922bc9e9">
+    <name>КодПозицииСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код позиции списка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.СпискиПрофессийДолжностейЛьготногоПенсионногоОбеспечения</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2fa8fea1-71dc-4d12-b06d-63d9198f1b66">
+    <name>ОснованиеИсчисляемогоСтажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание исчисляемого стажа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОснованияИсчисляемогоСтраховогоСтажа</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b2d14934-296d-4727-b7d5-9b78073ad4a2">
+    <name>ПервыйПараметрИсчисляемогоСтажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первый параметр исчисляемого стажа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b6398296-6cb4-4ad2-9264-58aa41736783">
+    <name>ВторойПараметрИсчисляемогоСтажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Второй параметр исчисляемого стажа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="aa8f923f-78ee-42e4-87bb-6f31bef330a0">
+    <name>ТретийПараметрИсчисляемогоСтажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Третий параметр исчисляемого стажа</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ПараметрыИсчисляемогоСтраховогоСтажа</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="741be248-14fb-4bf6-88a1-849cde40ee89">
+    <name>ОснованиеВыслугиЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание выслуги лет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ОснованияДосрочногоНазначенияПенсии</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="449175a0-78f2-4d89-9c4d-0497d739cb65">
+    <name>ПервыйПараметрВыслугиЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первый параметр выслуги лет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cfc988a5-43f8-4ca6-84a2-64af1d400157">
+    <name>ВторойПараметрВыслугиЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Второй параметр выслуги лет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f8859305-fe45-48fb-8275-952a75c3b4a9">
+    <name>ТретийПараметрВыслугиЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Третий параметр выслуги лет</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="12c9ea4e-af8b-4ff2-900a-6654aecd6f9e">
+    <name>ТерриториальныеУсловия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Территориальные условия</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ТерриториальныеУсловияПФР</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b16cfc4d-7ef8-4c7c-be78-b5a2f59eecfc">
+    <name>ПараметрТерриториальныхУсловий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметр территориальных условий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b99a255a-619c-4cc6-a89d-2a409bb8af44">
+    <name>ЗамещениеГосударственныхМуниципальныхДолжностей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Замещение государственных муниципальных должностей</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ЗамещениеГосударственныхМуниципальныхДолжностейПФР</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="f926f16c-63c6-4f5d-95e3-07eb2e04fb4e">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="83cc9b91-f879-4382-862a-fe79d742ada8">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1a2881fd-9b58-4399-af20-b9db4c58e5b1">
+    <name>ДатаОкончанияПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0bde6be9-45de-4b2c-82c9-d8ed6b7ccaf7">
+    <name>ДатаНачалаПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="11645e69-9775-48a6-80ab-e8095987e7e9">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="da98da83-ef31-4808-9163-571aca80ce3e">
+    <name>НомерОсновнойЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер основной записи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="652c2e7b-b376-4aa1-9829-69b9a113895b">
+    <name>НомерДополнительнойЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер дополнительной записи</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

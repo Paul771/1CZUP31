@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1206bd6e-4ef7-481c-8eae-7ece531540f7">
+  <producedTypes>
+    <objectType typeId="aae7351d-7937-4d81-8264-e593698765c7" valueTypeId="8dd5fb74-d71c-46ab-95c2-02ca5f8724b9"/>
+    <managerType typeId="a5879823-555f-4fdf-94ab-88dac9f00d4e" valueTypeId="4e824993-b822-4690-94ab-77da2059ba0d"/>
+  </producedTypes>
+  <name>СозданиеВедомостейПрочихДоходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создание ведомостей прочих доходов</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.СозданиеВедомостейПрочихДоходов.Form.ВедомостиПоРасчетномуДокументу</defaultForm>
+  <forms uuid="d6ce118c-5bc4-442d-89de-7b4c035dcb3f">
+    <name>ВедомостиПоРасчетномуДокументу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ведомости по расчетному документу</value>
+    </synonym>
+    <comment></comment>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="1e044465-ff9b-4ec1-bf2b-45328cd80254">
+    <name>СоздатьВедомостиПрочихДоходовПоДокументу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выплатить</value>
+    </synonym>
+    <comment></comment>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>DocumentRef.ВыплатаБывшимСотрудникам</types>
+      <types>DocumentRef.РегистрацияПрочихДоходов</types>
+      <types>DocumentRef.ДивидендыФизическимЛицам</types>
+    </commandParameterType>
+    <representation>PictureAndText</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Создать ведомости на выплату дохода по документу</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ПоказатьОплаченныеВедомости</picture>
+    </picture>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

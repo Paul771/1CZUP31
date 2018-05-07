@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78de72aa-56ba-4e0a-b8a9-8d72f67500d1">
+  <producedTypes>
+    <selectionType typeId="92f5eeb2-a314-4e4b-a809-55bfd19aa702" valueTypeId="8f5a197d-37f7-4789-bcec-2bebd7ac1bb4"/>
+    <listType typeId="189e2275-2f88-430f-8ce1-b824aa26857b" valueTypeId="dd21544d-f0d2-4f49-a556-82189ca87024"/>
+    <managerType typeId="33bb76c4-81f8-4b63-a8ff-38a8b27434f0" valueTypeId="fa3deb2f-e000-4f15-87f2-f8f2b5ad7a24"/>
+    <recordSetType typeId="f0d63666-2ea2-4916-8b0b-689460e03aff" valueTypeId="9729bd8d-a42b-4563-bb90-5f941574c416"/>
+    <recordKeyType typeId="2b93a08e-65d2-4ee2-be74-ae53665f620b" valueTypeId="a3d19b6b-d308-47ec-b020-02f4abab7177"/>
+    <recordType typeId="3f481281-b939-4ac4-9df5-f81679a20eb2" valueTypeId="e224b73c-19d1-43a4-aea8-1877f919db48"/>
+    <recordManagerType typeId="41d025ec-3f16-407b-aab1-af1844c4471a" valueTypeId="2394b4b9-e8a7-4e40-a733-e00b76ceecfa"/>
+  </producedTypes>
+  <name>СтавкаВзносаНаСтрахованиеОтНесчастныхСлучаев</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ставка взноса на страхование от несчастных случаев</value>
+  </synonym>
+  <comment></comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="dc75e960-25b0-42ef-90ae-69de01797f49">
+    <name>Ставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="8ae8aa5f-d6da-4c09-98dc-8a7ecea9361f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="78fb47b8-ecb3-4e80-a61e-4333bba47661">
+    <name>РедактированиеИстории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование истории</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

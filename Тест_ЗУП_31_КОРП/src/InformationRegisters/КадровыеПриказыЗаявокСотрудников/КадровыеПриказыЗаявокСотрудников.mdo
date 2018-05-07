@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0b92d98f-fd04-41c2-ae29-2e2b52e6a73e">
+  <producedTypes>
+    <selectionType typeId="f746beed-46ae-498c-943b-96e60b37cf11" valueTypeId="5ca30d8d-a462-4401-aaf0-d65d50cfac74"/>
+    <listType typeId="b139b96c-5963-4c85-b1ce-896622db77da" valueTypeId="f6cbb23c-7fc7-40d8-980d-46a583779221"/>
+    <managerType typeId="ab1d05be-04b1-4227-9f69-1d4fe2dd6d4b" valueTypeId="2dd120c2-858e-45ab-8af5-e16e348daa0f"/>
+    <recordSetType typeId="fcaa33e3-a4fa-40c5-a2dd-1fd9e651023c" valueTypeId="9536f027-d4de-4b9e-8b99-1c2d456ef090"/>
+    <recordKeyType typeId="a9799322-8812-4d58-a93a-b874c4e2fa6c" valueTypeId="e60a238d-f3f6-497e-9be1-c6243da7604c"/>
+    <recordType typeId="897f2b65-af2f-462b-99e9-a23005c675bb" valueTypeId="d91f6fc0-b982-43dc-9450-0e8171b726d2"/>
+    <recordManagerType typeId="5779b9a9-0d58-4adb-9455-855fb9780b78" valueTypeId="15bd3479-0bb4-4843-b2f9-db9a3407d28d"/>
+  </producedTypes>
+  <name>КадровыеПриказыЗаявокСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кадровые приказы заявок сотрудников</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="5f85e7d9-a067-4b4b-8526-469e92dbefd5">
+    <name>ЗаявкаСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка сотрудника</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>DocumentRef.ЗаявкаНаКомандировку</types>
+      <types>DocumentRef.ЗаявкаНаОтпуск</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5ab35c53-3778-47f2-aabc-a7a3946afdbf">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

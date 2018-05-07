@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6185002d-27e5-424f-9adb-096fed3e4e12">
+  <producedTypes>
+    <objectType typeId="704d4b98-1511-4b2c-93a6-9146584029a3" valueTypeId="58f0a999-e989-40a3-96f8-e9a157980e8e"/>
+    <managerType typeId="c96437f5-cea8-4e5d-bcaa-53a931e22dd1" valueTypeId="62b604d5-7328-46d6-ad1b-d1814814371d"/>
+  </producedTypes>
+  <name>ПоискРезюмеВИнтернете</name>
+  <synonym>
+    <key>ru</key>
+    <value>Поиск резюме в Интернете</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DataProcessor.ПоискРезюмеВИнтернете.Form.Форма</defaultForm>
+  <attributes uuid="3decbc11-8935-44b0-9e61-43380fa3eb80">
+    <name>ВозрастДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>до</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fd62dd88-23b1-4292-a384-a0b74b457201">
+    <name>ВозрастОт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возраст от</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="46c766f2-eb44-4f58-b483-a47062381bee">
+    <name>КлючевоеСлово</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключевое слово</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2f5e4f22-36c1-466e-b98d-e9a8423b8990">
+    <name>Пол</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пол</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="08a11567-b6ea-4ba7-9096-25aa7f8d64d3">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="89407dd9-e879-4354-9106-c8f27de33e69">
+    <name>Сайт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сайт</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ИсточникиИнформацииОКандидатах</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="93c71bcd-faeb-4b30-a53b-158062ddeed4">
+    <name>УровеньЗарплатыДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>до</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="672ef2eb-36c7-409a-be5d-4f0908c232a8">
+    <name>УровеньЗарплатыОт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарплата от</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7561ddc5-ea45-43e9-93ad-97d9b65bd857">
+    <name>УровеньОбразования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уровень образования</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e6f5c088-25c2-4289-bab7-269be37dcc97">
+    <name>ПериодРазмещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период размещения</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e5c830a6-6ace-410c-866e-0272f9cc1261">
+    <name>ТолькоВНазвании</name>
+    <synonym>
+      <key>ru</key>
+      <value>Только в названии</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c89da8d4-42c6-4c1c-a0be-1f4699936b6a">
+    <name>СкрыватьРезюмеБезЗарплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скрывать резюме без зарплаты</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="0610381f-c31f-4f00-a71b-8c9fe2dbb310">
+    <producedTypes>
+      <objectType typeId="9597b18d-7d92-48a7-9385-c393f79999db" valueTypeId="241cd0ab-6cff-44be-9982-2a61b9fe8e11"/>
+      <rowType typeId="e6643908-35ac-476d-aa62-16d4329193c6" valueTypeId="36c07bb8-502a-4391-a31a-e54109195a51"/>
+    </producedTypes>
+    <name>НайденныеКандидаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Найденные кандидаты</value>
+    </synonym>
+    <comment></comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <comment></comment>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="9fc4a516-8f38-4d7b-87cc-3fcec1a95cfc">
+      <name>НазваниеРезюме</name>
+      <synonym>
+        <key>ru</key>
+        <value>Название резюме</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="f5f8db74-1905-475f-9653-63abb3a5f035">
+      <name>ФИО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ФИО</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="cb41bf36-b255-478c-80a5-5bf5d8098065">
+      <name>Регион</name>
+      <synonym>
+        <key>ru</key>
+        <value>Регион</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="58c24cdf-e676-41df-8ce2-1c13eaa4baff">
+      <name>ГдеНайден</name>
+      <synonym>
+        <key>ru</key>
+        <value>Где найден</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>CatalogRef.ИсточникиИнформацииОКандидатах</types>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4d36e3ff-83a2-47cf-b819-f9f45ecdd7dd">
+      <name>УровеньЗарплаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Уровень зарплаты</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="0c236341-b361-4268-ad7e-02b08b82ac94">
+      <name>Возраст</name>
+      <synonym>
+        <key>ru</key>
+        <value>Возраст</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="1b004403-4b96-4172-b672-e4f131260bbe">
+      <name>Пол</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пол</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>EnumRef.ПолФизическогоЛица</types>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="4062d6db-8a4e-4918-a32d-c40235b7d8a6">
+      <name>ПоследнееМестоРаботы</name>
+      <synonym>
+        <key>ru</key>
+        <value>Последнее место работы</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="e20b4ec0-e1b9-4789-86d3-96aab9f4aeb3">
+      <name>ИдентификаторРезюме</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор резюме</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="8aab70f5-416a-4899-abe1-912ee4513372">
+      <name>ПолеСортировки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Поле сортировки</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f3c08de5-d304-4b20-bde8-476a66b35fec">
+      <name>ДатаРазмещения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата размещения</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f6bcae01-905c-4280-be4a-7c07eeca5228">
+      <name>СсылкаНаРезюме</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка на резюме</value>
+      </synonym>
+      <comment></comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <mask></mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue">
+        <value></value>
+      </fillValue>
+    </attributes>
+  </tabularSections>
+  <forms uuid="a56e3e90-65fa-4ea8-801e-72c6554f9610">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="1b6d9be0-9808-4e89-8b8a-ede9df2fdb2f">
+    <name>Классификаторы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Классификаторы</value>
+    </synonym>
+    <comment></comment>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <commands uuid="ed88ac85-d557-43ec-8421-888573dd765a">
+    <name>ПоискРезюмеВИнтернете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поиск резюме в Интернете</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelImportant</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="1e0d7ca3-4573-4a78-a126-88816f310846">
+    <name>ПоискРезюмеВИнтернетеПоВакансии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поиск резюме в интернете</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.Вакансии</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:DataProcessor>

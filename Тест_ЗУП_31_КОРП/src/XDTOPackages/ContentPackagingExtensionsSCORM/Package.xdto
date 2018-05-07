@@ -1,0 +1,39 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.adlnet.org/xsd/adlcp_v1p3">
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="completionThreshold" type="d2p1:completionThresholdType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="data" type="d2p1:dataType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="dataFromLMS" type="d2p1:dataFromLMSType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="location" type="d2p1:locationType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="map" type="d2p1:mapType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="timeLimitAction" type="d2p1:timeLimitActionType"/>
+	<property name="scormType" form="Attribute">
+		<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic">
+			<enumeration>sco</enumeration>
+			<enumeration>asset</enumeration>
+		</typeDef>
+	</property>
+	<property name="sharedDataGlobalToSystem" type="xs:boolean" fixed="false" default="true" form="Attribute"/>
+	<valueType name="dataFromLMSType" base="xs:string" variety="Atomic"/>
+	<valueType name="locationType" base="xs:anyURI" variety="Atomic"/>
+	<valueType name="minProgressMeasureType" base="xs:decimal" variety="Atomic" minInclusive="0.0" maxInclusive="1.0"/>
+	<valueType name="progressWeightType" base="xs:decimal" variety="Atomic" minInclusive="0.0" maxInclusive="1.0"/>
+	<valueType name="timeLimitActionType" base="xs:string" variety="Atomic">
+		<enumeration>exit,message</enumeration>
+		<enumeration>exit,no message</enumeration>
+		<enumeration>continue,message</enumeration>
+		<enumeration>continue,no message</enumeration>
+	</valueType>
+	<objectType name="completionThresholdType">
+		<property name="completedByMeasure" type="xs:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="minProgressMeasure" type="d3p1:minProgressMeasureType" lowerBound="0" fixed="false" default="1.0" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlcp_v1p3" name="progressWeight" type="d3p1:progressWeightType" lowerBound="0" fixed="false" default="1.0" form="Attribute"/>
+		<property name="__content" type="xs:string" form="Text"/>
+	</objectType>
+	<objectType name="dataType">
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlcp_v1p3" ref="d3p1:map" upperBound="-1"/>
+	</objectType>
+	<objectType name="mapType">
+		<property name="targetID" type="xs:anyURI" lowerBound="1" form="Attribute"/>
+		<property name="readSharedData" type="xs:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="writeSharedData" type="xs:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+	</objectType>
+</package>

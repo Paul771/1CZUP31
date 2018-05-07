@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4acb1127-12b1-4856-bf9f-ba29f6162b11">
+  <name>ПерезаполнитьВторичныеЗаписиНачисленийЗависящихОтСтажа</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перезаполнить вторичные записи начислений зависящих от стажа</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.СтажиФизическихЛиц</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.РасчетЗарплатыРасширенныйСобытия.ПерезаполнитьВторичныеЗаписиНачисленийЗависящихОтСтажаПриЗаписи</handler>
+</mdclass:EventSubscription>

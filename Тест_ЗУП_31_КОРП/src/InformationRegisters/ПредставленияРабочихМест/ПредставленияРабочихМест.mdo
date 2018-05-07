@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9dd13f76-dbd1-4714-aa22-de2a2a0fa319">
+  <producedTypes>
+    <selectionType typeId="6d0e00a8-f821-4c31-b9b4-b21b5102586d" valueTypeId="18693966-71cd-4e35-bf9c-ae53715a05d1"/>
+    <listType typeId="ed1b288f-4d0e-430c-8dad-a1db595df3ac" valueTypeId="a5a077a6-72ba-4c55-a7eb-c8760c656120"/>
+    <managerType typeId="278e5ee7-6b88-4e76-b6f8-9d6c6f32ca17" valueTypeId="6565939f-431b-40e5-ae60-c0adf24bd641"/>
+    <recordSetType typeId="517883a0-0fbe-4f3a-aeaf-7ecd338b6e27" valueTypeId="da1fe974-d8e2-41dc-a832-44fd9a91b4d8"/>
+    <recordKeyType typeId="e2ece955-5881-45c3-8972-ef8c2ba23d9c" valueTypeId="f8cbb25d-c502-472f-a234-e60a5e113194"/>
+    <recordType typeId="a4cad771-e529-484a-842c-1d439e71f8b2" valueTypeId="cb18a975-3d0e-4634-87d3-0b2ee8ce2998"/>
+    <recordManagerType typeId="cec39cd6-7834-4907-9a88-cc81709ceb49" valueTypeId="121af3af-b26a-45da-ab17-f58786fde859"/>
+  </producedTypes>
+  <name>ПредставленияРабочихМест</name>
+  <synonym>
+    <key>ru</key>
+    <value>Представления рабочих мест</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Представление рабочего места</value>
+  </recordPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Представления рабочих мест</value>
+  </listPresentation>
+  <resources uuid="e59ae44f-2d6b-4756-9c38-97b212df0eb1">
+    <name>Представление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="4c1c9046-5525-41a7-a470-dcc67c1d9fc4">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="29ac6343-3594-4ace-b982-7452216afab8">
+    <name>РабочееМесто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочее место</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ШтатноеРасписание</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

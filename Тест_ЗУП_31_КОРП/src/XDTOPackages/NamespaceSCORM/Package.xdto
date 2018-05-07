@@ -1,0 +1,17 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.w3.org/XML/1998/namespace">
+	<property name="base" type="xs:anyURI" form="Attribute"/>
+	<property name="id" type="xs:ID" form="Attribute"/>
+	<property name="lang" form="Attribute">
+		<typeDef xsi:type="ValueType" variety="Union" memberTypes="xs:language">
+			<typeDef base="xs:string" variety="Atomic">
+				<enumeration/>
+			</typeDef>
+		</typeDef>
+	</property>
+	<property name="space" form="Attribute">
+		<typeDef xsi:type="ValueType" base="xs:NCName" variety="Atomic">
+			<enumeration>default</enumeration>
+			<enumeration>preserve</enumeration>
+		</typeDef>
+	</property>
+</package>

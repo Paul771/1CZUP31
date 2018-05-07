@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d40f11d0-9985-4422-b291-85bbeacbe699">
+  <producedTypes>
+    <selectionType typeId="83c5f1da-d3b1-4ad7-83bf-09cd370cf4e5" valueTypeId="94f79152-5703-4af8-9309-2ba68dd3fe86"/>
+    <listType typeId="211f52b9-c3ac-4325-8b39-a046f3099c19" valueTypeId="72196925-a822-4129-89d9-6b02f787a475"/>
+    <managerType typeId="6d28cccf-cbbc-4387-8c9e-11d293e05c27" valueTypeId="c17736d3-f41f-4aee-b57e-de4d803e17c5"/>
+    <recordSetType typeId="e4393cb9-34ae-4595-9692-fa1f2baf6dde" valueTypeId="60b551a2-eaf6-473a-81a5-02221b3e7fbf"/>
+    <recordKeyType typeId="4b529fd4-d49e-4b71-a373-d54ad53ef4e4" valueTypeId="3080bc9b-5266-4e4e-9825-a779e501f19b"/>
+    <recordType typeId="0ed3c96e-1239-4a3d-ab67-fd39f25a6d80" valueTypeId="f78139ac-bc38-4ca4-9b64-0fde31dfa86f"/>
+    <recordManagerType typeId="0503814a-31c0-48c3-85ac-c0b64debd900" valueTypeId="bc75168a-2364-40ce-ace1-483a2eb8d994"/>
+  </producedTypes>
+  <name>УдалитьИсторияРазработкиЭлектронныхКурсов</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) История разработки электронных курсов</value>
+  </synonym>
+  <comment></comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="424477aa-7c63-4b6f-8aa8-e31480c4e30a">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь, который отредактировал объект</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="34f5cb38-679e-46f4-b8a3-d3e10cb0621f">
+    <name>Действие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действие</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>EnumRef.УдалитьДействияНадЭлектроннымиКурсами</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Действие, которое выполнил пользователь с объектом</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="6ca326e2-2f70-43b0-9132-836e9505733f">
+    <name>СсылкаНаЭлементКурса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка на элемент курса</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.ТеорияЭлектронныхКурсов</types>
+      <types>CatalogRef.ТерминыЭлектронныхГлоссариев</types>
+      <types>CatalogRef.УдалитьТекстыЭлектронныхКурсов</types>
+      <types>CatalogRef.ЭлектронныеГлоссарии</types>
+      <types>CatalogRef.ЭлектронныеРесурсы</types>
+      <types>CatalogRef.ЭлектронныеКурсы</types>
+      <types>CatalogRef.ЭлементыЭлектронныхРесурсов</types>
+      <types>CatalogRef.ТестовыеВопросы</types>
+      <types>CatalogRef.СодержаниеЭлектронныхКурсов</types>
+      <types>CatalogRef.ЭлектронныеРубрикаторы</types>
+      <types>CatalogRef.ЭлектронныеТесты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Редактируемый объект</value>
+    </toolTip>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

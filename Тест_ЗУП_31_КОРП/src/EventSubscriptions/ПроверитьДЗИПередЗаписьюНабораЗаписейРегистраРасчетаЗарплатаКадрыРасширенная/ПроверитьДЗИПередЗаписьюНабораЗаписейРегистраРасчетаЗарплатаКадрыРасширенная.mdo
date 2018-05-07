@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0bf97499-7bcc-4313-948c-a6b64bd5ae78">
+  <name>ПроверитьДЗИПередЗаписьюНабораЗаписейРегистраРасчетаЗарплатаКадрыРасширенная</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить дату запрета изменения перед записью набора записей регистра расчета</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>CalculationRegisterRecordSet.Удержания</types>
+    <types>CalculationRegisterRecordSet.Начисления</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ДатыЗапретаИзменения.ПроверитьДатуЗапретаИзмененияПередЗаписьюНабораЗаписейРегистраРасчета</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,45 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://www.adlnet.org/xsd/adlseq_v1p3">
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="constrainedChoiceConsiderations" type="d2p1:constrainChoiceConsiderationsType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="mapInfo" type="d2p1:mapInfoType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="objective" type="d2p1:objectiveType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="objectives" type="d2p1:objectivesType"/>
+	<property xmlns:d2p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="rollupConsiderations" type="d2p1:rollupConsiderationsType"/>
+	<property name="objectivesGlobalToSystem" type="xsd:boolean" fixed="false" default="true" form="Attribute"/>
+	<valueType name="rollupConsiderationType" base="xsd:token" variety="Atomic">
+		<enumeration>always</enumeration>
+		<enumeration>ifAttempted</enumeration>
+		<enumeration>ifNotSkipped</enumeration>
+		<enumeration>ifNotSuspended</enumeration>
+	</valueType>
+	<objectType name="constrainChoiceConsiderationsType">
+		<property name="preventActivation" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="constrainChoice" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+	</objectType>
+	<objectType name="mapInfoType">
+		<property name="targetObjectiveID" type="xsd:anyURI" lowerBound="1" form="Attribute"/>
+		<property name="readRawScore" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="readMinScore" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="readMaxScore" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="readCompletionStatus" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="readProgressMeasure" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+		<property name="writeRawScore" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="writeMinScore" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="writeMaxScore" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="writeCompletionStatus" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+		<property name="writeProgressMeasure" type="xsd:boolean" lowerBound="0" fixed="false" default="false" form="Attribute"/>
+	</objectType>
+	<objectType name="objectiveType">
+		<property name="objectiveID" type="xsd:anyURI" lowerBound="1" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlseq_v1p3" ref="d3p1:mapInfo" upperBound="-1"/>
+	</objectType>
+	<objectType name="objectivesType">
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlseq_v1p3" ref="d3p1:objective" upperBound="-1"/>
+	</objectType>
+	<objectType name="rollupConsiderationsType">
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="requiredForSatisfied" type="d3p1:rollupConsiderationType" lowerBound="0" fixed="false" default="always" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="requiredForNotSatisfied" type="d3p1:rollupConsiderationType" lowerBound="0" fixed="false" default="always" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="requiredForCompleted" type="d3p1:rollupConsiderationType" lowerBound="0" fixed="false" default="always" form="Attribute"/>
+		<property xmlns:d3p1="http://www.adlnet.org/xsd/adlseq_v1p3" name="requiredForIncomplete" type="d3p1:rollupConsiderationType" lowerBound="0" fixed="false" default="always" form="Attribute"/>
+		<property name="measureSatisfactionIfActive" type="xsd:boolean" lowerBound="0" fixed="false" default="true" form="Attribute"/>
+	</objectType>
+</package>

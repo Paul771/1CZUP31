@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f2640fb8-4a8c-4c7c-8c1e-37c73420900e">
+  <producedTypes>
+    <selectionType typeId="b4b6069c-05a0-479d-b2fa-c2dbc445ef21" valueTypeId="e4215d2f-b7ba-4c3c-818b-195a76157a12"/>
+    <listType typeId="2ee64ec5-0ec1-4447-a1c5-fdf844d16f5d" valueTypeId="c45dcfcd-003c-4b27-9ceb-9f5694e7c9fd"/>
+    <managerType typeId="27971d2e-7762-4344-9d8e-09589ebec30e" valueTypeId="813e54b7-e0f2-467a-9086-6d5503d07d77"/>
+  </producedTypes>
+  <name>Отпуска</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отпуска</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.Отпуска.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.Отпуск</registeredDocuments>
+  <registeredDocuments>Document.ОтпускаСотрудников</registeredDocuments>
+  <registeredDocuments>Document.ОтпускБезСохраненияОплаты</registeredDocuments>
+  <registeredDocuments>Document.ОтпускБезСохраненияОплатыСписком</registeredDocuments>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="8bc88bc9-b344-4399-8646-b8ec6b392d43">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.ПериодРегистрации</references>
+    <references>Document.ОтпускаСотрудников.Attribute.ПериодПринадлежности</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ПериодРегистрации</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.ПериодРегистрации</references>
+  </columns>
+  <columns uuid="b4dd24a5-3752-4fbf-b11c-6a6b1befe904">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.Сотрудник</references>
+    <references>Document.ОтпускаСотрудников.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Сотрудник</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.КраткийСоставДокумента</references>
+  </columns>
+  <columns uuid="58dc1f20-1955-45f8-a059-1576aa37ca69">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.Организация</references>
+    <references>Document.ОтпускаСотрудников.Attribute.Организация</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Организация</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.Организация</references>
+  </columns>
+  <columns uuid="82fba54d-c14a-4903-aba0-093d4d704090">
+    <name>Начало</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.ДатаНачалаПериодаОтсутствия</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ДатаНачала</references>
+  </columns>
+  <columns uuid="790967b5-bd6d-4d3e-a91d-891fbeebbee4">
+    <name>Окончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.ДатаОкончанияПериодаОтсутствия</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ДатаОкончания</references>
+  </columns>
+  <columns uuid="b0f8d7db-497a-4d1a-8b06-a744e87b43c3">
+    <name>Утвержден</name>
+    <synonym>
+      <key>ru</key>
+      <value>Утвержден</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.ДокументРассчитан</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ПерерасчетВыполнен</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.ПерерасчетВыполнен</references>
+  </columns>
+  <columns uuid="08c7570b-eac5-47b5-8e2b-fd5b123810bd">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.Комментарий</references>
+    <references>Document.ОтпускаСотрудников.Attribute.Комментарий</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Комментарий</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.Комментарий</references>
+  </columns>
+  <columns uuid="1a19fe45-b8a6-4ce1-8876-582e8d182f9f">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.Отпуск.Attribute.Ответственный</references>
+    <references>Document.ОтпускаСотрудников.Attribute.Ответственный</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Ответственный</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.Ответственный</references>
+  </columns>
+  <forms uuid="8822668d-7cdc-4e86-80a1-fe56e42d2121">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>

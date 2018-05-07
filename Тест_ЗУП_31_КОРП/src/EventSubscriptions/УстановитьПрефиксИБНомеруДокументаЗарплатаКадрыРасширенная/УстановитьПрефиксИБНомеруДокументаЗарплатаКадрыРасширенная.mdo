@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="df313f1f-55d3-4d17-a25b-df05a77b24b8">
+  <name>УстановитьПрефиксИБНомеруДокументаЗарплатаКадрыРасширенная</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить префикс ИБНомеру документа зарплата кадры расширенная</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>DocumentObject.УтверждениеТарифнойСетки</types>
+    <types>DocumentObject.ПереводНаОплатуПоСреднемуЗаработку</types>
+    <types>DocumentObject.Бронь</types>
+  </source>
+  <event>OnSetNewNumber</event>
+  <handler>CommonModule.ПрефиксацияОбъектовСобытия.УстановитьПрефиксИнформационнойБазы</handler>
+</mdclass:EventSubscription>

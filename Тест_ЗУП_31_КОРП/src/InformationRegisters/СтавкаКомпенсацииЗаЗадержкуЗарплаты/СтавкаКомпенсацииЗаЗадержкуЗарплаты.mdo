@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3921a128-fee6-43d7-afd0-84ae261f4973">
+  <producedTypes>
+    <selectionType typeId="58deb4da-c821-4802-a646-2a45976d3477" valueTypeId="835a4e2c-f76e-4def-a2ea-91a69688d97d"/>
+    <listType typeId="2ca2f817-e891-4784-a237-181b8509e755" valueTypeId="fb6c4055-8e61-45f6-ac39-93afd68230a8"/>
+    <managerType typeId="7b6be98a-cff6-45ab-8967-212efbd8d411" valueTypeId="36b9d2d2-0f86-4b8e-b273-ce9f68f41b0f"/>
+    <recordSetType typeId="40518ad2-3fe7-4a93-a1cc-3b09f25fc902" valueTypeId="4e694ac4-0e90-4943-9b8c-669ce0b6715c"/>
+    <recordKeyType typeId="060ddadb-50af-43c3-9597-a86b82f774dd" valueTypeId="73bf7ce1-b40b-45d7-a139-26fbb6b31484"/>
+    <recordType typeId="e1560a2d-1dbc-434c-bf1d-e1e55afbb95a" valueTypeId="8690a10d-7ad5-454a-85f6-f2bb62b4bdf0"/>
+    <recordManagerType typeId="a7579157-dbcd-4c71-9bc8-24f36fdfdc91" valueTypeId="17686a3c-ce6e-47eb-9e5b-272b07d6c0b1"/>
+  </producedTypes>
+  <name>СтавкаКомпенсацииЗаЗадержкуЗарплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ставка компенсации за задержку зарплаты</value>
+  </synonym>
+  <comment>Ставка компенсации за нарушение установленного срока выплаты зарплаты в соответствии со ст.236 Трудового Кодекса</comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <resources uuid="ba4410c4-42ec-472a-b04b-8ee01825ed37">
+    <name>Ставка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+        <scale>5</scale>
+      </numberQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="0962bb27-294c-454d-aa88-b7db22834958">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="de11c4ec-32c5-4000-b42e-63f2b2d70148">
+    <name>РедактированиеИстории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование истории</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5e6751d0-9880-4fc2-b252-63e194c2d377">
+  <name>ЗапретитьРедактированиеОбщихДанныхНаборЗаписейЗарплатаКадрыРасширенная</name>
+  <synonym>
+    <key>ru</key>
+    <value>Запретить редактирование общих данных набор записей зарплата кадры расширенная</value>
+  </synonym>
+  <comment></comment>
+  <source>
+    <types>InformationRegisterRecordSet.РазмерыГосударственныхПособий</types>
+    <types>InformationRegisterRecordSet.СтавкаРефинансированияЦБ</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ЗарплатаКадрыСобытия.ЗапретитьРедактированиеОбщихДанныхНаборЗаписейПередЗаписью</handler>
+</mdclass:EventSubscription>

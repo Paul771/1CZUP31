@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fc3727bf-50d6-4a60-8c6d-d46f64f98231">
+  <producedTypes>
+    <selectionType typeId="2c2da274-3ed3-44ae-ae96-ea3576a87ac1" valueTypeId="3e9000ce-2f5d-48a6-b7bf-f7d851c3363d"/>
+    <listType typeId="97560566-10b0-4c6f-88b9-eceaa328ea68" valueTypeId="621bcca4-0cb5-44aa-8673-1b20e234579b"/>
+    <managerType typeId="e75a1a1a-2783-48f0-be09-8df9a601525f" valueTypeId="5514a2be-adb2-4ad4-b889-b44da2a69e85"/>
+  </producedTypes>
+  <name>НачислениеЗарплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Начисление зарплаты</value>
+  </synonym>
+  <comment></comment>
+  <defaultForm>DocumentJournal.НачислениеЗарплаты.Form.ФормаСписка</defaultForm>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.БольничныйЛист</registeredDocuments>
+  <registeredDocuments>Document.НачислениеЗарплаты</registeredDocuments>
+  <registeredDocuments>Document.Отпуск</registeredDocuments>
+  <registeredDocuments>Document.ОплатаПоСреднемуЗаработку</registeredDocuments>
+  <registeredDocuments>Document.ПростойСотрудников</registeredDocuments>
+  <registeredDocuments>Document.Увольнение</registeredDocuments>
+  <registeredDocuments>Document.Командировка</registeredDocuments>
+  <registeredDocuments>Document.ЕдиновременноеПособиеЗаСчетФСС</registeredDocuments>
+  <registeredDocuments>Document.Премия</registeredDocuments>
+  <registeredDocuments>Document.НачислениеЗаПервуюПоловинуМесяца</registeredDocuments>
+  <registeredDocuments>Document.МатериальнаяПомощь</registeredDocuments>
+  <registeredDocuments>Document.ОтпускБезСохраненияОплаты</registeredDocuments>
+  <registeredDocuments>Document.ПрогулНеявка</registeredDocuments>
+  <registeredDocuments>Document.РазовоеНачисление</registeredDocuments>
+  <registeredDocuments>Document.ОплатаДнейУходаЗаДетьмиИнвалидами</registeredDocuments>
+  <registeredDocuments>Document.ДоходВНатуральнойФорме</registeredDocuments>
+  <registeredDocuments>Document.УвольнениеСписком</registeredDocuments>
+  <registeredDocuments>Document.Отгул</registeredDocuments>
+  <registeredDocuments>Document.НачислениеПоДоговорам</registeredDocuments>
+  <registeredDocuments>Document.ОтпускБезСохраненияОплатыСписком</registeredDocuments>
+  <registeredDocuments>Document.ОтгулСписком</registeredDocuments>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <listPresentation>
+    <key>ru</key>
+    <value>Все начисления</value>
+  </listPresentation>
+  <columns uuid="892e2105-c9f9-43db-919a-787ff8d49619">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.ПериодРегистрации</references>
+    <references>Document.НачислениеЗарплаты.Attribute.МесяцНачисления</references>
+    <references>Document.Отпуск.Attribute.ПериодРегистрации</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.ПериодРегистрации</references>
+    <references>Document.ПростойСотрудников.Attribute.ПериодРегистрации</references>
+    <references>Document.Увольнение.Attribute.ПериодРегистрации</references>
+    <references>Document.Командировка.Attribute.ПериодРегистрации</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.ПериодРегистрации</references>
+    <references>Document.Премия.Attribute.ПериодРегистрации</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.МесяцНачисления</references>
+    <references>Document.МатериальнаяПомощь.Attribute.ПериодРегистрации</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ПериодРегистрации</references>
+    <references>Document.ПрогулНеявка.Attribute.ПериодРегистрации</references>
+    <references>Document.РазовоеНачисление.Attribute.МесяцНачисления</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.ПериодРегистрации</references>
+    <references>Document.ДоходВНатуральнойФорме.Attribute.МесяцНачисления</references>
+    <references>Document.УвольнениеСписком.Attribute.ПериодРегистрации</references>
+    <references>Document.Отгул.Attribute.ПериодРегистрации</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.МесяцНачисления</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.ПериодРегистрации</references>
+    <references>Document.ОтгулСписком.Attribute.ПериодРегистрации</references>
+  </columns>
+  <columns uuid="c40e8b06-ed24-48bd-9761-5fd6b5c31d53">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.Организация</references>
+    <references>Document.НачислениеЗарплаты.Attribute.Организация</references>
+    <references>Document.Отпуск.Attribute.Организация</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.Организация</references>
+    <references>Document.ПростойСотрудников.Attribute.Организация</references>
+    <references>Document.Увольнение.Attribute.Организация</references>
+    <references>Document.Командировка.Attribute.Организация</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.Организация</references>
+    <references>Document.Премия.Attribute.Организация</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.Организация</references>
+    <references>Document.МатериальнаяПомощь.Attribute.Организация</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Организация</references>
+    <references>Document.ПрогулНеявка.Attribute.Организация</references>
+    <references>Document.РазовоеНачисление.Attribute.Организация</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.Организация</references>
+    <references>Document.ДоходВНатуральнойФорме.Attribute.Организация</references>
+    <references>Document.УвольнениеСписком.Attribute.Организация</references>
+    <references>Document.Отгул.Attribute.Организация</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.Организация</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.Организация</references>
+    <references>Document.ОтгулСписком.Attribute.Организация</references>
+  </columns>
+  <columns uuid="0245ccde-e386-45af-8e71-383c9ca2a96c">
+    <name>Сотрудники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.Сотрудник</references>
+    <references>Document.НачислениеЗарплаты.Attribute.КраткийСоставДокумента</references>
+    <references>Document.Отпуск.Attribute.Сотрудник</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.Сотрудник</references>
+    <references>Document.Увольнение.Attribute.Сотрудник</references>
+    <references>Document.Командировка.Attribute.Сотрудник</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.ФизическоеЛицо</references>
+    <references>Document.Премия.Attribute.КраткийСоставДокумента</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ПростойСотрудников.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Сотрудник</references>
+    <references>Document.ПрогулНеявка.Attribute.Сотрудник</references>
+    <references>Document.РазовоеНачисление.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.Сотрудник</references>
+    <references>Document.ДоходВНатуральнойФорме.Attribute.КраткийСоставДокумента</references>
+    <references>Document.МатериальнаяПомощь.Attribute.КраткийСоставДокумента</references>
+    <references>Document.УвольнениеСписком.Attribute.КраткийСоставДокумента</references>
+    <references>Document.Отгул.Attribute.Сотрудник</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.КраткийСоставДокумента</references>
+    <references>Document.ОтгулСписком.Attribute.КраткийСоставДокумента</references>
+  </columns>
+  <columns uuid="a429fc73-f541-4942-812e-8576ff7c7b6d">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.Ответственный</references>
+    <references>Document.НачислениеЗарплаты.Attribute.Ответственный</references>
+    <references>Document.Отпуск.Attribute.Ответственный</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.Ответственный</references>
+    <references>Document.ПростойСотрудников.Attribute.Ответственный</references>
+    <references>Document.Увольнение.Attribute.Ответственный</references>
+    <references>Document.Командировка.Attribute.Ответственный</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.Ответственный</references>
+    <references>Document.Премия.Attribute.Ответственный</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.Ответственный</references>
+    <references>Document.МатериальнаяПомощь.Attribute.Ответственный</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Ответственный</references>
+    <references>Document.ПрогулНеявка.Attribute.Ответственный</references>
+    <references>Document.РазовоеНачисление.Attribute.Ответственный</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.Ответственный</references>
+    <references>Document.ДоходВНатуральнойФорме.Attribute.Ответственный</references>
+    <references>Document.УвольнениеСписком.Attribute.Ответственный</references>
+    <references>Document.Отгул.Attribute.Ответственный</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.Ответственный</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.Ответственный</references>
+    <references>Document.ОтгулСписком.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="ddabdc34-6070-44ac-be30-9e35ea2d38ac">
+    <name>Начислено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начислено</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.НачислениеЗарплаты.Attribute.Начислено</references>
+    <references>Document.Отпуск.Attribute.Начислено</references>
+    <references>Document.ПростойСотрудников.Attribute.Начислено</references>
+    <references>Document.Увольнение.Attribute.Начислено</references>
+    <references>Document.БольничныйЛист.Attribute.Начислено</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.Начислено</references>
+    <references>Document.Командировка.Attribute.Начислено</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.Начислено</references>
+    <references>Document.Премия.Attribute.Начислено</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.Начислено</references>
+    <references>Document.МатериальнаяПомощь.Attribute.Начислено</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Начислено</references>
+    <references>Document.ПрогулНеявка.Attribute.Начислено</references>
+    <references>Document.РазовоеНачисление.Attribute.Начислено</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.Начислено</references>
+    <references>Document.ДоходВНатуральнойФорме.Attribute.Начислено</references>
+    <references>Document.УвольнениеСписком.Attribute.Начислено</references>
+    <references>Document.Отгул.Attribute.Начислено</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.Начислено</references>
+  </columns>
+  <columns uuid="a7f60f41-636a-410d-baf4-e9d531f77c64">
+    <name>Удержано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удержано</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.НачислениеЗарплаты.Attribute.Удержано</references>
+    <references>Document.Увольнение.Attribute.Удержано</references>
+    <references>Document.Премия.Attribute.Удержано</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.Удержано</references>
+    <references>Document.МатериальнаяПомощь.Attribute.Удержано</references>
+    <references>Document.БольничныйЛист.Attribute.Удержано</references>
+    <references>Document.Командировка.Attribute.Удержано</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.Удержано</references>
+    <references>Document.Отпуск.Attribute.Удержано</references>
+    <references>Document.РазовоеНачисление.Attribute.Удержано</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.Удержано</references>
+    <references>Document.УвольнениеСписком.Attribute.Удержано</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.Удержано</references>
+  </columns>
+  <columns uuid="a15a8ee3-f045-4468-85c2-6793362695dd">
+    <name>ПорядокВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок выплаты</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.ПорядокВыплаты</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.ПорядокВыплаты</references>
+    <references>Document.Командировка.Attribute.ПорядокВыплаты</references>
+    <references>Document.МатериальнаяПомощь.Attribute.ПорядокВыплаты</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.ПорядокВыплаты</references>
+    <references>Document.Отпуск.Attribute.ПорядокВыплаты</references>
+    <references>Document.Премия.Attribute.ПорядокВыплаты</references>
+    <references>Document.ПростойСотрудников.Attribute.ПорядокВыплаты</references>
+    <references>Document.Увольнение.Attribute.ПорядокВыплаты</references>
+    <references>Document.РазовоеНачисление.Attribute.ПорядокВыплаты</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.ПорядокВыплаты</references>
+    <references>Document.УвольнениеСписком.Attribute.ПорядокВыплаты</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.ПорядокВыплаты</references>
+  </columns>
+  <columns uuid="72c643c9-ae35-42a8-9ec4-b722448ebb1f">
+    <name>ПланируемаяДатаВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планируемая дата выплаты</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.Командировка.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.МатериальнаяПомощь.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.Отпуск.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.Премия.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.ПростойСотрудников.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.Увольнение.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.РазовоеНачисление.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.ПланируемаяДатаВыплаты</references>
+    <references>Document.УвольнениеСписком.Attribute.ПланируемаяДатаВыплаты</references>
+  </columns>
+  <columns uuid="6ddc66c2-e3d9-4f46-899f-679609e95304">
+    <name>Рассчитан</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рассчитан</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.ДокументРассчитан</references>
+    <references>Document.Командировка.Attribute.ДокументРассчитан</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.ДокументРассчитан</references>
+    <references>Document.Отпуск.Attribute.ДокументРассчитан</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ПерерасчетВыполнен</references>
+    <references>Document.Премия.Attribute.ДокументРассчитан</references>
+    <references>Document.ПрогулНеявка.Attribute.ПерерасчетВыполнен</references>
+    <references>Document.ПростойСотрудников.Attribute.ПерерасчетВыполнен</references>
+    <references>Document.Увольнение.Attribute.ДокументРассчитан</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.ДокументРассчитан</references>
+    <references>Document.УвольнениеСписком.Attribute.ДокументРассчитан</references>
+    <references>Document.Отгул.Attribute.ПерерасчетВыполнен</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.ПерерасчетВыполнен</references>
+    <references>Document.ОтгулСписком.Attribute.ПерерасчетВыполнен</references>
+  </columns>
+  <columns uuid="36a399a4-5987-43be-afdb-9cbd93dbfad4">
+    <name>ПредставлениеПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление периода</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.ПредставлениеПериода</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.ПредставлениеПериода</references>
+    <references>Document.Командировка.Attribute.ПредставлениеПериода</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.ПредставлениеПериода</references>
+    <references>Document.Отпуск.Attribute.ПредставлениеПериода</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.ПредставлениеПериода</references>
+    <references>Document.ПрогулНеявка.Attribute.ПредставлениеПериода</references>
+    <references>Document.ПростойСотрудников.Attribute.ПредставлениеПериода</references>
+    <references>Document.Увольнение.Attribute.ПредставлениеПериода</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.ПредставлениеПериода</references>
+    <references>Document.УвольнениеСписком.Attribute.ПредставлениеПериода</references>
+    <references>Document.Отгул.Attribute.ПредставлениеПериода</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.ПредставлениеПериода</references>
+  </columns>
+  <columns uuid="8ce993a7-6bb5-4c90-9c45-b0f7d40c8dfc">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <references>Document.БольничныйЛист.Attribute.Комментарий</references>
+    <references>Document.ДоходВНатуральнойФорме.Attribute.Комментарий</references>
+    <references>Document.ЕдиновременноеПособиеЗаСчетФСС.Attribute.Комментарий</references>
+    <references>Document.Командировка.Attribute.Комментарий</references>
+    <references>Document.МатериальнаяПомощь.Attribute.Комментарий</references>
+    <references>Document.НачислениеЗаПервуюПоловинуМесяца.Attribute.Комментарий</references>
+    <references>Document.НачислениеЗарплаты.Attribute.Комментарий</references>
+    <references>Document.ОплатаДнейУходаЗаДетьмиИнвалидами.Attribute.Комментарий</references>
+    <references>Document.ОплатаПоСреднемуЗаработку.Attribute.Комментарий</references>
+    <references>Document.Отпуск.Attribute.Комментарий</references>
+    <references>Document.ОтпускБезСохраненияОплаты.Attribute.Комментарий</references>
+    <references>Document.ПрогулНеявка.Attribute.Комментарий</references>
+    <references>Document.ПростойСотрудников.Attribute.Комментарий</references>
+    <references>Document.РазовоеНачисление.Attribute.Комментарий</references>
+    <references>Document.Увольнение.Attribute.Комментарий</references>
+    <references>Document.УвольнениеСписком.Attribute.Комментарий</references>
+    <references>Document.Отгул.Attribute.Комментарий</references>
+    <references>Document.НачислениеПоДоговорам.Attribute.Комментарий</references>
+    <references>Document.ОтпускБезСохраненияОплатыСписком.Attribute.Комментарий</references>
+    <references>Document.Премия.Attribute.Комментарий</references>
+    <references>Document.ОтгулСписком.Attribute.Комментарий</references>
+  </columns>
+  <forms uuid="ac3fd161-7489-47c1-b993-274abd9b1855">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DocumentJournal>
